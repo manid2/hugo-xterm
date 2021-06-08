@@ -92,3 +92,4 @@ typings/
 # ignore development files
 package-lock.json
 yarn.lock
+static/assets/*.js
