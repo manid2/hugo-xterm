@@ -1,30 +1,27 @@
 <footer class="footer" style="opacity: 1;border-top: dotted thin grey;">
-  <div class="footer__inner">
-    {{ if $.Site.Copyright }}
-      <div class="copyright">
-        <span>{{ $.Site.Copyright | safeHTML }} {{ now.Year }} </span>
-      </div>
-    {{ end }}
-    {{ if $.Site.Params.CopyrightUserUrl }}
-      <div class="copyright" style="color: green;">
-        <span><a href="{{ $.Site.Params.CopyrightUserUrl }}">
+  <div class="footer__inner" style="margin-top: 1rem;">
+    <div class="copyright">
+      <span>
+        {{ if $.Site.Copyright }}
+          {{ $.Site.Copyright | safeHTML }} {{ now.Year }}
+        {{ end }}
+        {{ if $.Site.Params.CopyrightUserUrl }}
+          ~~
+          <a style="color: green;" href="{{ $.Site.Params.CopyrightUserUrl }}">
             {{ if $.Site.Params.CopyrightUserText }}
               {{ $.Site.Params.CopyrightUserText }}
             {{ else }}
               {{ $.Site.Params.CopyrightUserUrl }}
             {{ end }}
-            </a>
-        </span>
-      </div>
-    {{ end }}
-    <div class="copyright" style="color: green;">
-      <span><a href="/pages/support">Support me</a></span>
-    </div>
-    <div class="copyright" style="color: green;">
-      <span><a href="/posts/index.xml">RSS</a></span>
-    </div>
-    <div class="copyright" style="color: green;">
-      <span><a href="/sitemap.xml">Sitemap</a></span>
+          </a>
+        {{ end }}
+        ~~
+        <a style="color: green;" href="/pages/support">Support me</a>
+        ~~
+        <a style="color: green;" href="/posts/index.xml">RSS</a>
+        ~~
+        <a style="color: green;" href="/sitemap.xml">Sitemap</a>
+      </span>
     </div>
   </div>
   <div class="footer__inner" style="margin-top: 1rem;">
