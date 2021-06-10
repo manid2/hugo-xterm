@@ -99,7 +99,7 @@ pre[class*="language-"].line-numbers > code {
 	position: relative;
 	margin: var(--code-margin) 0;
 	padding: 20px;
-	border: 1px solid rgba(255, 255, 255, .1);
+	border: 1px solid darkcyan;
 
 	+ .code-toolbar,
 	+ .highlight,
@@ -114,7 +114,7 @@ pre[class*="language-"].line-numbers > code {
 
 	code {
 		display: block;
-		color: inherit;
+		color: goldenrod;
 	}
 }
 

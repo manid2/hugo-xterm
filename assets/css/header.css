@@ -3,7 +3,7 @@
   background: var(--background);
   box-shadow: var(--shadow);
   color: white;
-  border: 2px solid;
+  border: 2px solid green;
   margin: 0;
   padding: 10px;
   list-style: none;

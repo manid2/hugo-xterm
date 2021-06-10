@@ -1,5 +1,5 @@
-<footer class="footer" style="opacity: 1;border-top: dotted thin grey;">
-  <div class="footer__inner" style="margin-top: 1rem;">
+<footer class="footer">
+  <div class="footer__inner">
     <div class="copyright">
       <span>
         {{ if $.Site.Copyright }}
@@ -7,7 +7,7 @@
         {{ end }}
         {{ if $.Site.Params.CopyrightUserUrl }}
           ~~
-          <a style="color: green;" href="{{ $.Site.Params.CopyrightUserUrl }}">
+          <a href="{{ $.Site.Params.CopyrightUserUrl }}">
             {{ if $.Site.Params.CopyrightUserText }}
               {{ $.Site.Params.CopyrightUserText }}
             {{ else }}
@@ -16,20 +16,20 @@
           </a>
         {{ end }}
         ~~
-        <a style="color: green;" href="/pages/support">Support me</a>
+        <a href="/pages/support">Support me</a>
         ~~
-        <a style="color: green;" href="/posts/index.xml">RSS</a>
+        <a href="/posts/index.xml">RSS</a>
         ~~
-        <a style="color: green;" href="/sitemap.xml">Sitemap</a>
+        <a href="/sitemap.xml">Sitemap</a>
       </span>
     </div>
   </div>
-  <div class="footer__inner" style="margin-top: 1rem;">
+  <div class="footer__inner">
     <div class="copyright">
-      <span>Powered by <a style="color: green;" href="http://gohugo.io">Hugo</a>
-            :: <a style="color: green;" href="https://github.com/panr/hugo-theme-terminal/">Terminal</a>
-            theme by <a style="color: green;" href="https://twitter.com/panr">panr</a>
-            :: theme <a style="color: green;" href="https://github.com/manid2/hugo-theme-terminal/">enhanced</a> by me.
+      <span>Powered by <a href="http://gohugo.io">Hugo</a>
+            :: <a href="https://github.com/panr/hugo-theme-terminal/">Terminal</a>
+            theme by <a href="https://twitter.com/panr">panr</a>
+            :: theme <a href="https://github.com/manid2/hugo-theme-terminal/">enhanced</a> by me.
       </span>
     </div>
   </div>

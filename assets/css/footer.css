@@ -1,7 +1,8 @@
 .footer {
   padding: 40px 0;
   flex-grow: 0;
-  opacity: .5; /* FIXME: remove opacity, could not remove it easily. */
+  /* --border: 3px dotted var(--accent);
+  border-top: var(--border); */
 
   &__inner {
     display: flex;
@@ -10,14 +11,11 @@
     margin: 0;
     width: 760px;
     max-width: 100%;
+    margin-top: 1rem;
 
     @media (--tablet) {
       flex-direction: column;
     }
-  }
-
-  a {
-    color: inherit;
   }
 
   .copyright {
