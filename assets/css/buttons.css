@@ -1,7 +1,11 @@
 .button-container {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  @media (--tablet) {
+    flex-direction: column;
+  }
 }
 
 button,
@@ -16,10 +20,22 @@ a.button {
   text-decoration: none;
   text-align: center;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 5px solid darkcyan;
+  background-color: darkslategrey;
   appearance: none;
   cursor: pointer;
   outline: none;
+
+  &:hover {
+    padding-right: 26px;
+    color: white;
+    font-weight: bold;
+    background-color: darkcyan;
+  }
+
+  @media (--tablet) {
+    margin-bottom: 1rem;
+  }
 
   /* variants */
 
