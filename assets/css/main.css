@@ -66,6 +66,10 @@ a {
   color: lightgreen;
   text-decoration: none;
 
+  &:hover {
+    color: magenta;
+  }
+
   /* Waiting for a better times... */
   /* &:has(code) {
     text-decoration-color: var(--accent);
