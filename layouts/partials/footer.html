@@ -1,6 +1,17 @@
 <footer class="footer">
   <div class="footer__inner">
     <div class="copyright">
+      <span style="font-size: smaller; font-style: italic">
+        Site built on:
+        {{ now.Format "2006-01-02 15:04:05 IST" }}
+        {{ with site.Params.git.last_commit }}
+        from commit: {{ .hash }}
+        {{ end }}
+      </span>
+    </div>
+  </div>
+  <div class="footer__inner">
+    <div class="copyright">
       <span>
         {{ if $.Site.Copyright }}
           {{ $.Site.Copyright | safeHTML }} {{ now.Year }}
