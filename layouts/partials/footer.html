@@ -1,4 +1,5 @@
-<footer class="footer">
+<section class="footer">
+  <hr>
   <div class="footer__inner">
     <div class="copyright">
       <span style="font-size: smaller; font-style: italic">
@@ -39,21 +40,10 @@
   </div>
   <div class="footer__inner">
     <div class="copyright">
-      <span>Powered by <a href="http://gohugo.io">Hugo</a>
-            :: <a href="https://github.com/panr/hugo-theme-terminal/">Terminal</a>
-            theme by <a href="https://twitter.com/panr">panr</a>
-            :: theme <a href="https://github.com/manid2/hugo-theme-terminal/">enhanced</a> by me.
+      <span>Powered by <a href="https://gohugo.io">Hugo</a>,
+        theme is based on
+        <a href="https://github.com/panr/hugo-theme-terminal/">Terminal</a>
       </span>
     </div>
   </div>
-</footer>
-
-<script src="{{ "assets/main.js" | absURL }}"></script>
-<script src="{{ "assets/prism.js" | absURL }}"></script>
-
-{{ if $.Site.Params.showLanguageSelector }}
-  <script src="{{ "assets/languageSelector.js" | absURL }}"></script>
-{{ end }}
-
-<!-- Extended footer section-->
-{{ partial "extended_footer.html" . }}
+</section>

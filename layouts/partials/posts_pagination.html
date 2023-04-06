@@ -1,5 +1,5 @@
 {{ if or .NextInSection .PrevInSection }}
-<div class="pagination">
+<section class="pagination">
     <div class="pagination__title">
         <span class="pagination__title-h">{{ $.Site.Params.ReadOtherPosts }}</span>
         <hr />
@@ -20,5 +20,5 @@
         </span>
         {{ end }}
     </div>
-</div>
+</section>
 {{ end }}

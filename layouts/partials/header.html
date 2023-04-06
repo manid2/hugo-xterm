@@ -1,13 +1,23 @@
-<header class="header">
-  <div class="header__inner">
+<div class="header">
+  <section class="header__inner">
     <div class="header__logo">
       {{ partial "logo.html" . }}
     </div>
     {{ if len $.Site.Menus }}
-      <div class="menu-trigger">menu</div>
-    {{ end }}
-  </div>
-  {{ if len $.Site.Menus }}
+    <div class="menu-trigger">menu</div>
     {{ partial "menu.html" . }}
+    {{ end }}
+  </section>
+
+  {{- if (.Param "ShowBreadCrumbs") -}}
+  <section class="header__inner">
+    {{ partial "breadcrumbs.html" . }}
+  </section>
   {{ end }}
-</header>
+</div>
+
+{{ if .GitInfo }}
+<section>
+  {{ partial "gitinfo.html" . }}
+</section>
+{{ end }}

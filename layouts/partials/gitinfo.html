@@ -1,0 +1,31 @@
+{{ $pageName := "Page" }}
+
+{{ if .IsHome }}
+{{ $pageName = "Home page" }}
+{{ else if .IsSection }}
+{{ $pageName = print .Title " list" | plainify }}
+{{ else if eq .Type "posts" }}
+{{ $pageName = print "Article" | plainify }}
+{{ else }}
+{{ with .File }}
+{{ if eq .TranslationBaseName "resume" }}
+{{ $pageName = print .TranslationBaseName | strings.FirstUpper }}
+{{ else if eq .TranslationBaseName "cv" }}
+{{ $pageName = print .TranslationBaseName | upper }}
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{ with .GitInfo }}
+<div class="gitinfo">
+{{ $pageName }}
+updated on:
+{{ .AuthorDate }}
+by commit
+<code class="gitinfo">
+  <a href="https://{{ $.Site.Data.gitinfo.host }}.com/{{ $.Site.Data.gitinfo.user }}/{{ $.Site.Data.gitinfo.repo }}/-/commit/{{ .Hash }}">
+    {{ .AbbreviatedHash }}
+  </a>
+</code>
+</div>
+{{ end }}

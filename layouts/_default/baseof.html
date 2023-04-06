@@ -1,27 +1,79 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.Language }}">
-<head>
-  {{ block "title" . }}
-    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
-  {{ end }}
-  {{ partial "head.html" . }}
-</head>
-<body class="{{- ( or .Params.color $.Site.Params.ThemeColor ) -}}">
-{{ $container := cond $.Site.Params.FullWidthTheme "container full" (cond $.Site.Params.CenterTheme "container center" "container") }}
-
-<div class="{{- $container -}}{{- cond ($.Site.Params.oneHeadingSize | default true) " headings--one-size" "" }}">
-
-  {{ partial "header.html" . }}
-
-  <div class="content">
-    {{ block "main" . }}
+  <head>
+    {{ block "title" . }}
+    <title>
+      {{ if .IsHome }}
+        {{ $.Site.Title }}
+      {{ else }}
+        {{ if .Title }}
+          {{ .Title }}
+        {{ else }}
+          {{ .File.TranslationBaseName }}
+        {{ end }}
+        :: {{ $.Site.Title }}
+      {{ end }}
+    </title>
     {{ end }}
-  </div>
 
-  {{ block "footer" . }}
-    {{ partial "footer.html" . }}
-  {{ end }}
-</div>
+    {{ block "head" . }}
+      {{ partial "head/meta.html" . }}
+      {{ partial "head/icons.html" . }}
+      {{ partial "head/fonts.html" . }}
+      {{ block "head_style" . }}
+        {{ partial "head/style.html" . }}
+      {{ end }}
+      {{ partial "head/share.html" . }}
+      {{ partial "head/feed.html" . }}
+    {{ end }}
+  </head>
 
-</body>
+  <body class="{{- $.Site.Params.ThemeColor -}}">
+    {{ block "container" . }}
+    {{ $container := "container" }}
+    {{ if $.Site.Params.FullWidthTheme }}
+      {{ $container = print $container " full" }}
+    {{ else if $.Site.Params.CenterTheme }}
+      {{ $container = print $container " center" }}
+    {{ end }}
+    <div class="{{- $container -}}">
+
+      <header>
+      {{ block "header" . }}
+        {{ partial "header.html" . }}
+      {{ end }}
+
+      {{ block "header_extra" . }}
+      {{ end }}
+      </header>
+
+      <main>
+        {{ block "main" . }}
+          {{ if .Title }}
+          <h1 class="post-title">{{ .Title | plainify }}</h1>
+          {{ end }}
+          {{ .Content }}
+        {{ end }}
+      </main>
+
+      <footer class="footer">
+      {{ block "footer_extra" . }}
+      {{ end }}
+
+      {{ block "footer" . }}
+        {{ partial "footer.html" . }}
+      {{ end }}
+      </footer>
+
+    </div>
+    {{ end }}
+
+    {{ block "scripts" . }}
+      <script src="{{ "assets/main.js" | absURL }}"></script>
+      <script src="{{ "assets/prism.js" | absURL }}"></script>
+      {{ if $.Site.Params.showLanguageSelector }}
+      <script src="{{ "assets/languageSelector.js" | absURL }}"></script>
+      {{ end }}
+    {{ end }}
+  </body>
 </html>

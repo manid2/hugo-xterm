@@ -1,0 +1,57 @@
+{{ define "head_style" }}
+  {{ partial "slides/style.html" . }}
+{{ end }}
+
+{{ define "container" }}
+  <!-- Hide header & footer until slides are ready -->
+  <div style="display: none;">
+    <div id="slide-header-footer">
+      {{ if .Title }}
+      <div class="header-left">{{- .Title -}}</div>
+      {{ end }}
+      {{ if $.Site.Copyright }}
+      <div class="footer-left">{{ $.Site.Copyright | safeHTML }} {{ now.Year }}</div>
+      {{ end }}
+    </div>
+  </div>
+
+  <div class="reveal">
+    <div class="slides">
+    <!-- Title slide -->
+    {{ if .Title }}
+    <section>
+      <h1>{{- .Title -}}</h1>
+      <p>
+      {{ with .Date }}
+      {{ .Format "2006-01-02" }}
+      {{ end }}
+      {{ with .Params.Author }}
+      | {{ . }}
+      {{ end }}
+      </p>
+      {{ if .Description}}
+      <p style="font-style: italic;">
+      {{ .Description | plainify }}
+      </p>
+      {{ end }}
+    </section>
+    {{ end}}
+
+    <!-- Content slides -->
+    <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+      {{ block "main" . }}
+      {{- .RawContent -}}
+      {{ end}}
+    </section>
+
+    <!-- End slide -->
+    <section>
+      <h2>Thank you</h2>
+    </section>
+  </div>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+  {{ partial "slides/scripts.html" . }}
+{{ end }}
