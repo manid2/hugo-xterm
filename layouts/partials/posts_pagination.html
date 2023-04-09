@@ -4,18 +4,20 @@
         <span class="pagination__title-h">{{ $.Site.Params.ReadOtherPosts }}</span>
         <hr />
     </div>
-    <div class="pagination__links">
+    <div class="pagination__buttons">
         {{ if .NextInSection }}
-        <span class="pagination__previous">
+        <span class="button previous">
             <a href="{{ .NextInSection.Permalink }}">
-                <span>← {{ .NextInSection.Title }}</span>
+                <span class="button__icon">←</span>
+                <span class="button__text">{{ .NextInSection.Title }}</span>
             </a>
         </span>
         {{ end }}
         {{ if .PrevInSection }}
-        <span class="pagination__next">
+        <span class="button next">
             <a href="{{ .PrevInSection.Permalink }}">
-                <span>{{ .PrevInSection.Title }} →</span>
+                <span class="button__text">{{ .PrevInSection.Title }}</span>
+                <span class="button__icon">→</span>
             </a>
         </span>
         {{ end }}

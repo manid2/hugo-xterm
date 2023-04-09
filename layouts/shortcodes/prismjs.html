@@ -1,4 +1,4 @@
-{{ $inner := replaceRE "^\n" "" .Inner | string }}
+{{ $inner := replaceRE "^\r?\n" "" .Inner | string }}
 {{ if len .Params | eq 0 }}
   <pre><code>{{ $inner }}</code></pre>
 {{ else }}
@@ -20,6 +20,7 @@
       >{{ $inner }}</code></pre>
   {{ else }}
     <pre class="language-{{ .Get 0 }}">
-      <code class="language-{{ .Get 0 }}">{{ $inner }}</code></pre>
+      <code class="language-{{ .Get 0 }}">{{ $inner }}</code>
+    </pre>
   {{ end }}
 {{ end }}

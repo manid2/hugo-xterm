@@ -69,11 +69,10 @@
     {{ end }}
 
     {{ block "scripts" . }}
-      <script src="{{ "assets/main.js" | absURL }}"></script>
-      <script src="{{ "assets/prism.js" | absURL }}"></script>
-      {{ if $.Site.Params.showLanguageSelector }}
-      <script src="{{ "assets/languageSelector.js" | absURL }}"></script>
-      {{ end }}
+      {{ $menu := resources.Get "js/menu.js" | js.Build }}
+      {{ $prism := resources.Get "js/prism.js" | js.Build }}
+      {{ $bundle := slice $menu $prism | resources.Concat "bundle.js" | resources.Minify }}
+      <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
     {{ end }}
   </body>
 </html>

@@ -89,8 +89,5 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 
-# ignore development files
-# NOTE: these are needed at build.
-#package-lock.json
-#yarn.lock
-#static/assets/*.js
+public
+.hugo_build.lock
