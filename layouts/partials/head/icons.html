@@ -1,8 +1,0 @@
-<!-- Icons -->
-<link rel="apple-touch-icon" href="{{ "images/favicons/apple-touch-icon.png" | absURL }}">
-{{ if isset $.Site.Params "favicon" }}
-  <link rel="shortcut icon" href="{{ $.Site.Params.favicon | absURL }}">
-{{ else }}
-  <link rel="shortcut icon" href="{{ printf "img/favicon/%s.png" ($.Site.Params.ThemeColor | default "orange") | absURL }}">
-{{ end }}
-

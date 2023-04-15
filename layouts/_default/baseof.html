@@ -1,32 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ $.Site.Language }}">
-  <head>
-    {{ block "title" . }}
-    <title>
-      {{ if .IsHome }}
-        {{ $.Site.Title }}
-      {{ else }}
-        {{ if .Title }}
-          {{ .Title }}
-        {{ else }}
-          {{ .File.TranslationBaseName }}
-        {{ end }}
-        :: {{ $.Site.Title }}
-      {{ end }}
-    </title>
-    {{ end }}
-
-    {{ block "head" . }}
-      {{ partial "head/meta.html" . }}
-      {{ partial "head/icons.html" . }}
-      {{ partial "head/fonts.html" . }}
-      {{ block "head_style" . }}
-        {{ partial "head/style.html" . }}
-      {{ end }}
-      {{ partial "head/share.html" . }}
-      {{ partial "head/feed.html" . }}
-    {{ end }}
-  </head>
+<html lang="{{- site.Language -}}">
+<head>
+  {{- block "head" . -}}
+    {{- partial "head/base.html" . -}}
+    {{- block "styles" . -}}
+      {{- partial "head/style.html" . -}}
+    {{- end -}}
+  {{- end -}}
+</head>
 
   <body class="{{- $.Site.Params.ThemeColor -}}">
     {{ block "container" . }}
