@@ -10,50 +10,53 @@
 </head>
 
   <body class="{{- $.Site.Params.ThemeColor -}}">
-    {{ block "container" . }}
-    {{ $container := "container" }}
-    {{ if $.Site.Params.FullWidthTheme }}
-      {{ $container = print $container " full" }}
-    {{ else if $.Site.Params.CenterTheme }}
-      {{ $container = print $container " center" }}
-    {{ end }}
+    {{- block "container" . -}}
+    {{- $container := "container" -}}
+    {{- if $.Site.Params.FullWidthTheme -}}
+      {{- $container = print $container " full" -}}
+    {{- else if $.Site.Params.CenterTheme -}}
+      {{- $container = print $container " center" -}}
+    {{- end -}}
+
+    {{- /* container*/}}
     <div class="{{- $container -}}">
 
+      {{- /* site header*/}}
       <header>
-      {{ block "header" . }}
-        {{ partial "header.html" . }}
-      {{ end }}
-
-      {{ block "header_extra" . }}
-      {{ end }}
+      {{- block "header" . -}}
+        {{- partial "header.html" . -}}
+      {{- end -}}
       </header>
 
+      {{- /* site main */}}
       <main>
-        {{ block "main" . }}
-          {{ if .Title }}
+        {{- block "main" . -}}
+          {{ if .Title -}}
           <h1 class="post-title">{{ .Title | plainify }}</h1>
-          {{ end }}
+          {{- end -}}
+
+          {{- /* site main content */}}
           {{ .Content }}
-        {{ end }}
+        {{- end -}}
       </main>
 
+      {{- /* site footer */}}
       <footer class="footer">
-      {{ block "footer_extra" . }}
-      {{ end }}
+      {{- block "footer_extra" . -}}
+      {{- end -}}
 
-      {{ block "footer" . }}
-        {{ partial "footer.html" . }}
-      {{ end }}
+      {{- block "footer" . -}}
+        {{- partial "footer.html" . -}}
+      {{- end -}}
       </footer>
-
     </div>
-    {{ end }}
+    {{- end -}}
 
-    {{ block "scripts" . }}
-      {{ $menu := resources.Get "js/menu.js" | js.Build }}
-      {{ $prism := resources.Get "js/prism.js" | js.Build }}
-      {{ $bundle := slice $menu $prism | resources.Concat "bundle.js" | resources.Minify }}
+    {{- block "scripts" . -}}
+      {{- $menu := resources.Get "js/menu.js" | js.Build -}}
+      {{- $prism := resources.Get "js/prism.js" | js.Build -}}
+      {{- $bundle := slice $menu $prism | resources.Concat "bundle.js" | resources.Minify -}}
       <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
-    {{ end }}
+    {{- end -}}
   </body>
 </html>
