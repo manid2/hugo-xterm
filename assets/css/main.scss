@@ -11,7 +11,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace;
+  font-family: Arial, Helvetica, Verdana, Roboto, sans-serif;
   font-size: 1rem;
   line-height: 1.54;
   letter-spacing: -0.02em;
@@ -29,40 +29,35 @@ body {
   }
 }
 
-.headings--one-size {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1.3;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Times New Roman", Garamond, Georgia, "Roboto Serif", serif;
+  line-height: 1.3;
+}
 
-    &:not(first-child) {
-      margin-top: 40px;
-    }
-  }
+h1,
+h2,
+h3 {
+  font-size: 1.4rem;
+}
 
-  h1,
-  h2,
-  h3 {
-    font-size: 1.4rem;
-  }
-
-  h4,
-  h5,
-  h6 {
-    font-size: 1.2rem;
-  }
+h4,
+h5,
+h6 {
+  font-size: 1.2rem;
 }
 
 a {
-  color: inherit;
+  color: $linkcolor;
+  text-decoration: none;
 
-  /* Waiting for a better times... */
-  /* &:has(code) {
-    text-decoration-color: $accent;
-  } */
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 img {
@@ -128,7 +123,7 @@ figure {
 }
 
 code, kbd {
-  font-family: 'Fira Code', Monaco, Consolas, Ubuntu Mono, monospace !important;
+  font-family: Ubuntu Mono, 'Fira Code', Monaco, Consolas, monospace !important;
   font-feature-settings: normal;
   background: transparentize($accent, .8);
   color: $accent;
@@ -219,10 +214,6 @@ blockquote {
       top: 20px;
       color: $accent;
       font-weight: bold;
-    }
-
-    a {
-      color: $accent;
     }
   }
 }

@@ -1,7 +1,8 @@
 /* COLOR VARIABLES */
-$background: mix($accent, #1D1E28, 2%);
-$color: white;
-$border-color: rgba(255, 255, 255, .1);
+$background: mix($accent, black, 10%);
+$color: mix($accent, cyan, 20%);
+$linkcolor: mix($accent, lightgreen, 20%);
+$border-color: mix($accent, black, 40%);
 
 /* MEDIA QUERIES */
 $phone: "max-width: 684px";

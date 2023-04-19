@@ -1,0 +1,129 @@
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0.5in;
+  }
+
+  body, .post {
+    margin: 0;
+    background-color: White;
+    color: Black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    line-height: 18pt;
+  }
+
+  h1, h2, h3 {
+    font-size: 14pt;
+    break-before: avoid-page;
+  }
+
+  h4, h5, h6 {
+    font-size: 12pt;
+  }
+
+  .post-title, .post-title:after {
+    border-bottom: 3px dotted LightGrey;
+  }
+
+  a,
+  .post-title > a,
+  .post-tags > a {
+    text-decoration: none;
+    color: Black;
+  }
+
+  .post-title > a::after,
+  .post-tags > a::after {
+    content: none;
+  }
+
+  .support-me {
+    display: block;
+    break-inside: avoid-page;
+  }
+
+  hr {
+    display: block;
+    height: 1px;
+    width: 100%;
+    border: none;
+    border-top: dashed 2px Grey;
+  }
+
+  p, ul, ol {
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 14pt;
+    font-size: 10pt;
+  }
+
+  table, th, tr, td {
+    border: 1px dashed Black;
+    background-color: White;
+    color: Black;
+    line-height: 14pt;
+    font-size: 10pt;
+  }
+
+  table {
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+    padding-top: 4pt;
+    padding-bottom: 4pt;
+  }
+
+  th, tr, td {
+    margin-top: 4pt;
+    margin-bottom: 4pt;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+  }
+
+  table, li {
+    break-inside: avoid-page;
+  }
+
+  /* TODO: optimize for code and pre */
+  code, kbd {
+    background-color: WhiteSmoke;
+    color: Black;
+  }
+
+  a::after {
+    color: DarkSlateGrey;
+    content: " (" attr(href) ")";
+    text-decoration: underline;
+    font-style: italic;
+  }
+
+  .post-meta,
+  .post-tags,
+  .gitinfo {
+    color: Grey;
+  }
+
+  code.gitinfo {
+    padding: 2pt;
+    margin: 0pt;
+  }
+
+  code.gitinfo > a {
+    text-decoration: underline;
+  }
+
+  a[href^="#"]:after,
+  .breadcrumbs,
+  .toc,
+  .footer,
+  code.gitinfo > a::after {
+    display: none
+  }
+}

@@ -1,9 +1,11 @@
+/* TODO: split header into sections */
 .header {
   display: flex;
   flex-direction: column;
   position: relative;
 
   @media print {
+    /* TODO: move this into print.scss */
     display: none;
   }
 
@@ -31,4 +33,11 @@
       text-decoration: none;
     }
   }
+}
+
+.gitinfo,
+.breadcrumbs {
+  font-size: smaller;
+  font-style: italic;
+  margin: 1em 0;
 }
