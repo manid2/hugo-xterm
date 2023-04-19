@@ -1,47 +1,19 @@
-.index-content {
-  margin-top: 20px;
-}
-
-.framed {
-  border: 1px solid $accent;
-  padding: 20px;
-
-  *:first-child {
-    margin-top: 0;
-  }
-
-  *:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.posts {
-  width: 100%;
-}
-
 .post {
   width: 100%;
   text-align: left;
-  margin: 20px auto;
-  padding: 20px 0;
+  margin: 48px 0;
 
-  &:not(:last-of-type) {
-    border-bottom: 1px solid $border-color;
-  }
-
-  &-meta {
-    font-size: 1rem;
-    margin-bottom: 10px;
-    color: transparentize($accent, .3);
+  &-header {
+    margin: 48px 0;
   }
 
   &-title {
     $border: 3px dotted $accent;
     position: relative;
     color: $accent;
-    margin: 0 0 15px;
-    padding-bottom: 15px;
+    padding-bottom: 16px;
     border-bottom: $border;
+    width: 100%;
 
     &:after {
       content: '';
@@ -57,15 +29,17 @@
     }
   }
 
+  &-meta,
   &-tags {
     display: block;
-    margin-bottom: 20px;
-    font-size: 1rem;
-    opacity: .8;
+    font-size: smaller;
+    font-style: italic;
+    margin: 16px 0;
   }
 
+  &-toc,
   &-content {
-    margin-top: 30px;
+    margin: 48px 0;
   }
 
   &-cover {
@@ -80,6 +54,16 @@
     }
   }
 
+  &-footer {
+    margin: 48px 0;
+  }
+
+  &-support {
+    font-style: italic;
+    margin: 48px 0;
+    border-top: 1px solid $border-color;
+  }
+
   ul {
     list-style: none;
 
@@ -88,22 +72,6 @@
       position: absolute;
       left: -20px;
       color: $accent;
-    }
-  }
-}
-
-.post--regulation {
-  h1 {
-    justify-content: center;
-  }
-
-  h2 {
-    justify-content: center;
-    margin-bottom: 10px;
-
-    & + h2 {
-      margin-top: -10px;
-      margin-bottom: 20px;
     }
   }
 }
@@ -117,8 +85,4 @@
 
 h1:hover a, h2:hover a, h3:hover a, h4:hover a {
   visibility: visible;
-}
-
-.footnotes {
-  color: transparentize($color, .5);
 }

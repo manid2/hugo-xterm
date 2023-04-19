@@ -1,49 +1,44 @@
-<section class="footer">
-  <hr>
-  <div class="footer__inner">
-    <div class="copyright">
-      <span style="font-size: smaller; font-style: italic">
-        Site built on:
-        {{ now.Format "2006-01-02 15:04:05 IST" }}
-        {{ with site.Params.git.last_commit }}
-        from commit: {{ .hash }}
-        {{ end }}
-      </span>
-    </div>
-  </div>
-  <div class="footer__inner">
-    <div class="copyright">
-      <span>
-        {{ if $.Site.Copyright }}
-          {{ $.Site.Copyright | safeHTML }} {{ now.Year }}
-        {{ end }}
-        {{ if $.Site.Params.CopyrightUserUrl }}
-          ~~
-          <a href="{{ $.Site.Params.CopyrightUserUrl }}">
-            {{ if $.Site.Params.CopyrightUserText }}
-              {{ $.Site.Params.CopyrightUserText }}
-            {{ else }}
-              {{ $.Site.Params.CopyrightUserUrl }}
-            {{ end }}
-          </a>
-        {{ end }}
-        ~~
-        <a href="/support">Support me</a>
-        ~~
-        <a href="/posts/index.xml">RSS</a>
-        ~~
-        <a href="/sitemap.xml">Sitemap</a>
-        ~~
-        <a href="https://{{ $.Site.Data.gitinfo.host }}.com/{{ $.Site.Data.gitinfo.user }}/{{ $.Site.Data.gitinfo.repo }}">Source</a>
-      </span>
-    </div>
-  </div>
-  <div class="footer__inner">
-    <div class="copyright">
-      <span>Powered by <a href="https://gohugo.io">Hugo</a>,
-        theme is based on
-        <a href="https://github.com/panr/hugo-theme-terminal/">Terminal</a>
-      </span>
-    </div>
-  </div>
-</section>
+{{- $gitRepoUrl := printf "https://%s.com/%s/%s/" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo -}}
+
+{{- /* site build info */}}
+<p class="buildinfo">
+{{- /* site build timestamp */ -}}
+<time datetime="{{ now.Format "2006-01-02 15:04:05 IST" }}">Site built on: {{ now.Format "2006-01-02 15:04:05 IST" }}</time>
+
+{{- with site.Params.git.last_commit -}}
+{{- printf " from commit: %s" .hash -}}
+{{- end -}}
+</p>
+
+{{- /* site copyright */}}
+<div class="copyright">
+  <p>
+  {{- if site.Copyright -}}
+  {{ site.Copyright | safeHTML }} {{ now.Year }}
+  {{- end -}}
+
+  {{- if site.Params.CopyrightUserUrl -}}
+  <span> ~~ </span>
+  {{- /* site copyright url */ -}}
+  <a href="{{ site.Params.CopyrightUserUrl }}">
+    {{- if site.Params.CopyrightUserText -}}
+    {{- site.Params.CopyrightUserText -}}
+    {{- else -}}
+    {{- site.Params.CopyrightUserUrl -}}
+    {{- end -}}
+  </a>
+  {{- end -}}
+  </p>
+
+  {{- /* site footer links */}}
+  <nav class="navbar">
+    <ul class="navbar__list">
+      <li><a href="/posts/index.xml">RSS</a></li>
+      <li><span>~~ </span><a href="/sitemap.xml">Sitemap</a></li>
+      <li><span>~~ </span><a href="{{ $gitRepoUrl }}">Source</a></li>
+    </ul>
+  </nav>
+</div>
+
+{{- /* site theme info */}}
+<p class="themeinfo">Powered by <a href="https://gohugo.io">Hugo</a>, theme is based on <a href="https://github.com/panr/hugo-theme-terminal/">Terminal</a></p>

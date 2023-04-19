@@ -1,0 +1,46 @@
+{{- $logoText := site.Params.Logo.logoText | default "Home" -}}
+{{- $logoLink := site.Params.Logo.logoHomeLink | default "/" -}}
+
+{{- /* navbar */}}
+<nav class="navbar">
+  <div class="navbar__first">
+    <ul class="navbar__list">
+      <li><a href="{{ $logoLink }}">{{ $logoText }}</a></li>
+
+      {{- if site.Params.showLanguageSelector }}
+      <li><a href="#">Lang</a></li>
+      {{- end }}
+
+      {{- if site.Params.showThemeColor }}
+      <li><a href="#">Dark</a></li>
+      {{- end }}
+    </ul>
+  </div>
+
+  {{- /* navbar separator */}}
+  <div class="navbar__separator"></div>
+
+  {{- if site.Params.showMenuItems }}
+  <div class="navbar__last">
+    <ul class="navbar__list menu--desktop">
+      {{- range site.Menus.main -}}
+        {{- if not .HasChildren }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+      {{- end -}}
+    </ul>
+    <ul class="menu menu--mobile">
+      <li class="menu__trigger">===</li>
+      <li>
+        <ul class="menu__dropdown">
+          {{- range site.Menus.main -}}
+            {{- if not .HasChildren }}
+            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            {{- end }}
+          {{- end -}}
+        </ul>
+      </li>
+    </ul>
+  </div>
+  {{- end }}
+</nav>

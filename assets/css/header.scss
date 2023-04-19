@@ -1,43 +1,54 @@
-/* TODO: split header into sections */
-.header {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  @media print {
-    /* TODO: move this into print.scss */
-    display: none;
-  }
-
-  &__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  &__logo {
-    display: flex;
-    flex: 1;
-
-    &:after {
-      content: '';
-      background: repeating-linear-gradient(90deg, $accent, $accent 2px, transparent 0, transparent 10px);
-      display: block;
-      width: 100%;
-      right: 10px;
-    }
-
-    a {
-      flex: 0 0 auto;
-      max-width: 100%;
-      text-decoration: none;
-    }
-  }
+.site-header {
+  margin: 48px 0;
+  border-bottom: 1px solid $border-color;
 }
 
 .gitinfo,
 .breadcrumbs {
   font-size: smaller;
   font-style: italic;
-  margin: 1em 0;
+  margin: 16px 0;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 48px;
+
+  &__first {
+    display: block;
+  }
+
+  &__separator {
+    flex-grow: 1;
+    border-top: 1px dashed $accent;
+  }
+
+  &__last {
+    display: block;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    > li {
+      flex: 0 0 auto;
+      background: $background;
+      padding: 8px 16px;
+      border: 1px dashed $accent;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }

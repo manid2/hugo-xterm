@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family: Arial, Helvetica, Verdana, Roboto, sans-serif;
   font-size: 1rem;
-  line-height: 1.54;
+  line-height: 1.4;
   letter-spacing: -0.02em;
   background-color: $background;
   color: $color;
@@ -29,6 +29,11 @@ body {
   }
 }
 
+.site-main {
+  margin: 0;
+  padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -36,17 +41,34 @@ h4,
 h5,
 h6 {
   font-family: "Times New Roman", Garamond, Georgia, "Roboto Serif", serif;
-  line-height: 1.3;
+  margin: 24px 0;
+  padding: 0;
+  width: fit-content;
 }
 
-h1,
-h2,
+h1 {
+  font-size: 2rem;
+  border-bottom: 2px dotted $accent;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 1px solid $accent;
+}
+
 h3 {
+  font-size: 1.6rem;
+  border-bottom: 1px dashed $accent;
+}
+
+h4 {
   font-size: 1.4rem;
 }
 
-h4,
-h5,
+h5 {
+  font-size: 1.2rem;
+}
+
 h6 {
   font-size: 1.2rem;
 }
@@ -79,7 +101,7 @@ img {
 }
 
 p {
-  margin-bottom: 20px;
+  margin: 16px 0;
 }
 
 figure {
@@ -288,7 +310,7 @@ mark {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding:  0 24px;
   max-width: 864px;
   min-height: 100vh;
   border-right: 1px solid rgba(255, 255, 255, 0.1);

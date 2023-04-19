@@ -1,8 +1,11 @@
-{{ if not .IsHome }}
+{{- if not .IsHome -}}
 <nav class="breadcrumbs" aria-label="breadcrumbs">
-  {{- $url := replace .Parent.Permalink (printf "%s" site.BaseURL) "" }}
+  {{- $url := replace .Parent.Permalink (printf "%s" site.BaseURL) "" -}}
   {{- $lang_url := strings.TrimPrefix (printf "%s/" .Lang) $url -}}
+
+  {{- /* Home */}}
   <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a>
+
   {{- $scratch := newScratch }}
   {{- range $index, $element := split $lang_url "/" }}
 
@@ -10,9 +13,11 @@
   {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
 
   {{- if (and ($bc_pg) (gt (len . ) 0))}}
-  {{- print "&nbsp;/&nbsp;" | safeHTML -}}<a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
+  {{- print "&nbsp;/&nbsp;" | safeHTML -}}
+  {{- /* Paths */}}
+  <a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
   {{- end }}
 
-  {{- end -}}
+  {{- end }}
 </nav>
-{{ end }}
+{{- end }}

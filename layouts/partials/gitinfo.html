@@ -1,31 +1,19 @@
-{{ $pageName := "Page" }}
+{{- $pageName := "Page" -}}
+{{- if .IsHome -}}
+  {{- $pageName = "Home page" -}}
+{{- else if .IsSection -}}
+  {{- $pageName = print .Title " list" | plainify -}}
+{{- else if eq .Type "posts" -}}
+  {{- $pageName = print "Article" | plainify -}}
+{{- else -}}
+  {{- with .File -}}
+    {{- if eq .TranslationBaseName "cv" -}}
+      {{- $pageName = print .TranslationBaseName | upper -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
 
-{{ if .IsHome }}
-{{ $pageName = "Home page" }}
-{{ else if .IsSection }}
-{{ $pageName = print .Title " list" | plainify }}
-{{ else if eq .Type "posts" }}
-{{ $pageName = print "Article" | plainify }}
-{{ else }}
-{{ with .File }}
-{{ if eq .TranslationBaseName "resume" }}
-{{ $pageName = print .TranslationBaseName | strings.FirstUpper }}
-{{ else if eq .TranslationBaseName "cv" }}
-{{ $pageName = print .TranslationBaseName | upper }}
-{{ end }}
-{{ end }}
-{{ end }}
-
-{{ with .GitInfo }}
-<div class="gitinfo">
-{{ $pageName }}
-updated on:
-{{ .AuthorDate }}
-by commit
-<code class="gitinfo">
-  <a href="https://{{ $.Site.Data.gitinfo.host }}.com/{{ $.Site.Data.gitinfo.user }}/{{ $.Site.Data.gitinfo.repo }}/-/commit/{{ .Hash }}">
-    {{ .AbbreviatedHash }}
-  </a>
-</code>
-</div>
-{{ end }}
+{{- with .GitInfo -}}
+{{ $commitUrl := printf "https://%s.com/%s/%s/~/commit/%s" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo .Hash }}
+<p class="gitinfo"> {{ $pageName }} last updated on {{ .AuthorDate }} by commit <code class="gitinfo"><a href="{{ $commitUrl }}">{{ .AbbreviatedHash }}</a></code></p>
+{{- end -}}

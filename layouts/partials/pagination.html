@@ -1,17 +1,21 @@
+{{- /* list pagination */}}
 <div class="pagination">
-  <hr>
+  <div class="pagination__title">
+    <span class="pagination__title-h">See more</span>
+    <hr />
+  </div>
   <div class="pagination__buttons">
-    {{ if .Paginator.HasPrev }}
+    {{- if .Paginator.HasPrev }}
       <a href="{{ .Paginator.Prev.URL }}" class="button previous">
         <span class="button__icon">←</span>
-        <span class="button__text">{{ $.Site.Params.newerPosts | default "Newer posts" }}</span>
+        <span class="button__text">{{ site.Params.newerPosts | default "Newer posts" }}</span>
       </a>
-    {{ end }}
-    {{ if .Paginator.HasNext }}
+    {{- end }}
+    {{- if .Paginator.HasNext }}
       <a href="{{ .Paginator.Next.URL }}" class="button next">
-        <span class="button__text">{{ $.Site.Params.olderPosts | default "Older posts" }}</span>
+        <span class="button__text">{{ site.Params.olderPosts | default "Older posts" }}</span>
         <span class="button__icon">→</span>
       </a>
-    {{ end }}
+    {{- end }}
   </div>
 </div>

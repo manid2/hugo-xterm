@@ -120,9 +120,10 @@
   }
 
   a[href^="#"]:after,
+  .site-header,
   .breadcrumbs,
   .toc,
-  .footer,
+  .site-footer,
   code.gitinfo > a::after {
     display: none
   }

@@ -1,51 +1,56 @@
-{{ define "main" }}
-<article class="content">
-  <header>
-    {{ if .Title }}
-    <h1 class="post-title">
-      {{ .Title | plainify }}
-    </h1>
-    {{ end }}
+{{- define "main" }}
+<article class="post">
+  <header class="post-header">
+    {{- if .Title }}
+    <h1 class="post-title">{{ .Title | plainify }}</h1>
+    {{- end }}
   </header>
 
-  {{ .Content }}
+  <div class="post-content">
+    {{- with .Content }}
+    {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor">&#8983;</a> ${3}` | safeHTML }}
+    {{- end }}
 
-  <h2>See</h2>
+    {{- /* list content */}}
+    <h2>See</h2>
 
-  {{ $PageContext := . }}
-  {{ if .IsHome }}
-  {{ $PageContext = .Site }}
-  {{ end }}
-  {{ $paginator := .Paginate .Pages }}
-  <ul>
-    {{ range $paginator.Pages }}
-    <li>
-      <a href="{{ .Permalink }}">
-        {{ if .Title }}
-        {{ .Title | markdownify }}
-        {{ else }}
-        {{ .File.TranslationBaseName | markdownify }}
-        {{ end }}
-      </a>
+    {{- $PageContext := . -}}
+    {{- if .IsHome -}}
+    {{- $PageContext = .Site -}}
+    {{- end }}
+    {{- $paginator := .Paginate .Pages -}}
+    {{- /* list items */}}
+    <ul>
+      {{- range $paginator.Pages }}
+      <li>
+        {{- /* list item */ -}}
+        <a href="{{ .Permalink }}">
+          {{- if .Title -}}
+          {{- .Title | markdownify -}}
+          {{- else -}}
+          {{- .File.TranslationBaseName | markdownify -}}
+          {{- end -}}
+        </a>
 
-      {{ if not .IsSection }}
-      <span class="post-meta">
-        {{ with .Date }}
-        | {{ .Format "2006-01-02" }}
-        {{ end }}
-        {{ with .Params.Author }}
-        | {{ . }}
-        {{ end }}
-      </span>
-      {{ end }}
-    </li>
-    {{ end }}
-  </ul>
+        {{- if and (not .IsSection) (or .Date .Params.Author) -}}
+        <span class="post-meta">
+          {{- with .Date -}}
+          | {{ .Format "2006-01-02" -}}
+          {{- end -}}
+          {{- with .Params.Author -}}
+          | {{- . -}}
+          {{- end -}}
+        </span>
+        {{- end -}}
+      </li>
+      {{- end }}
+    </ul>
+  </div>
 
-  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
-  <footer>
-  {{ partial "pagination.html" . }}
+  {{- if or .Paginator.HasPrev .Paginator.HasNext }}
+  <footer class="post-footer">
+    {{- partial "pagination.html" . -}}
   </footer>
-  {{ end }}
+  {{- end }}
 </article>
-{{ end }}
+{{- end }}

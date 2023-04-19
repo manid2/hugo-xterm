@@ -1,15 +1,11 @@
 .pagination {
-  margin-top: 50px;
-
-  @media print {
-    display: none;
-  }
+  margin: 48px 0;
 
   &__title {
     display: flex;
     text-align: center;
     position: relative;
-    margin: 100px 0 20px;
+    margin: 24px 0;
 
     &-h {
       text-align: center;

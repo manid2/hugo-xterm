@@ -9,54 +9,57 @@
   {{- end -}}
 </head>
 
-  <body class="{{- $.Site.Params.ThemeColor -}}">
-    {{- block "container" . -}}
-    {{- $container := "container" -}}
-    {{- if $.Site.Params.FullWidthTheme -}}
-      {{- $container = print $container " full" -}}
-    {{- else if $.Site.Params.CenterTheme -}}
-      {{- $container = print $container " center" -}}
+<body class="{{- site.Params.themeColor -}}">
+  {{- block "container" . -}}
+  {{- $container := "container" -}}
+  {{- if site.Params.fullWidthTheme -}}
+    {{- $container = print $container " full" -}}
+  {{- else if site.Params.centerTheme -}}
+    {{- $container = print $container " center" -}}
+  {{- end -}}
+
+  {{- /* container*/}}
+  <div class="{{- $container -}}">
+
+    {{- /* site header*/}}
+    <header class="site-header">
+    {{- block "header" . -}}
+      {{- partial "header.html" . -}}
     {{- end -}}
+    </header>
 
-    {{- /* container*/}}
-    <div class="{{- $container -}}">
+    {{- /* site main */}}
+    <main class="site-main">
 
-      {{- /* site header*/}}
-      <header>
-      {{- block "header" . -}}
-        {{- partial "header.html" . -}}
+      {{- if .GitInfo -}}
+        {{- partial "gitinfo.html" . -}}
       {{- end -}}
-      </header>
 
-      {{- /* site main */}}
-      <main>
-        {{- block "main" . -}}
-          {{ if .Title -}}
-          <h1 class="post-title">{{ .Title | plainify }}</h1>
-          {{- end -}}
-
-          {{- /* site main content */}}
-          {{ .Content }}
+      {{- block "main" . -}}
+        {{ if .Title -}}
+        <h1 class="post-title">{{ .Title | plainify }}</h1>
         {{- end -}}
-      </main>
 
-      {{- /* site footer */}}
-      <footer class="footer">
-      {{- block "footer_extra" . -}}
+        {{- /* site main content */}}
+        {{ .Content }}
       {{- end -}}
+      {{- /* end main content */}}
+    </main>
 
-      {{- block "footer" . -}}
-        {{- partial "footer.html" . -}}
-      {{- end -}}
-      </footer>
-    </div>
+    {{- /* site footer */}}
+    <footer class="site-footer">
+    {{- block "footer" . -}}
+      {{- partial "footer.html" . -}}
     {{- end -}}
+    </footer>
+  </div>
+  {{- end -}}
 
-    {{- block "scripts" . -}}
-      {{- $menu := resources.Get "js/menu.js" | js.Build -}}
-      {{- $prism := resources.Get "js/prism.js" | js.Build -}}
-      {{- $bundle := slice $menu $prism | resources.Concat "bundle.js" | resources.Minify -}}
-      <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
-    {{- end -}}
-  </body>
+  {{- block "scripts" . -}}
+    {{- $menu := resources.Get "js/menu.js" | js.Build -}}
+    {{- $prism := resources.Get "js/prism.js" | js.Build -}}
+    {{- $bundle := slice $menu $prism | resources.Concat "bundle.js" | resources.Minify -}}
+    <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+  {{- end -}}
+</body>
 </html>

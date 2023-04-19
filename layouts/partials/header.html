@@ -1,25 +1,11 @@
-<section class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      {{ partial "logo.html" . }}
-    </div>
-    {{ if len $.Site.Menus }}
-      {{ partial "mobile-menu.html" . }}
-    {{ end }}
-  </div>
-  {{ if len $.Site.Menus }}
-    {{ partial "menu.html" . }}
-  {{ end }}
+{{- if and (site.Params.banner) (templates.Exists "banner.html") -}}
+<section class="banner">
+  {{- partial "banner.html" . -}}
 </section>
+{{- end -}}
 
-{{- if and (.Param "ShowBreadCrumbs") (not .IsHome) -}}
-<section class="header">
-  {{ partial "breadcrumbs.html" . }}
-</section>
-{{ end }}
+{{- partial "navbar.html" . -}}
 
-{{ if .GitInfo }}
-<section>
-  {{ partial "gitinfo.html" . }}
-</section>
-{{ end }}
+{{- if and (site.Params.showBreadCrumbs) (not .IsHome) -}}
+  {{- partial "breadcrumbs.html" . -}}
+{{- end -}}

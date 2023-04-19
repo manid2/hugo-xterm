@@ -3,8 +3,8 @@
 {{- $colorCss := resources.Get (printf "css/color/%s.scss" ($.Site.Params.ThemeColor | default "orange")) -}}
 {{- $css := slice $colorCss $defaultStyles | resources.Concat "css/base.scss" -}}
 {{- $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" true "precision" 6 "includePaths" (slice "node_modules")) -}}
-{{- $styles := $css | resources.ToCSS $options -}}
-<link rel="stylesheet" href="{{ $styles.Permalink }}">
+{{- $styles := $css | resources.ToCSS $options | resources.Fingerprint -}}
+<link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
 {{- /* Custom CSS to override theme properties (/static/style.css) */}}
 {{- if (fileExists "static/style.css") }}
