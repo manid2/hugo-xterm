@@ -18,7 +18,7 @@
   {{- end -}}
 
   {{- if site.Params.CopyrightUserUrl -}}
-  <span> ~~ </span>
+  <span>&nbsp;~~&nbsp;</span>
   {{- /* site copyright url */ -}}
   <a href="{{ site.Params.CopyrightUserUrl }}">
     {{- if site.Params.CopyrightUserText -}}
@@ -34,8 +34,8 @@
   <nav class="navbar">
     <ul class="navbar__list">
       <li><a href="/posts/index.xml">RSS</a></li>
-      <li><span>~~ </span><a href="/sitemap.xml">Sitemap</a></li>
-      <li><span>~~ </span><a href="{{ $gitRepoUrl }}">Source</a></li>
+      <li><span>&nbsp;~~&nbsp;</span><a href="/sitemap.xml">Sitemap</a></li>
+      <li><span>&nbsp;~~&nbsp;</span><a href="{{ $gitRepoUrl }}">Source</a></li>
     </ul>
   </nav>
 </div>
