@@ -11,8 +11,8 @@ a.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 18px;
-  margin-bottom: 5px;
+  padding: 8px 16px;
+  margin-bottom: 4px;
   text-decoration: none;
   text-align: center;
   border-radius: 8;
@@ -34,7 +34,7 @@ a.button {
   &.outline {
     background: transparent;
     box-shadow: none;
-    padding: 8px 18px;
+    padding: 8px 16px;
 
     :hover {
       transform: none;
@@ -55,7 +55,7 @@ a.button {
 
   &.wide {
     min-width: 200px;
-    padding: 14px 24px;
+    padding: 16px 24px;
   }
 }
 
@@ -68,23 +68,23 @@ a.read-more:active {
   background: none;
   box-shadow: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 24px 0;
   max-width: 100%;
 }
 
 .code-toolbar {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 
   .toolbar-item a {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 3px 8px;
-    margin-bottom: 5px;
+    padding: 4px 8px;
+    margin-bottom: 4px;
     text-decoration: none;
     text-align: center;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-weight: 500;
     border-radius: 8px;
     border: 1px solid transparent;

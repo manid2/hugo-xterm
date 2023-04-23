@@ -2,14 +2,14 @@
   display: none;
   flex-direction: column;
   $shadow-color: transparentize($background, .2);
-  $shadow: 0 10px $shadow-color, -10px 10px $shadow-color, 10px 10px $shadow-color;
+  $shadow: 0 8px $shadow-color, -8px 8px $shadow-color, 8px 8px $shadow-color;
   position: absolute;
   background: $background;
   box-shadow: $shadow;
   color: white;
   margin: 0;
   padding: 0;
-  top: 10px;
+  top: 8px;
   left: 0;
   list-style: none;
   z-index: 99;

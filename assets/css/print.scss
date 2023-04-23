@@ -4,97 +4,42 @@
     margin: 0.5in;
   }
 
-  body, .post {
+  body {
     margin: 0;
     background-color: White;
     color: Black;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    margin-top: 4pt;
-    margin-bottom: 4pt;
-    padding-top: 2pt;
-    padding-bottom: 2pt;
-    line-height: 18pt;
+  .post, .post-header, .post-content, .post-footer, .post-support,
+  table, blockquote {
+    margin: 24px 0;
   }
 
-  h1, h2, h3 {
-    font-size: 14pt;
-    break-before: avoid-page;
+  .post-title {
+    margin: 16px 0;
+    padding-bottom: 8px;
   }
 
-  h4, h5, h6 {
-    font-size: 12pt;
+  h1, h2, li, table, .post-support {
+    break-inside: avoid-page;
   }
 
-  .post-title, .post-title:after {
-    border-bottom: 3px dotted LightGrey;
+  .gitinfo, .post-meta, .post-tags {
+    color: grey;
+    margin: 8px 0;
   }
 
-  a,
-  .post-title > a,
-  .post-tags > a {
+  a, .post-title > a, .post-tags > a {
     text-decoration: none;
-    color: Black;
+    color: darkgreen;
   }
 
-  .post-title > a::after,
-  .post-tags > a::after {
+  .post-title > a::after, .post-tags > a::after {
     content: none;
   }
 
-  .support-me {
-    display: block;
-    break-inside: avoid-page;
-  }
-
-  hr {
-    display: block;
-    height: 1px;
-    width: 100%;
-    border: none;
-    border-top: dashed 2px Grey;
-  }
-
-  p, ul, ol {
-    margin-top: 4pt;
-    margin-bottom: 4pt;
-    padding-top: 0;
-    padding-bottom: 0;
-    line-height: 14pt;
-    font-size: 10pt;
-  }
-
-  table, th, tr, td {
-    border: 1px dashed Black;
-    background-color: White;
-    color: Black;
-    line-height: 14pt;
-    font-size: 10pt;
-  }
-
-  table {
-    margin-top: 12pt;
-    margin-bottom: 12pt;
-    padding-top: 4pt;
-    padding-bottom: 4pt;
-  }
-
-  th, tr, td {
-    margin-top: 4pt;
-    margin-bottom: 4pt;
-    padding-top: 2pt;
-    padding-bottom: 2pt;
-  }
-
-  table, li {
-    break-inside: avoid-page;
-  }
-
-  /* TODO: optimize for code and pre */
-  code, kbd {
-    background-color: WhiteSmoke;
-    color: Black;
+  table, th, td {
+    padding: 4px;
   }
 
   a::after {
@@ -104,15 +49,19 @@
     font-style: italic;
   }
 
-  .post-meta,
-  .post-tags,
-  .gitinfo {
-    color: Grey;
+  blockquote, code, kbd {
+    background: transparentize($accent, .9);
+    color: $background;
   }
 
-  code.gitinfo {
-    padding: 2pt;
-    margin: 0pt;
+  .code-toolbar {
+    background: transparentize($accent, .9) !important;
+    margin: 16px 0;
+    padding: 16px;
+
+    .toolbar {
+      display: none;
+    }
   }
 
   code.gitinfo > a {
@@ -122,7 +71,8 @@
   a[href^="#"]:after,
   .site-header,
   .breadcrumbs,
-  .toc,
+  .post-toc,
+  .pagination,
   .site-footer,
   code.gitinfo > a::after {
     display: none

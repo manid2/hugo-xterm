@@ -3,7 +3,7 @@
 
   position: relative;
   width: 100%;
-  margin: 40px 0;
+  margin: 48px 0;
 
   input[type="checkbox"] {
     position: absolute;
@@ -46,7 +46,7 @@
   &__title {
     flex: 1;
     color: $accent;
-    padding: 3px 10px;
+    padding: 4px 16px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -57,13 +57,13 @@
     border: 1px solid $border-color;
     border-bottom: none;
     text-transform: uppercase;
-    padding: 3px 10px;
+    padding: 4px 16px;
   }
 
   &__toggle {
     color: $accent;
     font-size: 16px;
-    padding: 3px 10px;
+    padding: 4px 16px;
 
     &:after {
       content: attr(data-label-collapse);

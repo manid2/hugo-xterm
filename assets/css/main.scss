@@ -107,7 +107,7 @@ p {
 figure {
   display: table;
   max-width: 100%;
-  margin: 25px 0;
+  margin: 24px 0;
 
   &.left {
     margin-right: auto;
@@ -124,7 +124,7 @@ figure {
 
   figcaption {
     font-size: 14px;
-    padding: 5px 10px;
+    padding: 4px 8px;
     margin-top: 5px;
     background: $accent;
     color: $background;
@@ -149,7 +149,7 @@ code, kbd {
   font-feature-settings: normal;
   background: transparentize($accent, .8);
   color: $accent;
-  padding: 1px 6px;
+  padding: 2px 8px;
   margin: 0 2px;
   font-size: .95rem;
 
@@ -162,8 +162,8 @@ code, kbd {
 
 pre {
   background: transparent !important;
-  padding: 20px 10px;
-  margin: 40px 0;
+  padding: 24px 16px;
+  margin: 48px 0;
   font-size: .95rem !important;
   overflow: auto;
   border-top: 1px solid rgba(255, 255, 255, .1);
@@ -171,7 +171,7 @@ pre {
 
   + pre {
     border-top: 0;
-    margin-top: -40px;
+    margin-top: -48px;
   }
 
   @media ($phone) {
@@ -189,10 +189,12 @@ pre {
 }
 
 blockquote {
-  border-top: 1px solid $accent;
-  border-bottom: 1px solid $accent;
-  margin: 40px 0;
-  padding: 25px;
+  border-left: 4px solid $border-color;
+  background: mix($background, grey, 90%);
+  margin: 48px 0;
+  padding: 24px;
+  opacity: 0.7;
+  font-style: italic;
 
   @media ($phone) {
     padding-right: 0;
@@ -214,7 +216,8 @@ blockquote {
     content: '>';
     display: block;
     position: absolute;
-    left: -25px;
+    left: -24px;
+    padding: 4px;
     color: $accent;
   }
 
@@ -223,8 +226,8 @@ blockquote {
     background: transparentize($accent, .9);
     font: inherit;
     color: inherit;
-    border: 1px solid $accent;
-    padding-top: 60px;
+    border: 1px solid $border-color;
+    padding-top: 48px;
 
     p:before {
       content: '';
@@ -233,7 +236,7 @@ blockquote {
     &:before {
       content: '> From Twitter:';
       position: absolute;
-      top: 20px;
+      top: 24px;
       color: $accent;
       font-weight: bold;
     }
@@ -244,14 +247,14 @@ table {
   table-layout: auto;
   border-collapse: collapse;
   width: 100%;
-  margin: 40px 0;
+  margin: 48px 0;
 }
 
 table,
 th,
 td {
   border: 1px dashed $accent;
-  padding: 10px;
+  padding: 8px;
 }
 
 th {
@@ -260,15 +263,11 @@ th {
 
 ul,
 ol {
-  margin-left: 22px;
+  margin-left: 24px;
   padding: 0;
 
   li {
     position: relative;
-  }
-
-  @media ($phone) {
-    margin-left: 20px;
   }
 }
 
@@ -290,7 +289,7 @@ ol {
   }
 
   ol {
-    margin-left: 38px;
+    margin-left: 48px;
 
     li {
       counter-increment: li;
@@ -313,7 +312,6 @@ mark {
   padding:  0 24px;
   max-width: 864px;
   min-height: 100vh;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
 
   &.full,
   &.center {
@@ -323,10 +321,6 @@ mark {
 
   &.full {
     max-width: 100%;
-  }
-
-  @media ($phone) {
-    padding: 20px;
   }
 
   @media print {

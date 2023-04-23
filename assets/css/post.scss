@@ -65,23 +65,12 @@
     margin: 48px 0;
     border-top: 1px solid $border-color;
   }
-
-  ul {
-    list-style: none;
-
-    li:not(:empty):before {
-      content: '-';
-      position: absolute;
-      left: -20px;
-      color: $accent;
-    }
-  }
 }
 
 .hanchor {
   color: transparentize($accent, .1);
   text-decoration: none;
-  margin-left: 10px;
+  margin-left: 16px;
   visibility: hidden;
 }
 

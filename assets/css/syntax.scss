@@ -17,7 +17,11 @@ code.language-scss,
 .token.number,
 .token.inserted,
 .token.important {
-  color: $accent !important;
+  color: $accent;
+
+  @media print {
+    color: mix($accent, black, 70%);
+  }
 }
 
 .token.tag-id,
@@ -34,7 +38,11 @@ code.language-scss,
 .token.class-name,
 .token.constant,
 .token.symbol {
-  color: transparentize($accent, .3) !important;
+  color: transparentize($accent, .3);
+
+  @media print {
+    color: mix($accent, black, 60%);
+  }
 }
 
 .token.property,
@@ -44,20 +52,20 @@ code.language-scss,
 code.language-javascript,
 code.language-html,
 .command-line-prompt > span:before {
-  color: mix($accent, #999, .9) !important;
+  color: mix($accent, green, 20%);
 }
 
 .token.selector,
 .token.tag,
 .token.punctuation {
-  color: white;
+  color: mix($accent, grey, 20%);
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: rgba(255, 255, 255, .3) !important;
+  color: mix($accent, grey, 20%);
 }
 
 .token.namespace {
@@ -116,11 +124,11 @@ pre[class*="language-"] {
 }
 
 .code-toolbar {
-  $code-margin: 40px;
+  $code-margin: 48px;
 	position: relative;
 	margin: $code-margin 0;
-	padding: 20px;
-	border: 1px solid rgba(255, 255, 255, .1);
+	padding: 24px;
+	border: 1px solid $border-color;
 
 	+ .code-toolbar,
 	+ .highlight,
@@ -137,6 +145,16 @@ pre[class*="language-"] {
 		display: block;
 		color: inherit;
 	}
+
+  pre {
+    code {
+      color: mix($accent, white, 80%);
+
+      @media print {
+        color: mix($accent, black, 20%);
+      }
+    }
+  }
 
   > .toolbar {
     button {
