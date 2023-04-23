@@ -31,10 +31,12 @@
 
   &-meta,
   &-tags {
-    display: block;
-    font-size: smaller;
     font-style: italic;
     margin: 16px 0;
+    color: transparentize($accent, .2);
+    a {
+      opacity: 0.8;
+    }
   }
 
   &-toc,

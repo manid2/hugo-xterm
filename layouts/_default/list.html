@@ -4,6 +4,10 @@
     {{- if .Title }}
     <h1 class="post-title">{{ .Title | plainify }}</h1>
     {{- end }}
+
+    {{- with .Params.Description -}}
+    <p class="post-meta">{{ . }}</p>
+    {{- end -}}
   </header>
 
   <div class="post-content">
@@ -35,12 +39,17 @@
         {{- if and (not .IsSection) (or .Date .Params.Author) -}}
         <span class="post-meta">
           {{- with .Date -}}
-          | {{ .Format "2006-01-02" -}}
+          <span> | {{ .Format "2006-01-02" -}}</span>
           {{- end -}}
+
           {{- with .Params.Author -}}
-          | {{- . -}}
+          <span> | {{ . }}</span>
           {{- end -}}
         </span>
+
+        {{- with .Params.Description -}}
+        <p class="post-meta">{{ . }}</p>
+        {{- end -}}
         {{- end -}}
       </li>
       {{- end }}
