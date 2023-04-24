@@ -6,14 +6,11 @@
   <div class="navbar__first">
     <ul class="navbar__list">
       <li><a href="{{ $logoLink }}">{{ $logoText }}</a></li>
-
-      {{- if site.Params.showLanguageSelector }}
-      <li><a href="#">Lang</a></li>
-      {{- end }}
-
-      {{- if site.Params.showThemeColor }}
-      <li><a href="#">Dark</a></li>
-      {{- end }}
+      <li>
+        <span class="theme-toggle">
+          {{ partial "theme-icon.html" . }}
+        </span>
+      </li>
     </ul>
   </div>
 

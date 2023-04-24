@@ -144,50 +144,6 @@ figure {
   }
 }
 
-code, kbd {
-  font-family: Ubuntu Mono, 'Fira Code', Monaco, Consolas, monospace !important;
-  font-feature-settings: normal;
-  background: transparentize($accent, .8);
-  color: $accent;
-  padding: 2px 8px;
-  margin: 0 2px;
-  font-size: .95rem;
-
-  code, kbd {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-  }
-}
-
-pre {
-  background: transparent !important;
-  padding: 24px 16px;
-  margin: 48px 0;
-  font-size: .95rem !important;
-  overflow: auto;
-  border-top: 1px solid rgba(255, 255, 255, .1);
-  border-bottom: 1px solid rgba(255, 255, 255, .1);
-
-  + pre {
-    border-top: 0;
-    margin-top: -48px;
-  }
-
-  @media ($phone) {
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
-
-  code {
-    background: none !important;
-    margin: 0;
-    padding: 0;
-    font-size: inherit;
-    border: none;
-  }
-}
-
 blockquote {
   border-left: 4px solid $border-color;
   background: mix($background, grey, 90%);
@@ -342,12 +298,4 @@ hr {
   border: none;
   background: $border-color;
   height: 1px;
-}
-
-.hidden {
-  display: none;
-}
-
-sup {
- line-height: 0;
 }
