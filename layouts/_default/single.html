@@ -54,7 +54,9 @@
 
   {{- if eq .Type "posts" }}
   <footer class="post-footer">
-    {{- partial "support-me.html" . -}}
+    {{- if templates.Exists "partials/support-me.html" -}}
+      {{- partial "support-me.html" . -}}
+    {{- end -}}
     {{- partial "posts_pagination.html" . -}}
     {{- partial "comments.html" . -}}
   </footer>
