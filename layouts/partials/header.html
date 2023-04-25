@@ -6,6 +6,8 @@
 
 {{- partial "navbar.html" . -}}
 
+{{- partial "toolbar.html" . -}}
+
 {{- if and (site.Params.showBreadCrumbs) (not .IsHome) -}}
   {{- partial "breadcrumbs.html" . -}}
 {{- end -}}

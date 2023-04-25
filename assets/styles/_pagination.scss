@@ -1,23 +1,26 @@
 .pagination {
-  margin: 48px 0;
+  margin: $spacer-largest 0;
 
   &__title {
     display: flex;
     text-align: center;
     position: relative;
-    margin: 24px 0;
+    margin: $spacer-large 0;
 
     &-h {
       text-align: center;
       margin: 0 auto;
-      padding: 4px 16px;
-      background: $background;
-      color: transparentize($color, .7);
-      font-size: .8rem;
+      padding: $spacer-smallest $spacer-normal;
+      font-size: smaller;
       text-transform: uppercase;
       text-decoration: none;
       letter-spacing: .1em;
       z-index: 1;
+
+      @include themed() {
+        background: t($background);
+        color: transparentize(t($text), .4);
+      }
     }
 
     hr {
@@ -25,7 +28,7 @@
       left: 0;
       right: 0;
       width: 100%;
-      margin-top: 16px;
+      margin-top: $spacer-normal;
       z-index: 0;
     }
   }
@@ -35,7 +38,7 @@
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
-    gap: 10px;
+    gap: $spacer-small;
 
     a {
       text-decoration: none;
@@ -48,7 +51,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
   padding: 0;
   appearance: none;
 
@@ -60,7 +62,7 @@
     display: flex;
     justify-content: center;
     flex: 1;
-    padding: 8px 16px;
+    padding: $spacer-small $spacer-normal;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -74,10 +76,10 @@
   }
 
   &.next .button__icon {
-    margin-left: 8px;
+    margin-left: $spacer-small;
   }
 
   &.previous .button__icon {
-    margin-right: 8px;
+    margin-right: $spacer-small;
   }
 }

@@ -11,22 +11,35 @@ a.button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  margin-bottom: 4px;
+  padding: $spacer-small $spacer-normal;
+  margin-bottom: $spacer-small;
   text-decoration: none;
   text-align: center;
   border-radius: 8;
-  border: 1px solid $accent;
-  background: $accent;
-  color: $background;
+  border: $spacer-1 solid;
   font: inherit;
   font-weight: bold;
   appearance: none;
   cursor: pointer;
   outline: none;
 
-  &:hover {
-    background: transparentize($accent, .1);
+  @include themed() {
+    background: t($accent);
+    color: mix(t($accent), white, 20%);
+    border-color: t($accent);
+
+    &:hover {
+      background: transparentize(t($accent), .2);
+    }
+  }
+
+  @media print {
+    background: tp($background) !important;
+    color: mix(tp($accent), black, 20%) !important;
+
+    &:after {
+      display: none;
+    }
   }
 
   /* variants */
@@ -34,7 +47,7 @@ a.button {
   &.outline {
     background: transparent;
     box-shadow: none;
-    padding: 8px 16px;
+    padding: $spacer-small $spacer-normal;
 
     :hover {
       transform: none;
@@ -44,18 +57,17 @@ a.button {
 
   &.link {
     background: none;
-    font-size: 1rem;
   }
 
   /* sizes */
 
   &.small {
-    font-size: .8rem;
+    font-size: smaller;
   }
 
   &.wide {
-    min-width: 200px;
-    padding: 16px 24px;
+    min-width: $spacer-largest * 4;
+    padding: $spacer-normal $spacer-large;
   }
 }
 
@@ -64,10 +76,13 @@ a.read-more:hover,
 a.read-more:active {
   display: inline-flex;
   border: none;
-  color: $accent;
   background: none;
   box-shadow: none;
   padding: 0;
-  margin: 24px 0;
+  margin: $spacer-large 0;
   max-width: 100%;
+
+  @include themed() {
+    color: t($accent);
+  }
 }

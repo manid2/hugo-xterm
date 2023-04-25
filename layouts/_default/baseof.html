@@ -18,6 +18,7 @@
     {{- $container = print $container " center" -}}
   {{- end -}}
 
+  <div class="theme-container">
   {{- /* container*/}}
   <div class="{{- $container -}}">
 
@@ -54,6 +55,7 @@
     </footer>
   </div>
   {{- end -}}
+  </div>
 
   {{- block "scripts" . -}}
     {{- $menu := resources.Get "scripts/menu.js" | js.Build -}}

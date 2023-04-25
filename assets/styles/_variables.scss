@@ -1,4 +1,41 @@
-/* MEDIA QUERIES */
+/* Fonts */
+$font-family: Arial, Helvetica, Verdana, Roboto, sans-serif;
+$font-family-mono: Ubuntu Mono, 'Fira Code', Monaco, Consolas, monospace;
+$font-family-title: "Times New Roman", Garamond, Georgia, "Roboto Serif", serif;
+
+$font-size: 1rem;
+$font-size-smaller: $font-size - 0.125;
+$font-size-larger: $font-size + 0.125;
+
+/* Layouts */
+$container-max-width: 864px;
+
+/* Spacers */
+$spacer-1: 1px;
+$spacer-2: $spacer-1 * 2;
+$spacer-smallest: $spacer-2 * 2;
+$spacer-small: $spacer-smallest * 2;
+$spacer-normal: $spacer-small * 2;
+$spacer-large: $spacer-small * 3;
+$spacer-largest: $spacer-normal * 3;
+
+/* Colors */
+$blue: hsl(240, 80%, 60%);
+$green: hsl(120, 80%, 60%);
+
+/* Light theme colors */
+$accent-light: scale-color($blue, $lightness: 10%);
+$background-light: scale-color($blue, $lightness: 90%);
+$text-light: scale-color($blue, $lightness: -45%);
+$text-links-light: scale-color($green, $lightness: -45%);
+
+/* Dark theme colors */
+$accent-dark: scale-color($blue, $lightness: -10%);
+$background-dark: scale-color($blue, $lightness: -90%);
+$text-dark: scale-color($blue, $lightness: 45%);
+$text-links-dark: scale-color($green, $lightness: 45%);
+
+/* Media queries */
 $phone: "max-width: 684px";
 $tablet: "max-width: 900px";
 

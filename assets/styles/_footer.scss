@@ -1,7 +1,15 @@
 .site-footer {
-  margin: 48px 0;
-  border-top: 1px solid $border-color;
+  margin: $spacer-largest 0;
+  border-top: $spacer-1 solid;
   opacity: 0.6;
+
+  @include themed() {
+    border-color: t($accent);
+  }
+
+  @media print {
+    display: none;
+  }
 }
 
 .themeinfo,
@@ -15,7 +23,7 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
-  margin: 16px 0;
+  margin: $spacer-normal 0;
 
   > p {
     margin: 0;

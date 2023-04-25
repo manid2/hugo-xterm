@@ -1,31 +1,43 @@
-// Toggle theme
-
+const bodyClassList = document.body.classList;
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
 const localTheme = window.localStorage && window.localStorage.getItem("theme");
 const themeToggle = document.querySelector(".theme-toggle");
 
+// Set theme from local storage
 if (localTheme) {
-  document.body.classList.remove("light-theme", "dark-theme");
-  document.body.classList.add(localTheme);
+  bodyClassList.add(localTheme);
+} else {
+  // Set theme from system theme
+  const isSystemDark = systemDark.matches;
+  if (isSystemDark) {
+    bodyClassList.add("theme-dark");
+  } else {
+    bodyClassList.add("theme-light");
+  }
 }
 
-themeToggle.addEventListener("click", () => {
-  const themeUndefined = !new RegExp("(dark|light)-theme").test(document.body.className);
-  const isOSDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  if (themeUndefined) {
-    if (isOSDark) {
-      document.body.classList.add("light-theme");
-    } else {
-      document.body.classList.add("dark-theme");
-    }
+// Watch for system theme changes
+systemDark.addEventListener('change', e => {
+  if (e.matches === "dark") {
+    bodyClassList.add("theme-dark");
   } else {
-    document.body.classList.toggle("light-theme");
-    document.body.classList.toggle("dark-theme");
+    bodyClassList.add("theme-light");
+  }
+});
+
+// Toggle theme on click
+themeToggle.addEventListener("click", () => {
+  if (bodyClassList.contains("theme-dark")) {
+    bodyClassList.remove("theme-dark");
+    bodyClassList.add("theme-light");
+  } else {
+    bodyClassList.remove("theme-light");
+    bodyClassList.add("theme-dark");
   }
 
   window.localStorage &&
     window.localStorage.setItem(
       "theme",
-      document.body.classList.contains("dark-theme") ? "dark-theme" : "light-theme",
+      bodyClassList.contains("theme-dark") ? "theme-dark" : "theme-light",
     );
 });

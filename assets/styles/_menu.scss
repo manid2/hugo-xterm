@@ -1,29 +1,35 @@
 @mixin menu {
   display: none;
   flex-direction: column;
-  $shadow-color: transparentize($background, .2);
-  $shadow: 0 8px $shadow-color, -8px 8px $shadow-color, 8px 8px $shadow-color;
   position: absolute;
-  background: $background;
-  box-shadow: $shadow;
-  color: white;
   margin: 0;
   padding: 0;
-  top: 8px;
+  top: $spacer-small;
   left: 0;
   list-style: none;
   z-index: 99;
+
+  @include themed() {
+    $shadow-color: transparentize(t($background), .2);
+    $shadow: 0 $spacer-small $shadow-color, -$spacer-small $spacer-small $shadow-color, $spacer-small $spacer-small $shadow-color;
+    background: t($background);
+    box-shadow: $shadow;
+  }
 }
 
 @mixin header-menu-trigger {
-  color: $accent;
-  background: $background;
-  padding: 8px 16px;
-  border: 1px dashed $accent;
+  padding: $spacer-small $spacer-normal;
   height: 100%;
   margin-bottom: 0 !important;
   position: relative;
   cursor: pointer;
+  border: $spacer-2 dotted;
+
+  @include themed() {
+    color: t($text);
+    background: t($background);
+    border-color: t($accent);
+  }
 }
 
 .menu {
@@ -36,9 +42,12 @@
 
   &__trigger {
     margin-right: 0 !important;
-    color: $accent;
     user-select: none;
     cursor: pointer;
+
+    @include themed() {
+      color: t($accent);
+    }
   }
 
   &__dropdown {
@@ -50,8 +59,12 @@
 
     > li {
       flex: 0 0 auto;
-      padding: 8px 16px;
-      border: 1px dashed $accent;
+      padding: $spacer-small $spacer-normal;
+      border: $spacer-2 dotted;
+
+      @include themed() {
+        border-color: t($accent);
+      }
 
       a {
         display: flex;

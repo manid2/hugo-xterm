@@ -1,13 +1,67 @@
 .site-header {
-  margin: 48px 0;
-  border-bottom: 1px solid $border-color;
+  margin: $spacer-largest 0;
+  border-bottom: $spacer-1 solid;
+
+  @include themed() {
+    border-color: t($accent);
+  }
+
+  @media print {
+    display: none;
+  }
 }
 
 .gitinfo,
 .breadcrumbs {
   font-size: smaller;
   font-style: italic;
-  margin: 16px 0;
+  margin: $spacer-normal 0;
+}
+
+.gitinfo {
+  @media print {
+    opacity: 0.8;
+    margin: 0;
+    a {
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.toolbar {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: $spacer-normal 0;
+
+  &-item {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: $spacer-small;
+
+    &-icon {
+      margin-right: $spacer-smallest;
+    }
+
+    &-label {
+      display: initial;
+
+      @media ($phone) {
+        display: none;
+      }
+    }
+  }
+}
+
+.theme-toggle {
+  cursor: pointer;
+}
+
+.theme-toggler {
+  fill: currentColor;
 }
 
 .navbar {
@@ -15,7 +69,8 @@
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 48px;
+  margin-bottom: $spacer-largest;
+  font-size: larger;
 
   &__first {
     display: block;
@@ -23,7 +78,11 @@
 
   &__separator {
     flex-grow: 1;
-    border-top: 1px dashed $accent;
+    border-top: $spacer-2 dotted;
+
+    @include themed() {
+      border-color: t($accent);
+    }
   }
 
   &__last {
@@ -38,16 +97,11 @@
 
     > li {
       flex: 0 0 auto;
-      background: $background;
-      padding: 8px 16px;
-      border: 1px dashed $accent;
+      padding: $spacer-small $spacer-normal;
+      border: $spacer-2 dotted;
 
-      a {
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
+      @include themed() {
+        border-color: t($accent);
       }
     }
   }
