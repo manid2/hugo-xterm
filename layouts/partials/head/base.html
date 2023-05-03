@@ -1,5 +1,4 @@
 {{- $title := site.Title -}}
-{{- $description := site.Params.Subtitle -}}
 {{- $ogImage := site.Params.favicon -}}
 {{- if not .IsHome -}}
   {{- if .Title -}}
@@ -8,13 +7,15 @@
     {{- $title = .File.TranslationBaseName -}}
   {{- end -}}
   {{- $title = printf "%s %s %s" $title "::" site.Title -}}
-
-  {{- if .Description -}}
-    {{- $description = .Description | plainify -}}
-  {{- else -}}
-    {{- $description = .Summary | plainify -}}
-  {{- end -}}
 {{- end -}}
+
+{{- $description := "" -}}
+{{- if .Description -}}
+  {{- $description = .Description | plainify -}}
+{{- else -}}
+  {{- $description = .Summary | plainify -}}
+{{- end -}}
+
 {{- $keywords := site.Params.Keywords -}}
 {{- with .Params.Keywords -}}
   {{- $keywords = delimit . ", " -}}
