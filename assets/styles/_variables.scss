@@ -21,19 +21,18 @@ $spacer-largest: $spacer-normal * 3;
 
 /* Colors */
 $blue: hsl(240, 80%, 60%);
-$green: hsl(120, 80%, 60%);
 
 /* Light theme colors */
 $accent-light: scale-color($blue, $lightness: 10%);
-$background-light: scale-color($blue, $lightness: 90%);
-$text-light: scale-color($blue, $lightness: -45%);
-$text-links-light: scale-color($green, $lightness: -45%);
+$background-light: scale-color($accent-light, $lightness: 90%);
+$text-light: scale-color(adjust-hue($background-light, -45deg), $lightness: -70%);
+$text-links-light: adjust-hue($text-light, -30deg);
 
 /* Dark theme colors */
 $accent-dark: scale-color($blue, $lightness: -10%);
-$background-dark: scale-color($blue, $lightness: -90%);
-$text-dark: scale-color($blue, $lightness: 45%);
-$text-links-dark: scale-color($green, $lightness: 45%);
+$background-dark: scale-color($accent-dark, $lightness: -90%);
+$text-dark: scale-color(adjust-hue($background-dark, -45deg), $lightness: 70%);
+$text-links-dark: adjust-hue($text-dark, -30deg);
 
 /* Media queries */
 $phone: "max-width: 684px";
