@@ -124,9 +124,13 @@
 }
 
 .hanchor {
-  text-decoration: none;
-  margin-left: $spacer-normal;
-  visibility: hidden;
+  float: right;
+  margin-right: -#{$spacer-large};
+
+  &:after {
+    content: '#';
+    visibility: hidden;
+  }
 
   @include themed() {
     color: transparentize(t($accent), .1);
@@ -137,6 +141,18 @@
   }
 }
 
-h1:hover a, h2:hover a, h3:hover a, h4:hover a {
-  visibility: visible;
+h1, h2, h3, h4, h5, h6 {
+  > a.hanchor {
+    text-decoration: none;
+  }
+
+  > a.hanchor:focus::after {
+    visibility: visible;
+  }
+
+  &:hover {
+    > a.hanchor::after {
+      visibility: visible;
+    }
+  }
 }
