@@ -21,13 +21,12 @@
     border-bottom: $border-title;
     width: 100%;
 
-    @media print {
-      margin: 0;
-      border-color: tp($accent);
-    }
-
     @include themed() {
       border-color: t($accent);
+    }
+
+    @media print {
+      border-color: tp($accent) !important;
     }
 
     &:after {
@@ -43,7 +42,7 @@
       }
 
       @media print {
-        border-color: tp($accent);
+        border-color: tp($accent) !important;
       }
     }
 

@@ -99,6 +99,7 @@
       flex: 0 0 auto;
       padding: $spacer-small $spacer-normal;
       border: $spacer-2 dotted;
+      margin-right: -#{$spacer-2};
 
       @include themed() {
         border-color: t($accent);

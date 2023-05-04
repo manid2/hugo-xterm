@@ -64,7 +64,7 @@ h1, h2, h3 {
 
   @media print {
     color: tp($text);
-    border-color: tp($accent);
+    border-color: tp($accent) !important;
   }
 }
 
@@ -285,7 +285,7 @@ table, th, td {
 
   @media print {
     padding: $spacer-smallest;
-    border-color: tp($accent);
+    border-color: tp($accent) !important;
   }
 }
 
@@ -319,6 +319,10 @@ ul, ol {
         margin: $spacer-small 0;
       }
       break-inside: avoid-page;
+    }
+
+    ul, ol {
+      margin: 0 0 0 $spacer-large;
     }
   }
 }
