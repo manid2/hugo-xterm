@@ -179,7 +179,6 @@ blockquote {
   border-left: $spacer-smallest solid;
   margin: $spacer-largest 0;
   padding: $spacer-large;
-  opacity: 0.8;
   font-style: italic;
 
   @media ($phone) {
@@ -187,7 +186,8 @@ blockquote {
   }
 
   @include themed() {
-    background: mix(t($background), grey, 90%);
+    color: desaturate(t($text), 30deg);
+    background: mix(t($background), t($accent), 90%);
     border-color: t($accent);
   }
 
@@ -217,11 +217,11 @@ blockquote {
     padding: $spacer-smallest;
 
     @include themed() {
-      color: t($accent);
+      color: complement(t($text));
     }
 
     @media print {
-      color: tp($accent);
+      color: complement(tp($text));
     }
   }
 
@@ -231,17 +231,6 @@ blockquote {
     color: inherit;
     border: $spacer-1 solid;
     padding-top: $spacer-largest;
-
-    @include themed() {
-      border-color: t($accent);
-      background: transparentize(t($accent), .9);
-    }
-
-    @media print {
-      padding-top: $spacer-large;
-      border-color: tp($accent);
-      background: transparentize(tp($accent), .9);
-    }
 
     p:before {
       content: '';
@@ -254,11 +243,11 @@ blockquote {
       font-weight: bold;
 
       @include themed() {
-        color: t($accent);
+        color: complement(t($text));
       }
 
       @media print {
-        color: tp($accent);
+        color: complement(tp($text));
       }
     }
   }
