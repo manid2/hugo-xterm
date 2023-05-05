@@ -4,19 +4,73 @@ $background: 'background';
 $text: 'text';
 $text-links: 'text-links';
 
+$text-accent: 'text-accent';
+$text-brighter: 'text-brighter';
+$text-duller: 'text-duller';
+
+$background-brighter: 'background-brighter';
+$background-grey: 'background-grey';
+
+$code-text: 'code-text';
+$code-text-links: 'code-text-links';
+$code-background: 'code-background';
+
+$blockquote-text: 'blockquote-text';
+$blockquote-text-links: 'blockquote-text-links';
+$blockquote-background: 'blockquote-background';
+
+$button-text: 'button-text';
+$button-background: 'button-background';
+
 /* Themes */
 $themes: (
   light: (
     $accent: $accent--light,
     $background: $background--light,
     $text: $text--light,
-    $text-links: $text-links--light
+    $text-links: $text-links--light,
+
+    $text-accent: scale-color($accent--light, $lightness: 30%),
+    $text-brighter: scale-color($text--light, $lightness: 20%),
+    $text-duller: scale-color($text--light, $lightness: -20%),
+
+    $background-brighter: scale-color($background--light, $lightness: -5%),
+    $background-grey: scale-color($accent--light, $saturation: -90%, $lightness: 75%),
+
+    $code-text: scale-color($text--light, $lightness: 40%),
+    $code-text-links: scale-color($text-links--light, $lightness: -10%),
+    $code-background: scale-color($background--light, $lightness: 40%),
+
+    $blockquote-text: darken($text--light, 5%),
+    $blockquote-text-links: darken($text-links--light, 5%),
+    $blockquote-background: darken($background--light, 5%),
+
+    $button-text: darken($text--light, 5%),
+    $button-background: darken($background--light, 5%),
   ),
   dark: (
     $accent: $accent--dark,
     $background: $background--dark,
     $text: $text--dark,
-    $text-links: $text-links--dark
+    $text-links: $text-links--dark,
+
+    $text-accent: scale-color($accent--dark, $lightness: 30%),
+    $text-brighter: scale-color($text--dark, $lightness: 20%),
+    $text-duller: scale-color($text--dark, $lightness: -20%),
+
+    $background-brighter: scale-color($background--dark, $lightness: 20%),
+    $background-grey: scale-color($accent--dark, $saturation: -90%, $lightness: -55%),
+
+    $code-text: scale-color($text--dark, $lightness: 60%),
+    $code-text-links: scale-color($text-links--dark, $lightness: 20%),
+    $code-background: scale-color($accent--dark, $lightness: -40%),
+
+    $blockquote-text: lighten($text--dark, 5%),
+    $blockquote-text-links: lighten($text-links--dark, 5%),
+    $blockquote-background: lighten($background--dark, 5%),
+
+    $button-text: lighten($text--dark, 10%),
+    $button-background: lighten($background--dark, 15%),
   ),
 );
 

@@ -13,14 +13,18 @@
 
 .gitinfo,
 .breadcrumbs {
-  font-size: smaller;
+  font-size: $font-size-smaller;
   font-style: italic;
   margin: $spacer-normal 0;
 }
 
 .gitinfo {
+  @include themed() {
+    color: t($text-duller);
+  }
+
   @media print {
-    opacity: 0.8;
+    color: tp($text-duller) !important;
     margin: 0;
     a {
       &:after {

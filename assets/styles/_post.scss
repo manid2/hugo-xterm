@@ -7,6 +7,25 @@
     margin: 0 0 $spacer-large 0;
   }
 
+  &-entries {
+    margin: $spacer-large 0 $spacer-large $spacer-large;
+
+    > li {
+      padding: $spacer-smallest;
+
+      > p {
+          margin: 0;
+      }
+
+      > a {
+        > h2 {
+          border-style: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+
   &-header {
     margin: $spacer-largest 0;
 
@@ -60,8 +79,12 @@
   &-meta,
   &-tags {
     font-style: italic;
+    font-size: $font-size-smaller;
     margin: $spacer-small 0;
-    opacity: 0.8;
+
+    @include themed() {
+      color: t($text-accent);
+    }
 
     a {
       @media print {
@@ -69,6 +92,18 @@
           display: none;
         }
       }
+    }
+  }
+
+  &-description {
+    font-size: $font-size-larger;
+
+    @include themed() {
+      color: t($text-brighter);
+    }
+
+    @media print {
+      color: tp($text-brighter) !important;
     }
   }
 
@@ -125,7 +160,7 @@
 
 .hanchor {
   float: right;
-  margin-right: -#{$spacer-large};
+  margin-right: $spacer-large * -1;
 
   &:after {
     content: '#';

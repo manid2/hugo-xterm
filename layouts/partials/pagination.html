@@ -1,21 +1,51 @@
-{{- /* list pagination */}}
+{{- /* pagination */}}
+{{- $pgTitle := "See more" -}}
+{{- $pgNext := "Next" -}}
+{{- $pgPrev := "Previous" -}}
+{{- $pgNextLink := false -}}
+{{- $pgPrevLink := false -}}
+
+{{- if .IsPage -}}
+  {{- $pgTitle = site.Params.ReadOtherPosts | default "Read other posts" -}}
+
+  {{- with .NextInSection -}}
+    {{- $pgNext = .Title -}}
+    {{- $pgNextLink = .Permalink -}}
+  {{- end -}}
+
+  {{- with .PrevInSection -}}
+    {{- $pgPrev = .Title -}}
+    {{- $pgPrevLink = .Permalink -}}
+  {{- end -}}
+{{- else -}}
+  {{- if .Paginator.HasNext -}}
+    {{- $pgNextLink = .Paginator.Next.URL -}}
+  {{- end -}}
+
+  {{- if .Paginator.HasPrev -}}
+    {{- $pgPrevLink = .Paginator.Prev.URL -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if or $pgNextLink $pgPrevLink -}}
 <div class="pagination">
   <div class="pagination__title">
-    <span class="pagination__title-h">See more</span>
+    <span class="pagination__title-h">{{ $pgTitle }}</span>
     <hr />
   </div>
-  <div class="pagination__buttons">
-    {{- if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}" class="button previous">
+  <div class="buttons center">
+    {{- if $pgPrevLink }}
+      <a href="{{ $pgPrevLink }}" class="button previous">
         <span class="button__icon">←</span>
-        <span class="button__text">{{ site.Params.newerPosts | default "Newer posts" }}</span>
+        <span class="button__text">{{ $pgPrev }}</span>
       </a>
     {{- end }}
-    {{- if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}" class="button next">
-        <span class="button__text">{{ site.Params.olderPosts | default "Older posts" }}</span>
+    {{- if $pgNextLink }}
+      <a href="{{ $pgNextLink }}" class="button next">
+        <span class="button__text">{{ $pgNext }}</span>
         <span class="button__icon">→</span>
       </a>
     {{- end }}
   </div>
 </div>
+{{- end -}}

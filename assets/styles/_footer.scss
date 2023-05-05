@@ -1,10 +1,10 @@
 .site-footer {
   margin: $spacer-largest 0;
   border-top: $spacer-1 solid;
-  opacity: 0.6;
 
   @include themed() {
     border-color: t($accent);
+    color: t($text-duller);
   }
 
   @media print {
@@ -14,8 +14,7 @@
 
 .themeinfo,
 .buildinfo {
-  font-size: smaller;
-  font-style: italic;
+  font-size: $font-size-smaller;
 }
 
 .copyright {

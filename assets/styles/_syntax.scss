@@ -189,3 +189,64 @@
 }
 
 /* override chroma theme colors */
+.theme--light {
+  /* Background */ .bg,
+  /* PreWrapper */ .chroma { background-color: hsl(240, 60%, 98%); }
+  /* LineNumbers */ .chroma .ln { background-color: hsl(240, 20%, 92%); }
+}
+
+.theme--dark {
+  /* Background */ .bg,
+  /* PreWrapper */ .chroma { background-color: hsl(240, 20%, 15%); }
+  /* LineNumbers */ .chroma .ln { background-color: hsl(240, 10%, 20%); }
+}
+
+/* syntax highlighted code layout */
+div.highlight-wrapper {
+  margin: $spacer-large 0;
+  border-radius: $spacer-2;
+  border: $spacer-1 solid;
+
+  @include themed() {
+    border-color: t($accent);
+  }
+}
+
+div.highlight-toolbar {
+  border-bottom: $spacer-1 solid;
+
+  @include themed() {
+    color: t($text-brighter);
+    background: t($background-grey);
+    border-color: t($accent);
+  }
+
+  .item {
+    display: inline-block;
+    padding: $spacer-small;
+    border-right: $spacer-1 solid;
+    border-color: inherit;
+
+    .label {
+      @include themed() {
+        color: t($text-duller);
+      }
+    }
+  }
+}
+
+.chroma {
+  margin: 0;
+  overflow: auto;
+}
+
+.chroma code {
+  color: inherit;
+  background: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.chroma .line span.cl.wrap {
+  white-space: pre-wrap;
+}

@@ -114,6 +114,32 @@ p {
   margin: $spacer-normal 0;
 }
 
+code {
+  font-family: $font-family-mono;
+  border-radius: $spacer-2;
+  padding: $spacer-2 $spacer-smallest;
+
+  @include themed() {
+    color: t($code-text);
+    background: t($code-background);
+  }
+
+  @media print {
+    color: tp($code-text) !important;
+    background: tp($code-background) !important;
+  }
+
+  a {
+    @include themed() {
+      color: t($code-text-links);
+    }
+
+    @media print {
+      color: tp($code-text-links) !important;
+    }
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -186,14 +212,15 @@ blockquote {
   }
 
   @include themed() {
-    color: desaturate(t($text), 30deg);
-    background: mix(t($background), t($accent), 90%);
+    color: t($blockquote-text);
+    background: t($blockquote-background);
     border-color: t($accent);
   }
 
   @media print {
     margin: $spacer-large 0;
-    background: mix(tp($background), grey, 90%);
+    color: tp($blockquote-text);
+    background: tp($blockquote-background);
     border-color: tp($accent);
   }
 
@@ -213,16 +240,8 @@ blockquote {
     content: '>';
     display: block;
     position: absolute;
-    left: -$spacer-large;
+    left: $spacer-large * -1;
     padding: $spacer-smallest;
-
-    @include themed() {
-      color: complement(t($text));
-    }
-
-    @media print {
-      color: complement(tp($text));
-    }
   }
 }
 
@@ -255,18 +274,18 @@ th {
   font-weight: bold;
 
   @include themed() {
-    color: mix(t($text), t($accent), 80%);
-    background: mix(t($background), t($accent), 80%);
+    color: t($text-brighter);
+    background: t($background-brighter);
   }
 
   @media print {
-    color: mix(tp($text), tp($accent), 80%) !important;
-    background: mix(tp($background), tp($accent), 80%) !important;
+    color: tp($text-brighter) !important;
+    background: tp($background-brighter) !important;
   }
 }
 
 td {
-  font-size: $font-size - 0.1;
+  font-size: $font-size-smaller;
 }
 
 ul, ol {

@@ -1,11 +1,11 @@
 /* Fonts */
 $font-family: Arial, Helvetica, Verdana, Roboto, sans-serif;
-$font-family-mono: Ubuntu Mono, 'Fira Code', Monaco, Consolas, monospace;
+$font-family-mono: Ubuntu Mono, Monaco, Consolas, monospace;
 $font-family-title: "Times New Roman", Garamond, Georgia, "Roboto Serif", serif;
 
 $font-size: 1rem;
 $font-size-smaller: $font-size - 0.125;
-$font-size-larger: $font-size + 0.125;
+$font-size-larger: $font-size + 0.225;
 
 /* Layouts */
 $container-max-width: 864px;
@@ -20,19 +20,19 @@ $spacer-large: $spacer-small * 3;
 $spacer-largest: $spacer-normal * 3;
 
 /* Colors */
-$blue: hsl(240, 80%, 60%);
+$blue: hsl(240, 100%, 50%);
 
 /* Light theme colors */
-$accent--light: scale-color($blue, $lightness: 10%);
-$background--light: scale-color($accent--light, $lightness: 90%);
-$text--light: scale-color(adjust-hue($background--light, -45deg), $lightness: -70%);
-$text-links--light: adjust-hue($text--light, -30deg);
+$accent--light: $blue;
+$background--light: adjust-color($accent--light, $hue: -20deg, $saturation: -60%, $lightness: 40%);
+$text--light: darken($accent--light, 30%);
+$text-links--light: adjust-color($accent--light, $hue: -90deg, $lightness: -20%);
 
 /* Dark theme colors */
-$accent--dark: scale-color($blue, $lightness: -10%);
-$background--dark: scale-color($accent--dark, $lightness: -90%);
-$text--dark: scale-color(adjust-hue($background--dark, -45deg), $lightness: 70%);
-$text-links--dark: adjust-hue($text--dark, -30deg);
+$accent--dark: lighten($accent--light, 10%);
+$background--dark: darken($background--light, 80%);
+$text--dark: adjust-color($accent--dark, $hue: -30deg, $lightness: 20%);
+$text-links--dark: adjust-color($accent--dark, $hue: -90deg, $lightness: -20%);
 
 /* Media queries */
 $phone: "max-width: 684px";

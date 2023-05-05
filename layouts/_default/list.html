@@ -12,54 +12,51 @@
 
   <div class="post-content">
     {{- with .Content }}
-    {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"></a>${3}` | safeHTML }}
+      {{ . }}
     {{- end }}
 
     {{- /* list content */}}
     <h2>See</h2>
 
-    {{- $PageContext := . -}}
-    {{- if .IsHome -}}
-    {{- $PageContext = .Site -}}
-    {{- end }}
     {{- $paginator := .Paginate .Pages -}}
     {{- /* list items */}}
-    <ul>
+    <ul class="post-entries">
       {{- range $paginator.Pages }}
       <li>
         {{- /* list item */ -}}
         <a href="{{ .Permalink }}">
           {{- if .Title -}}
-          {{- .Title | markdownify -}}
+          <h2>
+            {{- .Title | markdownify -}}
+          </h2>
           {{- else -}}
           {{- .File.TranslationBaseName | markdownify -}}
           {{- end -}}
         </a>
 
         {{- if and (not .IsSection) (or .Date .Params.Author) -}}
-        <span class="post-meta">
-          {{- with .Date -}}
-          <span> | {{ .Format "2006-01-02" -}}</span>
-          {{- end -}}
+        <p class="post-meta">
+        {{- with .Date -}}
+        <span>{{ .Format "2006-01-02" -}}</span>
+        {{- end -}}
 
-          {{- with .Params.Author -}}
-          <span> | {{ . }}</span>
-          {{- end -}}
+        {{- with .Params.Author -}}
+        <span> | {{ . }}</span>
+        {{- end -}}
         </span>
+        </p>
+        {{- end -}}
 
         {{- with .Params.Description -}}
-        <p class="post-meta">{{ . }}</p>
-        {{- end -}}
+        <p class="post-description">{{ . }}</p>
         {{- end -}}
       </li>
       {{- end }}
     </ul>
   </div>
 
-  {{- if or .Paginator.HasPrev .Paginator.HasNext }}
   <footer class="post-footer">
     {{- partial "pagination.html" . -}}
   </footer>
-  {{- end }}
 </article>
 {{- end }}

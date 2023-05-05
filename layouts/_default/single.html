@@ -30,7 +30,7 @@
     {{- end }}
 
     {{- with .Params.Description }}
-    <p>{{ . }}</p>
+    <p class="post-description">{{ . }}</p>
     {{- end }}
   </header>
 
@@ -48,7 +48,7 @@
 
   {{- with .Content }}
   <div class="post-content">
-    {{ . | replaceRE "(<h[1-9] id=\"([^\"]+)\".+)(</h[1-9]+>)" `${1}<a href="#${2}" class="hanchor" ariaLabel="Anchor"></a>${3}` | safeHTML }}
+    {{ . }}
   </div>
   {{- end }}
 
@@ -57,7 +57,7 @@
     {{- if templates.Exists "partials/support-me.html" -}}
       {{- partial "support-me.html" . -}}
     {{- end -}}
-    {{- partial "posts_pagination.html" . -}}
+    {{- partial "pagination.html" . -}}
     {{- partial "comments.html" . -}}
   </footer>
   {{- end }}

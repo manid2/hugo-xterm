@@ -1,35 +1,49 @@
-.button-container {
-  display: table;
-  margin-left: auto;
-  margin-right: auto;
+.buttons {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  column-gap: $spacer-small;
+
+  @media ($phone) {
+    flex-direction: column;
+    row-gap: $spacer-small;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.fill {
+    button,
+    .button,
+    a.button {
+      flex-grow: 1;
+      @media ($phone) {
+        width: 100%;
+      }
+    }
+  }
 }
 
 button,
 .button,
 a.button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: $spacer-small $spacer-normal;
-  margin-bottom: $spacer-small;
-  text-decoration: none;
   text-align: center;
-  border-radius: 8;
+  align-items: center;
+  border-radius: $spacer-small;
   border: $spacer-1 solid;
-  font: inherit;
   font-weight: bold;
-  appearance: none;
   cursor: pointer;
-  outline: none;
 
   @include themed() {
-    background: t($accent);
-    color: mix(t($accent), white, 20%);
+    color: t($button-text);
+    background: t($button-background);
     border-color: t($accent);
 
     &:hover {
-      background: transparentize(t($accent), .2);
+      background: transparentize(t($button-background), .2);
+      text-decoration: none;
     }
   }
 
@@ -42,47 +56,17 @@ a.button {
     }
   }
 
-  /* variants */
-
-  &.outline {
-    background: transparent;
-    box-shadow: none;
-    padding: $spacer-small $spacer-normal;
-
-    :hover {
-      transform: none;
-      box-shadow: none;
-    }
+  &__text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
-  &.link {
-    background: none;
+  &.next .button__icon {
+    margin-left: $spacer-small;
   }
 
-  /* sizes */
-
-  &.small {
-    font-size: smaller;
-  }
-
-  &.wide {
-    min-width: $spacer-largest * 4;
-    padding: $spacer-normal $spacer-large;
-  }
-}
-
-a.read-more,
-a.read-more:hover,
-a.read-more:active {
-  display: inline-flex;
-  border: none;
-  background: none;
-  box-shadow: none;
-  padding: 0;
-  margin: $spacer-large 0;
-  max-width: 100%;
-
-  @include themed() {
-    color: t($accent);
+  &.previous .button__icon {
+    margin-right: $spacer-small;
   }
 }

@@ -1,0 +1,20 @@
+{{- $lang  := .Attributes.lang | default .Type -}}
+{{- $file  := .Attributes.file | default (printf "code-%d.%s" .Ordinal $lang) -}}
+
+{{- /* TODO: Add div toolbar */}}
+<div class="highlight-wrapper">
+  <div class="highlight-toolbar">
+    <div class="item">
+      <span class="label">Lang: </span>
+      <span class="name">{{ $lang }}</span>
+    </div>
+
+    {{- if $file -}}
+    <div class="item">
+      <span class="label">File: </span>
+      <span class="name">{{ $file }}</span>
+    </div>
+    {{- end -}}
+  </div>
+  {{- highlight .Inner $lang -}}
+</div>
