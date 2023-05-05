@@ -2,7 +2,7 @@
 <article class="post">
   <header class="post-header">
     {{- if .Title }}
-    <h1 class="post-title">{{ .Title | plainify }}</h1>
+    <h1>{{ .Title | plainify }}</h1>
     {{- end }}
 
     {{- with .Params.Description -}}
