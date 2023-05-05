@@ -70,7 +70,7 @@ h1, h2, h3 {
 
 h1 {
   font-size: $font-size * 2.25;
-  border-bottom: 2px dotted;
+  border-bottom: $spacer-2 dotted;
 
   @media print, ($phone) {
     font-size: $font-size * 2;
@@ -79,12 +79,12 @@ h1 {
 
 h2 {
   font-size: $font-size * 1.6;
-  border-bottom: 1px solid;
+  border-bottom: $spacer-1 solid;
 }
 
 h3 {
   font-size: $font-size * 1.25;
-  border-bottom: 1px dashed;
+  border-bottom: $spacer-1 dashed;
 }
 
 a {
@@ -110,6 +110,10 @@ a {
   }
 }
 
+p {
+  margin: $spacer-normal 0;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -126,10 +130,6 @@ img {
   &.right {
     margin-left: auto;
   }
-}
-
-p {
-  margin: $spacer-normal 0;
 }
 
 figure {
@@ -222,33 +222,6 @@ blockquote {
 
     @media print {
       color: complement(tp($text));
-    }
-  }
-
-  &.twitter-tweet {
-    position: relative;
-    font: inherit;
-    color: inherit;
-    border: $spacer-1 solid;
-    padding-top: $spacer-largest;
-
-    p:before {
-      content: '';
-    }
-
-    &:before {
-      content: '> From Twitter:';
-      position: absolute;
-      top: $spacer-large;
-      font-weight: bold;
-
-      @include themed() {
-        color: complement(t($text));
-      }
-
-      @media print {
-        color: complement(tp($text));
-      }
     }
   }
 }
@@ -349,10 +322,13 @@ ol {
   }
 }
 
-mark {
+hr {
+  width: 100%;
+  border: none;
+  height: $spacer-1;
+
   @include themed() {
     background: t($accent);
-    color: t($background);
   }
 }
 
@@ -384,15 +360,5 @@ mark {
 
   @media print {
     display: initial;
-  }
-}
-
-hr {
-  width: 100%;
-  border: none;
-  height: $spacer-1;
-
-  @include themed() {
-    background: t($accent);
   }
 }
