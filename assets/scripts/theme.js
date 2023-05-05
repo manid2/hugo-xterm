@@ -1,6 +1,9 @@
+const themeDark = "theme--dark";
+const themeLight = "theme--light";
 const bodyClassList = document.body.classList;
 const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-const localTheme = window.localStorage && window.localStorage.getItem("theme");
+const localTheme = window.localStorage &&
+  window.localStorage.getItem("theme");
 const themeToggle = document.querySelector(".theme-toggle");
 
 // Set theme from local storage
@@ -10,34 +13,36 @@ if (localTheme) {
   // Set theme from system theme
   const isSystemDark = systemDark.matches;
   if (isSystemDark) {
-    bodyClassList.add("theme--dark");
+    bodyClassList.add(themeDark);
   } else {
-    bodyClassList.add("theme--light");
+    bodyClassList.add(themeLight);
   }
 }
 
 // Watch for system theme changes
 systemDark.addEventListener('change', e => {
   if (e.matches === "dark") {
-    bodyClassList.add("theme--dark");
+    bodyClassList.remove(themeDark);
+    bodyClassList.add(themeLight);
   } else {
-    bodyClassList.add("theme--light");
+    bodyClassList.remove(themeLight);
+    bodyClassList.add(themeDark);
   }
 });
 
 // Toggle theme on click
 themeToggle.addEventListener("click", () => {
-  if (bodyClassList.contains("theme--dark")) {
-    bodyClassList.remove("theme--dark");
-    bodyClassList.add("theme--light");
+  let currentTheme = themeDark;
+  if (bodyClassList.contains(themeDark)) {
+    bodyClassList.remove(themeDark);
+    bodyClassList.add(themeLight);
+    currentTheme = themeLight;
   } else {
-    bodyClassList.remove("theme--light");
-    bodyClassList.add("theme--dark");
+    bodyClassList.remove(themeLight);
+    bodyClassList.add(themeDark);
+    currentTheme = themeDark;
   }
 
   window.localStorage &&
-    window.localStorage.setItem(
-      "theme",
-      bodyClassList.contains("theme--dark") ? "theme--dark" : "theme--light",
-    );
+    window.localStorage.setItem( "theme", currentTheme);
 });
