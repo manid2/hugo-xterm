@@ -10,34 +10,34 @@ if (localTheme) {
   // Set theme from system theme
   const isSystemDark = systemDark.matches;
   if (isSystemDark) {
-    bodyClassList.add("theme-dark");
+    bodyClassList.add("theme--dark");
   } else {
-    bodyClassList.add("theme-light");
+    bodyClassList.add("theme--light");
   }
 }
 
 // Watch for system theme changes
 systemDark.addEventListener('change', e => {
   if (e.matches === "dark") {
-    bodyClassList.add("theme-dark");
+    bodyClassList.add("theme--dark");
   } else {
-    bodyClassList.add("theme-light");
+    bodyClassList.add("theme--light");
   }
 });
 
 // Toggle theme on click
 themeToggle.addEventListener("click", () => {
-  if (bodyClassList.contains("theme-dark")) {
-    bodyClassList.remove("theme-dark");
-    bodyClassList.add("theme-light");
+  if (bodyClassList.contains("theme--dark")) {
+    bodyClassList.remove("theme--dark");
+    bodyClassList.add("theme--light");
   } else {
-    bodyClassList.remove("theme-light");
-    bodyClassList.add("theme-dark");
+    bodyClassList.remove("theme--light");
+    bodyClassList.add("theme--dark");
   }
 
   window.localStorage &&
     window.localStorage.setItem(
       "theme",
-      bodyClassList.contains("theme-dark") ? "theme-dark" : "theme-light",
+      bodyClassList.contains("theme--dark") ? "theme--dark" : "theme--light",
     );
 });

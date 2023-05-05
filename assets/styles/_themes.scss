@@ -7,16 +7,16 @@ $text-links: 'text-links';
 /* Themes */
 $themes: (
   light: (
-    accent: $accent-light,
-    background: $background-light,
-    text: $text-light,
-    text-links: $text-links-light
+    $accent: $accent--light,
+    $background: $background--light,
+    $text: $text--light,
+    $text-links: $text-links--light
   ),
   dark: (
-    accent: $accent-dark,
-    background: $background-dark,
-    text: $text-dark,
-    text-links: $text-links-dark
+    $accent: $accent--dark,
+    $background: $background--dark,
+    $text: $text--dark,
+    $text-links: $text-links--dark
   ),
 );
 
@@ -24,7 +24,7 @@ $current-theme: null;
 
 @mixin themed() {
   @each $theme-name, $theme-map in $themes {
-    .theme-#{$theme-name} & {
+    .theme--#{$theme-name} & {
       $current-theme: () !global;
       @each $key, $submap in $theme-map {
         $value: map-get(map-get($themes, $theme-name), '#{$key}');

@@ -1,16 +1,16 @@
 /* Generate theme styles using:
 
     ```bash
-    echo '.theme-light {'                       > syntax.scss
+    echo '.theme--light {'                      > syntax.scss
     hugo gen chromastyles --style=monokailight >> syntax.scss
     echo '}'                                   >> syntax.scss
-    echo '.theme-light {'                      >> syntax.scss
+    echo '.theme--light {'                     >> syntax.scss
     hugo gen chromastyles --style=monokai      >> syntax.css
     echo '}'                                   >> syntax.scss
     ```
  */
 
-.theme-light {
+.theme--light {
   /* Background */ .bg { color: #272822; background-color: #fafafa; }
   /* PreWrapper */ .chroma { color: #272822; background-color: #fafafa; }
   /* Other */ .chroma .x {  }
@@ -99,7 +99,7 @@
   /* TextWhitespace */ .chroma .w {  }
 }
 
-.theme-dark {
+.theme--dark {
   /* Background */ .bg { color: #f8f8f2; background-color: #272822; }
   /* PreWrapper */ .chroma { color: #f8f8f2; background-color: #272822; }
   /* Other */ .chroma .x {  }
@@ -187,3 +187,5 @@
   /* GenericUnderline */ .chroma .gl {  }
   /* TextWhitespace */ .chroma .w {  }
 }
+
+/* override chroma theme colors */
