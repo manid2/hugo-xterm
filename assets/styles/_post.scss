@@ -10,18 +10,17 @@
   &-entries {
     margin: $spacer-large 0 $spacer-large $spacer-large;
 
-    > li {
+    .item {
       padding: $spacer-smallest;
+      margin: $spacer-small 0;
 
-      > p {
-          margin: 0;
+      p {
+        margin: $spacer-small 0;
       }
 
-      > a {
-        > h2 {
-          border-style: none;
-          margin: 0;
-        }
+      h2, h3 {
+        border-style: none;
+        margin: $spacer-small 0;
       }
     }
   }

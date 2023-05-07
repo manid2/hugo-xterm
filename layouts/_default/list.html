@@ -23,6 +23,7 @@
     <ul class="post-entries">
       {{- range $paginator.Pages }}
       <li>
+        <div class="item">
         {{- /* list item */ -}}
         <a href="{{ .Permalink }}">
           {{- if .Title -}}
@@ -50,6 +51,7 @@
         {{- with .Params.Description -}}
         <p class="post-description">{{ . }}</p>
         {{- end -}}
+        </div>
       </li>
       {{- end }}
     </ul>
