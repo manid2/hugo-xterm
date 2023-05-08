@@ -1,9 +1,8 @@
 /* Fonts */
-$font-family: Arial, Helvetica, Verdana, Roboto, sans-serif;
-$font-family-mono: Ubuntu Mono, Monaco, Consolas, monospace;
-$font-family-title: "Times New Roman", Garamond, Georgia, "Roboto Serif",
+$font-family: arial, helvetica, verdana, roboto, sans-serif;
+$font-family-mono: ubuntu mono, monaco, consolas, monospace;
+$font-family-title: "Times New Roman", garamond, georgia, "Roboto Serif",
   serif;
-
 $font-size: 1rem;
 $font-size-smaller: $font-size - 0.125;
 $font-size-larger: $font-size + 0.225;
@@ -21,23 +20,24 @@ $spacer-large: $spacer-small * 3;
 $spacer-largest: $spacer-normal * 3;
 
 /* Colors */
-$blue: hsl(240, 100%, 50%);
+$blue: hsl(
+  $hue: 240deg,
+  $saturation: 100%,
+  $lightness: 50%,
+);
 
 /* Light theme colors */
 $accent--light: $blue;
-
 $background--light: scale-color(
   $accent--light,
   $saturation: -60%,
   $lightness: 90%
 );
-
 $text--light: scale-color(
   $accent--light,
   $saturation: -60%,
   $lightness: -50%
 );
-
 $text-links--light: adjust-color(
   $accent--light,
   $hue: -90deg,
@@ -46,15 +46,12 @@ $text-links--light: adjust-color(
 
 /* Dark theme colors */
 $accent--dark: $blue;
-
 $background--dark: scale-color(
   $accent--dark,
   $saturation: -80%,
   $lightness: -80%
 );
-
 $text--dark: scale-color($accent--dark, $lightness: 80%);
-
 $text-links--dark: adjust-color(
   $accent--dark,
   $hue: -90deg,
@@ -64,10 +61,3 @@ $text-links--dark: adjust-color(
 /* Media queries */
 $phone: "max-width: 684px";
 $tablet: "max-width: 900px";
-
-/* Global CSS variables */
-:root {
-  /* variables for js, must be the same as these in @custom-media queries */
-  --phoneWidth: (max-width: 684px);
-  --tabletWidth: (max-width: 900px);
-}

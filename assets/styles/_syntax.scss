@@ -4,7 +4,7 @@ div.highlight-wrapper {
   border-radius: $spacer-2;
   border: $spacer-1 solid;
 
-  @include themed() {
+  @include themed {
     border-color: t($background-brighter);
   }
 }
@@ -13,7 +13,7 @@ div.highlight-wrapper div.highlight-toolbar {
   display: flex;
   border-bottom: $spacer-1 solid;
 
-  @include themed() {
+  @include themed {
     color: t($text-brighter);
     background: t($background-grey);
     border-color: t($background-brighter);
@@ -24,7 +24,7 @@ div.highlight-wrapper div.highlight-toolbar {
     font-size: $font-size-smaller;
 
     .label {
-      @include themed() {
+      @include themed {
         color: t($text-duller);
       }
     }

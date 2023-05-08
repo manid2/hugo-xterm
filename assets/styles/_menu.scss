@@ -9,11 +9,12 @@
   list-style: none;
   z-index: 99;
 
-  @include themed() {
+  @include themed {
     $shadow-color: transparentize(t($background), 0.2);
     $shadow: 0 $spacer-small $shadow-color,
       -$spacer-small $spacer-small $shadow-color,
       $spacer-small $spacer-small $shadow-color;
+
     background: t($background);
     box-shadow: $shadow;
   }
@@ -27,7 +28,7 @@
   cursor: pointer;
   border: $spacer-2 dotted;
 
-  @include themed() {
+  @include themed {
     color: t($text);
     background: t($background);
     border-color: t($accent);
@@ -42,17 +43,17 @@
   padding: 0;
   margin: 0;
 
-  &__trigger {
-    margin-right: 0 !important;
+  &-trigger {
+    margin-right: 0;
     user-select: none;
     cursor: pointer;
 
-    @include themed() {
+    @include themed {
       color: t($accent);
     }
   }
 
-  &__dropdown {
+  &-dropdown {
     @include menu;
 
     .open & {
@@ -64,7 +65,7 @@
       padding: $spacer-small $spacer-normal;
       border: $spacer-2 dotted;
 
-      @include themed() {
+      @include themed {
         border-color: t($accent);
       }
 
@@ -86,8 +87,9 @@
   }
 
   &--mobile {
-    .menu__trigger {
+    .menu-trigger {
       @include header-menu-trigger;
+
       display: none;
 
       @media ($phone) {
@@ -95,7 +97,7 @@
       }
     }
 
-    .menu__dropdown {
+    .menu-dropdown {
       @media ($phone) {
         left: auto;
         right: 0;
@@ -104,7 +106,7 @@
 
     li {
       flex: 0 0 auto;
-      margin-bottom: -#{$spacer-2};
+      margin-bottom: $spacer-2 * -1;
     }
   }
 }

@@ -1,6 +1,7 @@
 @import "variables";
 @import "themes";
 
+/* components */
 @import "buttons";
 @import "header";
 @import "menu";
@@ -9,5 +10,6 @@
 @import "pagination";
 @import "footer";
 
+/* code syntax highlight */
 @import "_gen/syntax";
 @import "syntax";

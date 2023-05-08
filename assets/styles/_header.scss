@@ -2,7 +2,7 @@
   margin: $spacer-largest 0;
   border-bottom: $spacer-1 solid;
 
-  @include themed() {
+  @include themed {
     border-color: t($accent);
   }
 
@@ -19,15 +19,16 @@
 }
 
 .gitinfo {
-  @include themed() {
+  @include themed {
     color: t($text-duller);
   }
 
   @media print {
     color: tp($text-duller) !important;
     margin: 0;
+
     a {
-      &:after {
+      &::after {
         display: none;
       }
     }
@@ -42,22 +43,8 @@
   margin: $spacer-normal 0;
 
   .item {
-    display: flex;
-    align-items: center;
     padding: $spacer-smallest $spacer-small;
     margin-right: $spacer-small;
-
-    .icon {
-      margin-right: $spacer-smallest;
-    }
-
-    .label {
-      display: initial;
-
-      @media ($phone) {
-        display: none;
-      }
-    }
   }
 }
 
@@ -66,7 +53,7 @@
 }
 
 .theme-toggler {
-  fill: currentColor;
+  fill: currentcolor;
 }
 
 .navbar {
@@ -85,7 +72,7 @@
     flex-grow: 1;
     border-top: $spacer-2 dotted;
 
-    @include themed() {
+    @include themed {
       border-color: t($accent);
     }
   }
@@ -106,7 +93,7 @@
       border: $spacer-2 dotted;
       margin-right: -#{$spacer-2};
 
-      @include themed() {
+      @include themed {
         border-color: t($accent);
       }
     }

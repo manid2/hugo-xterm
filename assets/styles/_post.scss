@@ -36,11 +36,12 @@
 
   &-title {
     $border-title: $spacer-smallest dotted;
+
     position: relative;
     border-bottom: $border-title;
     width: 100%;
 
-    @include themed() {
+    @include themed {
       border-color: t($accent);
     }
 
@@ -48,7 +49,7 @@
       border-color: tp($accent) !important;
     }
 
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       bottom: $spacer-2;
@@ -56,7 +57,7 @@
       width: 100%;
       border-bottom: $border-title;
 
-      @include themed() {
+      @include themed {
         border-color: t($accent);
       }
 
@@ -69,7 +70,7 @@
       text-decoration: none;
 
       @media print {
-        &:after {
+        &::after {
           display: none;
         }
       }
@@ -82,13 +83,13 @@
     font-size: $font-size-smaller;
     margin: $spacer-small 0;
 
-    @include themed() {
+    @include themed {
       color: t($text-accent);
     }
 
     a {
       @media print {
-        &:after {
+        &::after {
           display: none;
         }
       }
@@ -98,7 +99,7 @@
   &-description {
     font-size: $font-size-larger;
 
-    @include themed() {
+    @include themed {
       color: t($text-brighter);
     }
 
@@ -148,51 +149,12 @@
     margin: $spacer-largest 0;
     border-top: $spacer-1 solid;
 
-    @include themed() {
+    @include themed {
       border-color: t($accent);
     }
 
     @media print {
       margin: $spacer-large 0;
-    }
-  }
-}
-
-.hanchor {
-  float: right;
-  margin-right: $spacer-large * -1;
-
-  &:after {
-    content: "#";
-    visibility: hidden;
-  }
-
-  @include themed() {
-    color: t($text-accent);
-  }
-
-  @media print {
-    display: none;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  > a.hanchor {
-    text-decoration: none;
-  }
-
-  > a.hanchor:focus::after {
-    visibility: visible;
-  }
-
-  &:hover {
-    > a.hanchor::after {
-      visibility: visible;
     }
   }
 }

@@ -3,8 +3,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -15,23 +15,23 @@ body {
   font-size: $font-size;
   line-height: 1.54;
   letter-spacing: -0.02em;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: "liga", "tnum", "zero", "ss01", "locl";
   font-variant-ligatures: contextual;
   -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media print {
   @page {
-    size: A4 portrait;
+    size: a4 portrait;
     margin: 0.5in;
   }
 }
 
 .theme-container {
-  @include themed() {
+  @include themed {
     background: t($background);
     color: t($text);
   }
@@ -47,27 +47,28 @@ body {
   padding: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $font-family-title;
-  font-weight: bold;
-  margin: $spacer-large 0;
-  padding: $spacer-smallest 0;
-  width: fit-content;
+.hanchor {
+  float: right;
+  margin-right: $spacer-large * -1;
+
+  &::after {
+    content: "#";
+    visibility: hidden;
+  }
+
+  @include themed {
+    color: t($text-accent);
+  }
 
   @media print {
-    break-after: avoid-page;
+    display: none;
   }
 }
 
 h1,
 h2,
 h3 {
-  @include themed() {
+  @include themed {
     border-color: t($accent);
   }
 
@@ -96,6 +97,37 @@ h3 {
   border-bottom: $spacer-1 dashed;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-title;
+  font-weight: bold;
+  margin: $spacer-large 0;
+  padding: $spacer-smallest 0;
+  width: fit-content;
+
+  @media print {
+    break-after: avoid-page;
+  }
+
+  > a.hanchor {
+    text-decoration: none;
+  }
+
+  > a.hanchor:focus::after {
+    visibility: visible;
+  }
+
+  &:hover {
+    > a.hanchor::after {
+      visibility: visible;
+    }
+  }
+}
+
 a {
   text-decoration: none;
 
@@ -103,18 +135,20 @@ a {
     text-decoration: underline;
   }
 
-  @include themed() {
+  @include themed {
     color: t($text-links);
   }
 
   @media print {
-    color: tp($text-links) !important;
-
-    &:after {
-      color: DarkSlateGrey;
-      content: " (" attr(href) ")";
+    &::after {
+      margin-left: $spacer-smallest;
+      content: "(" attr(href) ")";
       text-decoration: underline;
       font-style: italic;
+
+      @include themed {
+        color: t($text);
+      }
     }
   }
 }
@@ -128,7 +162,7 @@ code {
   border-radius: $spacer-2;
   padding: $spacer-2 $spacer-smallest;
 
-  @include themed() {
+  @include themed {
     color: t($code-text);
     background: t($code-background);
   }
@@ -193,7 +227,7 @@ figure {
       text-align: right;
     }
 
-    @include themed() {
+    @include themed {
       background: t($accent);
       color: t($background);
     }
@@ -206,7 +240,7 @@ blockquote {
   padding: $spacer-normal $spacer-normal $spacer-normal $spacer-large;
   font-style: italic;
 
-  @include themed() {
+  @include themed {
     color: t($text-brighter);
     background: t($blockquote-background);
     border-color: t($accent);
@@ -219,6 +253,10 @@ blockquote {
     border-color: tp($accent);
   }
 
+  p {
+    position: relative;
+  }
+
   p:first-of-type {
     margin-top: 0;
   }
@@ -227,11 +265,7 @@ blockquote {
     margin-bottom: 0;
   }
 
-  p {
-    position: relative;
-  }
-
-  p:first-of-type:before {
+  p:first-of-type::before {
     content: ">";
     display: block;
     position: absolute;
@@ -257,7 +291,7 @@ td {
   border: $spacer-1 dashed;
   padding: $spacer-small;
 
-  @include themed() {
+  @include themed {
     border-color: t($accent);
   }
 
@@ -270,7 +304,7 @@ td {
 th {
   font-weight: bold;
 
-  @include themed() {
+  @include themed {
     color: t($text-brighter);
     background: t($background-brighter);
   }
@@ -297,12 +331,13 @@ ol {
       > p {
         margin: $spacer-small 0;
       }
-      break-inside: avoid-page;
-    }
 
-    ul,
-    ol {
-      margin: 0 0 0 $spacer-large;
+      break-inside: avoid-page;
+
+      ul,
+      ol {
+        margin: 0 0 0 $spacer-large;
+      }
     }
   }
 }
@@ -315,14 +350,14 @@ ol {
     counter-increment: li;
   }
 
-  li:before {
+  li::before {
     content: counter(li);
     position: absolute;
     right: calc(100% + 10px);
     display: inline-block;
     text-align: right;
 
-    @include themed() {
+    @include themed {
       color: $accent;
     }
   }
@@ -334,7 +369,7 @@ ol {
       counter-increment: li;
     }
 
-    li:before {
+    li::before {
       content: counters(li, ".") " ";
     }
   }
@@ -345,7 +380,7 @@ hr {
   border: none;
   height: $spacer-1;
 
-  @include themed() {
+  @include themed {
     background: t($accent);
   }
 }

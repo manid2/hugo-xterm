@@ -22,9 +22,9 @@
       {{- end -}}
     </ul>
     <ul class="menu menu--mobile">
-      <li class="menu__trigger">===</li>
+      <li class="menu-trigger">===</li>
       <li>
-        <ul class="menu__dropdown">
+        <ul class="menu-dropdown">
           {{- range site.Menus.main -}}
             {{- if not .HasChildren }}
             <li><a href="{{ .URL }}">{{ .Name }}</a></li>

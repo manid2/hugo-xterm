@@ -1,3 +1,72 @@
+/* Buttons */
+button,
+.button,
+a.button {
+  align-items: center;
+  border-radius: $spacer-small;
+  border: $spacer-1 solid;
+  cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  padding: $spacer-small $spacer-normal;
+  text-align: center;
+
+  @include themed {
+    background: t($button-background);
+    border-color: t($accent);
+
+    &:hover {
+      background: transparentize(t($button-background), 0.6);
+      text-decoration: none;
+    }
+  }
+
+  /* button variants */
+  &.outline,
+  &.transparent {
+    font-weight: normal;
+    background: none;
+
+    @include themed {
+      color: t($text-brighter);
+    }
+  }
+
+  &.transparent {
+    border: none;
+  }
+
+  &.outline.brighter {
+    @include themed {
+      border-color: t($background-brighter);
+    }
+  }
+
+  /* button label */
+  .label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  /* button icon */
+  .icon {
+    margin-right: $spacer-smallest;
+
+    &.right {
+      margin: 0 0 0 $spacer-smallest;
+    }
+  }
+}
+
+button,
+.button {
+  @media print {
+    display: none;
+  }
+}
+
+/* Buttons container */
 .buttons {
   display: flex;
   flex-flow: row wrap;
@@ -9,84 +78,21 @@
     row-gap: $spacer-small;
   }
 
+  /* Buttons centered in the container */
   &.center {
     justify-content: center;
   }
 
+  /* Buttons filling the container */
   &.fill {
     button,
     .button,
     a.button {
       flex-grow: 1;
+
       @media ($phone) {
         width: 100%;
       }
     }
-  }
-}
-
-button,
-.button,
-a.button {
-  padding: $spacer-small $spacer-normal;
-  text-align: center;
-  align-items: center;
-  border-radius: $spacer-small;
-  border: $spacer-1 solid;
-  font-weight: bold;
-  cursor: pointer;
-
-  @include themed() {
-    color: t($button-text);
-    background: t($button-background);
-    border-color: t($accent);
-
-    &:hover {
-      background: transparentize(t($button-background), 0.2);
-      text-decoration: none;
-    }
-  }
-
-  @media print {
-    background: tp($background) !important;
-    color: mix(tp($accent), black, 20%) !important;
-
-    &:after {
-      display: none;
-    }
-  }
-
-  &.outline,
-  &.transparent {
-    font-weight: normal;
-    background: none;
-
-    @include themed() {
-      color: t($text-brighter);
-    }
-  }
-
-  &.transparent {
-    border: none;
-  }
-
-  &.outline.brighter {
-    @include themed() {
-      border-color: t($background-brighter);
-    }
-  }
-
-  &__text {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
-  &.next .button__icon {
-    margin-left: $spacer-small;
-  }
-
-  &.previous .button__icon {
-    margin-right: $spacer-small;
   }
 }

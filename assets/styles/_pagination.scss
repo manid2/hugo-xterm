@@ -17,7 +17,7 @@
       letter-spacing: 0.1em;
       z-index: 1;
 
-      @include themed() {
+      @include themed {
         background: t($background);
         color: transparentize(t($text), 0.4);
       }

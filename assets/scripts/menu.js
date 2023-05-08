@@ -19,8 +19,8 @@ window.addEventListener("resize", () => {
 
 // Handle desktop menu
 allMenus.forEach(menu => {
-  const trigger = menu.querySelector(".menu__trigger");
-  const dropdown = menu.querySelector(".menu__dropdown");
+  const trigger = menu.querySelector(".menu-trigger");
+  const dropdown = menu.querySelector(".menu-dropdown");
 
   trigger.addEventListener("click", e => {
     e.stopPropagation();

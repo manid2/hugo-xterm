@@ -35,15 +35,15 @@
   </div>
   <div class="buttons center">
     {{- if $pgPrevLink }}
-      <a href="{{ $pgPrevLink }}" class="button previous">
-        <span class="button__icon">←</span>
-        <span class="button__text">{{ $pgPrev }}</span>
+      <a href="{{ $pgPrevLink }}" class="button">
+        <span class="icon">←</span>
+        <span class="label">{{ $pgPrev }}</span>
       </a>
     {{- end }}
     {{- if $pgNextLink }}
-      <a href="{{ $pgNextLink }}" class="button next">
-        <span class="button__text">{{ $pgNext }}</span>
-        <span class="button__icon">→</span>
+      <a href="{{ $pgNextLink }}" class="button">
+        <span class="label">{{ $pgNext }}</span>
+        <span class="icon right">→</span>
       </a>
     {{- end }}
   </div>

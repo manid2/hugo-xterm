@@ -3,19 +3,14 @@ $accent: "accent";
 $background: "background";
 $text: "text";
 $text-links: "text-links";
-
 $text-accent: "text-accent";
 $text-brighter: "text-brighter";
 $text-duller: "text-duller";
-
 $background-brighter: "background-brighter";
 $background-grey: "background-grey";
-
 $code-text: "code-text";
 $code-background: "code-background";
-
 $blockquote-background: "blockquote-background";
-
 $button-text: "button-text";
 $button-background: "button-background";
 
@@ -26,7 +21,6 @@ $themes: (
     $background: $background--light,
     $text: $text--light,
     $text-links: $text-links--light,
-
     $text-accent: scale-color($accent--light, $lightness: 30%),
     $text-brighter:
       scale-color($text--light, $saturation: 40%, $lightness: 20%),
@@ -46,7 +40,6 @@ $themes: (
     $background: $background--dark,
     $text: $text--dark,
     $text-links: $text-links--dark,
-
     $text-accent: scale-color($accent--dark, $lightness: 60%),
     $text-brighter:
       scale-color($text--dark, $saturation: 60%, $lightness: 60%),
@@ -63,12 +56,14 @@ $themes: (
   ),
 );
 
+/* Current theme global variable */
 $current-theme: null;
 
 @mixin themed() {
   @each $theme-name, $theme-map in $themes {
     .theme--#{$theme-name} & {
       $current-theme: () !global;
+
       @each $key, $submap in $theme-map {
         $value: map-get(map-get($themes, $theme-name), "#{$key}");
         $current-theme: map-merge(
@@ -79,6 +74,7 @@ $current-theme: null;
         ) !global;
       }
       @content;
+
       $current-theme: null !global;
     }
   }
