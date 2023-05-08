@@ -42,7 +42,7 @@ a.button {
     border-color: t($accent);
 
     &:hover {
-      background: transparentize(t($button-background), .2);
+      background: transparentize(t($button-background), 0.2);
       text-decoration: none;
     }
   }
@@ -71,7 +71,6 @@ a.button {
   }
 
   &.outline.brighter {
-
     @include themed() {
       border-color: t($background-brighter);
     }

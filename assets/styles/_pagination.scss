@@ -14,12 +14,12 @@
       font-size: smaller;
       text-transform: uppercase;
       text-decoration: none;
-      letter-spacing: .1em;
+      letter-spacing: 0.1em;
       z-index: 1;
 
       @include themed() {
         background: t($background);
-        color: transparentize(t($text), .4);
+        color: transparentize(t($text), 0.4);
       }
     }
 

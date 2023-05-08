@@ -10,8 +10,10 @@
   z-index: 99;
 
   @include themed() {
-    $shadow-color: transparentize(t($background), .2);
-    $shadow: 0 $spacer-small $shadow-color, -$spacer-small $spacer-small $shadow-color, $spacer-small $spacer-small $shadow-color;
+    $shadow-color: transparentize(t($background), 0.2);
+    $shadow: 0 $spacer-small $shadow-color,
+      -$spacer-small $spacer-small $shadow-color,
+      $spacer-small $spacer-small $shadow-color;
     background: t($background);
     box-shadow: $shadow;
   }
@@ -79,7 +81,7 @@
 
   &--desktop {
     @media ($phone) {
-      display: none
+      display: none;
     }
   }
 

@@ -2,7 +2,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -45,7 +47,12 @@ body {
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $font-family-title;
   font-weight: bold;
   margin: $spacer-large 0;
@@ -57,7 +64,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   @include themed() {
     border-color: t($accent);
   }
@@ -237,7 +246,7 @@ blockquote {
   }
 
   p:first-of-type:before {
-    content: '>';
+    content: ">";
     display: block;
     position: absolute;
     left: $spacer-large * -1;
@@ -256,7 +265,9 @@ table {
   }
 }
 
-table, th, td {
+table,
+th,
+td {
   border: $spacer-1 dashed;
   padding: $spacer-small;
 
@@ -288,7 +299,8 @@ td {
   font-size: $font-size-smaller;
 }
 
-ul, ol {
+ul,
+ol {
   margin: $spacer-normal 0 $spacer-normal $spacer-large;
   padding: 0;
 
@@ -302,7 +314,8 @@ ul, ol {
       break-inside: avoid-page;
     }
 
-    ul, ol {
+    ul,
+    ol {
       margin: 0 0 0 $spacer-large;
     }
   }
@@ -354,7 +367,7 @@ hr {
 .container {
   display: flex;
   flex-direction: column;
-  padding:  0 $spacer-large;
+  padding: 0 $spacer-large;
   max-width: $container-max-width;
   min-height: 100vh;
 

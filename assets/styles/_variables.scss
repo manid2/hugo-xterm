@@ -1,7 +1,8 @@
 /* Fonts */
 $font-family: Arial, Helvetica, Verdana, Roboto, sans-serif;
 $font-family-mono: Ubuntu Mono, Monaco, Consolas, monospace;
-$font-family-title: "Times New Roman", Garamond, Georgia, "Roboto Serif", serif;
+$font-family-title: "Times New Roman", Garamond, Georgia, "Roboto Serif",
+  serif;
 
 $font-size: 1rem;
 $font-size-smaller: $font-size - 0.125;
@@ -24,15 +25,28 @@ $blue: hsl(240, 100%, 50%);
 
 /* Light theme colors */
 $accent--light: $blue;
-$background--light: adjust-color($accent--light, $hue: -20deg, $saturation: -60%, $lightness: 40%);
+$background--light: adjust-color(
+  $accent--light,
+  $hue: -20deg,
+  $saturation: -60%,
+  $lightness: 40%
+);
 $text--light: darken($accent--light, 30%);
-$text-links--light: adjust-color($accent--light, $hue: -90deg, $lightness: -20%);
+$text-links--light: adjust-color(
+  $accent--light,
+  $hue: -90deg,
+  $lightness: -20%
+);
 
 /* Dark theme colors */
 $accent--dark: lighten($accent--light, 10%);
 $background--dark: darken($background--light, 80%);
 $text--dark: adjust-color($accent--dark, $hue: -30deg, $lightness: 20%);
-$text-links--dark: adjust-color($accent--dark, $hue: -90deg, $lightness: -20%);
+$text-links--dark: adjust-color(
+  $accent--dark,
+  $hue: -90deg,
+  $lightness: -20%
+);
 
 /* Media queries */
 $phone: "max-width: 684px";

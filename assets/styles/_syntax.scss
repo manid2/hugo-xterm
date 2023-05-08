@@ -1,12 +1,16 @@
 /* override chroma theme colors */
 .theme--light {
-  /* Background */ .bg,
-  /* PreWrapper */ .chroma { background-color: hsl(240, 60%, 98%); }
+  /* PreWrapper */
+  .chroma {
+    background-color: hsl(240, 60%, 98%);
+  }
 }
 
 .theme--dark {
-  /* Background */ .bg,
-  /* PreWrapper */ .chroma { background-color: hsl(240, 20%, 15%); }
+  /* PreWrapper */
+  .chroma {
+    background-color: hsl(240, 20%, 15%);
+  }
 }
 
 /* syntax highlighted code layout */
@@ -20,8 +24,7 @@ div.highlight-wrapper {
   }
 }
 
-div.highlight-wrapper
-div.highlight-toolbar {
+div.highlight-wrapper div.highlight-toolbar {
   display: flex;
   border-bottom: $spacer-1 solid;
 
@@ -47,27 +50,23 @@ div.highlight-toolbar {
   }
 }
 
-div.highlight
-.chroma {
+div.highlight .chroma {
   margin: 0;
   padding: $spacer-small 0;
   overflow: auto;
 }
 
-div.highlight
-.chroma code {
+div.highlight .chroma code {
   color: inherit;
   background: inherit;
   padding: 0;
   margin: 0;
 }
 
-div.highlight
-.chroma .line span.cl.wrap {
+div.highlight .chroma .line span.cl.wrap {
   white-space: pre-wrap;
 }
 
-div.highlight
-.chroma .cl {
+div.highlight .chroma .cl {
   padding-right: $spacer-small;
 }

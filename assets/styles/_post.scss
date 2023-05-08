@@ -18,7 +18,8 @@
         margin: $spacer-small 0;
       }
 
-      h2, h3 {
+      h2,
+      h3 {
         border-style: none;
         margin: $spacer-small 0;
       }
@@ -48,7 +49,7 @@
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: $spacer-2;
       display: block;
@@ -162,12 +163,12 @@
   margin-right: $spacer-large * -1;
 
   &:after {
-    content: '#';
+    content: "#";
     visibility: hidden;
   }
 
   @include themed() {
-    color: transparentize(t($accent), .1);
+    color: transparentize(t($accent), 0.1);
   }
 
   @media print {
@@ -175,7 +176,12 @@
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   > a.hanchor {
     text-decoration: none;
   }
