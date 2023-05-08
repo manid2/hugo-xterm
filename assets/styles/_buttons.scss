@@ -56,6 +56,27 @@ a.button {
     }
   }
 
+  &.outline,
+  &.transparent {
+    font-weight: normal;
+    background: none;
+
+    @include themed() {
+      color: t($text);
+    }
+  }
+
+  &.transparent {
+    border: none;
+  }
+
+  &.outline.brighter {
+
+    @include themed() {
+      border-color: t($background-brighter);
+    }
+  }
+
   &__text {
     text-overflow: ellipsis;
     white-space: nowrap;

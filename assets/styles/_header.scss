@@ -41,16 +41,17 @@
   justify-content: flex-start;
   margin: $spacer-normal 0;
 
-  &-item {
+  .item {
     display: flex;
-    flex-flow: row wrap;
+    align-items: center;
+    padding: $spacer-smallest $spacer-small;
     margin-right: $spacer-small;
 
-    &-icon {
+    .icon {
       margin-right: $spacer-smallest;
     }
 
-    &-label {
+    .label {
       display: initial;
 
       @media ($phone) {

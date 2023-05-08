@@ -4,17 +4,17 @@
 {{- /* TODO: Add div toolbar */}}
 <div class="highlight-wrapper">
   <div class="highlight-toolbar">
-    <div class="item">
+    <span class="item">
       <span class="label">Lang: </span>
       <span class="name">{{ $lang }}</span>
-    </div>
+    </span>
 
-    {{- if $file -}}
-    <div class="item">
+    <span class="item">
       <span class="label">File: </span>
       <span class="name">{{ $file }}</span>
-    </div>
-    {{- end -}}
+    </span>
+
+    <button class="item right outline brighter">Copy</button>
   </div>
   {{- highlight .Inner $lang -}}
 </div>
