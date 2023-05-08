@@ -2,13 +2,11 @@
 .theme--light {
   /* Background */ .bg,
   /* PreWrapper */ .chroma { background-color: hsl(240, 60%, 98%); }
-  /* LineNumbers */ .chroma .ln { background-color: hsl(240, 20%, 92%); }
 }
 
 .theme--dark {
   /* Background */ .bg,
   /* PreWrapper */ .chroma { background-color: hsl(240, 20%, 15%); }
-  /* LineNumbers */ .chroma .ln { background-color: hsl(240, 10%, 20%); }
 }
 
 /* syntax highlighted code layout */
@@ -18,24 +16,24 @@ div.highlight-wrapper {
   border: $spacer-1 solid;
 
   @include themed() {
-    border-color: t($accent);
+    border-color: t($background-brighter);
   }
 }
 
+div.highlight-wrapper
 div.highlight-toolbar {
   border-bottom: $spacer-1 solid;
 
   @include themed() {
     color: t($text-brighter);
     background: t($background-grey);
-    border-color: t($accent);
+    border-color: t($background-brighter);
   }
 
   .item {
     display: inline-block;
-    padding: $spacer-small;
-    border-right: $spacer-1 solid;
-    border-color: inherit;
+    padding: 0 $spacer-small;
+    font-size: $font-size-smaller;
 
     .label {
       @include themed() {
@@ -45,11 +43,14 @@ div.highlight-toolbar {
   }
 }
 
+div.highlight
 .chroma {
   margin: 0;
+  padding: $spacer-small 0;
   overflow: auto;
 }
 
+div.highlight
 .chroma code {
   color: inherit;
   background: inherit;
@@ -57,6 +58,12 @@ div.highlight-toolbar {
   margin: 0;
 }
 
+div.highlight
 .chroma .line span.cl.wrap {
   white-space: pre-wrap;
+}
+
+div.highlight
+.chroma .cl {
+  padding-right: $spacer-small;
 }

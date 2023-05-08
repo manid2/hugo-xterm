@@ -35,7 +35,7 @@ $themes: (
     $text-duller: scale-color($text--light, $lightness: -20%),
 
     $background-brighter: scale-color($background--light, $lightness: -5%),
-    $background-grey: scale-color($accent--light, $saturation: -90%, $lightness: 75%),
+    $background-grey: scale-color($accent--light, $saturation: -90%, $lightness: 85%),
 
     $code-text: scale-color($text--light, $lightness: 40%),
     $code-text-links: scale-color($text-links--light, $lightness: -10%),
@@ -58,8 +58,9 @@ $themes: (
     $text-brighter: scale-color($text--dark, $lightness: 20%),
     $text-duller: scale-color($text--dark, $lightness: -20%),
 
+
     $background-brighter: scale-color($background--dark, $lightness: 20%),
-    $background-grey: scale-color($accent--dark, $saturation: -90%, $lightness: -55%),
+    $background-grey: scale-color($accent--dark, $saturation: -90%, $lightness: -70%),
 
     $code-text: scale-color($text--dark, $lightness: 60%),
     $code-text-links: scale-color($text-links--dark, $lightness: 20%),
