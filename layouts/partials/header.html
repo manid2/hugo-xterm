@@ -1,7 +1,7 @@
 {{- if and (site.Params.banner) (templates.Exists "banner.html") -}}
-<section class="banner">
-  {{- partial "banner.html" . -}}
-</section>
+  <section class="banner">
+    {{- partial "banner.html" . -}}
+  </section>
 {{- end -}}
 
 {{- partial "navbar.html" . -}}

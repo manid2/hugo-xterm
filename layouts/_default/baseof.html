@@ -1,67 +1,66 @@
 <!DOCTYPE html>
 <html lang="{{- site.Language -}}">
-<head>
-  {{- block "head" . -}}
-    {{- partial "head/base.html" . -}}
-    {{- block "styles" . -}}
-      {{- partial "head/style.html" . -}}
+  <head>
+    {{- block "head" . -}}
+      {{- partial "head/base.html" . -}}
+      {{- block "styles" . -}}
+        {{- partial "head/style.html" . -}}
+      {{- end -}}
     {{- end -}}
-  {{- end -}}
-</head>
+  </head>
 
-<body>
-  {{- block "container" . -}}
-  {{- $container := "container" -}}
-  {{- if site.Params.fullWidthTheme -}}
-    {{- $container = print $container " full" -}}
-  {{- else if site.Params.centerTheme -}}
-    {{- $container = print $container " center" -}}
-  {{- end -}}
-
-  <div class="theme-container">
-  {{- /* container*/}}
-  <div class="{{- $container -}}">
-
-    {{- /* site header*/}}
-    <header class="site-header">
-    {{- block "header" . -}}
-      {{- partial "header.html" . -}}
-    {{- end -}}
-    </header>
-
-    {{- /* site main */}}
-    <main class="site-main">
-
-      {{- if .GitInfo -}}
-        {{- partial "gitinfo.html" . -}}
+  <body class="theme--light">
+    {{- block "container" . -}}
+      {{- $container := "container" -}}
+      {{- if site.Params.fullWidthTheme -}}
+        {{- $container = print $container " full" -}}
+      {{- else if site.Params.centerTheme -}}
+        {{- $container = print $container " center" -}}
       {{- end -}}
 
-      {{- block "main" . -}}
-        {{ if .Title -}}
-        <h1 class="post-title">{{ .Title | plainify }}</h1>
-        {{- end -}}
 
-        {{- /* site main content */}}
-        {{ .Content }}
-      {{- end -}}
-      {{- /* end main content */}}
-    </main>
+      <div class="theme-container">
+        {{- /* container */}}
+        <div class="{{- $container -}}">
+          {{- /* site header */}}
+          <header class="site-header">
+            {{- block "header" . -}}
+              {{- partial "header.html" . -}}
+            {{- end -}}
+          </header>
 
-    {{- /* site footer */}}
-    <footer class="site-footer">
-    {{- block "footer" . -}}
-      {{- partial "footer.html" . -}}
+          {{- /* site main */}}
+          <main class="site-main">
+            {{- if .GitInfo -}}
+              {{- partial "gitinfo.html" . -}}
+            {{- end -}}
+
+            {{- block "main" . -}}
+              {{ if .Title -}}
+                <h1 class="post-title">{{ .Title | plainify }}</h1>
+              {{- end -}}
+
+              {{- /* site main content */}}
+              {{ .Content }}
+            {{- end -}}
+            {{- /* end main content */}}
+          </main>
+
+          {{- /* site footer */}}
+          <footer class="site-footer">
+            {{- block "footer" . -}}
+              {{- partial "footer.html" . -}}
+            {{- end -}}
+          </footer>
+        </div>
+      </div>
     {{- end -}}
-    </footer>
-  </div>
-  {{- end -}}
-  </div>
 
-  {{- block "scripts" . -}}
-    {{- $menu := resources.Get "scripts/menu.js" | js.Build -}}
-    {{- $theme := resources.Get "scripts/theme.js" | js.Build -}}
-    {{- $bundle := slice $menu $theme | resources.Concat "bundle.js" | resources.Minify -}}
-    <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
-  {{- end -}}
-</body>
+    {{- block "scripts" . -}}
+      {{- $menu := resources.Get "scripts/menu.js" | js.Build -}}
+      {{- $theme := resources.Get "scripts/theme.js" | js.Build -}}
+      {{- $bundle := slice $menu $theme | resources.Concat "bundle.js" | resources.Minify -}}
+      <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+    {{- end -}}
+  </body>
 </html>

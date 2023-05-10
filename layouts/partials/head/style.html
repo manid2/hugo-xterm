@@ -2,14 +2,14 @@
 {{- if hugo.IsProduction -}}
   {{- $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
   {{- $styles := resources.Get "styles/app.scss" | resources.ToCSS $options | resources.Fingerprint -}}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" />
 {{- else -}}
   {{- $options := (dict "targetPath" "styles.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
   {{- $styles := resources.Get "styles/app.scss" | resources.ToCSS $options -}}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}">
+  <link rel="stylesheet" href="{{ $styles.Permalink }}" />
 {{- end -}}
 
 {{- /* Custom CSS to override theme properties (/static/style.css) */}}
 {{- if (fileExists "static/style.css") }}
-<link rel="stylesheet" href="{{ "style.css" | absURL }}">
+  <link rel="stylesheet" href="{{ "style.css" | absURL }}" />
 {{- end }}

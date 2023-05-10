@@ -1,23 +1,23 @@
 {{- if not .IsHome -}}
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  {{- $url := replace .Parent.Permalink (printf "%s" site.BaseURL) "" -}}
-  {{- $lang_url := strings.TrimPrefix (printf "%s/" .Lang) $url -}}
+  <nav class="breadcrumbs" aria-label="breadcrumbs">
+    {{- $url := replace .Parent.Permalink (printf "%s" site.BaseURL) "" -}}
+    {{- $lang_url := strings.TrimPrefix (printf "%s/" .Lang) $url -}}
 
-  {{- /* Home */}}
-  <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a>
+    {{- /* Home */}}
+    <a href="{{ "" | absLangURL }}">{{ i18n "home" | default "Home" }}</a>
 
-  {{- $scratch := newScratch }}
-  {{- range $index, $element := split $lang_url "/" }}
+    {{- $scratch := newScratch }}
+    {{- range $index, $element := split $lang_url "/" }}
 
-  {{- $scratch.Add "path" (printf "%s/" $element )}}
-  {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
+      {{- $scratch.Add "path" (printf "%s/" $element ) }}
+      {{- $bc_pg := site.GetPage ($scratch.Get "path") -}}
 
-  {{- if (and ($bc_pg) (gt (len . ) 0))}}
-  {{- print "&nbsp;/&nbsp;" | safeHTML -}}
-  {{- /* Paths */}}
-  <a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
-  {{- end }}
+      {{- if (and ($bc_pg) (gt (len . ) 0)) }}
+        {{- print "&nbsp;/&nbsp;" | safeHTML -}}
+        {{- /* Paths */}}
+        <a href="{{ $bc_pg.Permalink }}">{{ $bc_pg.Name }}</a>
+      {{- end }}
 
-  {{- end }}
-</nav>
+    {{- end }}
+  </nav>
 {{- end }}

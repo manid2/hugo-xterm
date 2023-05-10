@@ -3,23 +3,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.js"></script>
 <script>
   Reveal.initialize({
-      controls: true,
-      progress: true,
-      history: true,
-      center: true,
-      plugins: [ RevealMarkdown, RevealHighlight]
-    });
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    plugins: [RevealMarkdown, RevealHighlight],
+  });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
   // On reveal.js ready event, add header/footer <div> into each `.slide-background` <div>
-  var header = $('#slide-header-footer').html();
-  if ( window.location.search.match( /print-pdf/gi ) ) {
-    Reveal.addEventListener( 'ready', function( event ) {
-      $('.slide-background').append(header);
+  var header = $("#slide-header-footer").html();
+  if (window.location.search.match(/print-pdf/gi)) {
+    Reveal.addEventListener("ready", function (event) {
+      $(".slide-background").append(header);
     });
-  }
-  else {
-    $('div.reveal').append(header);
+  } else {
+    $("div.reveal").append(header);
   }
 </script>

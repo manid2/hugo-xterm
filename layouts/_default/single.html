@@ -1,65 +1,63 @@
 {{- define "main" -}}
-<article class="post">
-  <header class="post-header">
-    {{- if .Title }}
-    <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
-    {{- end }}
-
-    {{- if or (.Params.Date) (.Params.Author) }}
-    <address class="post-meta">
-      {{- with .Params.Date }}
-      <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}">
-      Published on {{ .Format "2006-01-02 15:04:05 IST" }}
-      </time>
+  <article class="post">
+    <header class="post-header">
+      {{- if .Title }}
+        <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
       {{- end }}
-      
-      {{- with .Params.Author }}
-      by {{ . }}
+
+      {{- if or (.Params.Date) (.Params.Author) }}
+        <address class="post-meta">
+          {{- with .Params.Date }}
+            <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}">
+              Published on
+              {{ .Format "2006-01-02 15:04:05 IST" }}
+            </time>
+          {{- end }}
+
+          {{- with .Params.Author }}
+            <span>by {{ . }}</span>
+          {{- end }}
+
+          {{- with .Params.LastMod }}
+            <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}"> last modified {{ .Format "2006-01-02 15:04:05 IST" }}. </time>
+          {{- end }}
+        </address>
       {{- end }}
-      
-      {{- with .Params.LastMod }}
-      <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}">
-      last modified {{ .Format "2006-01-02 15:04:05 IST" }}.
-      </time>
+
+      {{- if .Params.tags }}
+        <p class="post-tags">Tags:&nbsp; {{- range .Params.tags -}}#<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;{{- end -}}</p>
       {{- end }}
-    </address>
+
+      {{- with .Params.Description }}
+        <p class="post-description">{{ . }}</p>
+      {{- end }}
+    </header>
+
+    {{- if .Params.Cover }}
+      <img src="{{ .Params.Cover | absURL }}" class="post-cover" {{ with .Params.CoverAlt }}alt="{{ . | plainify }}"{{ end }} />
     {{- end }}
 
-    {{- if .Params.tags }}
-    <p class="post-tags">Tags:&nbsp; {{- range .Params.tags -}}#<a href="{{ (urlize (printf "tags/%s/" .)) | absLangURL }}">{{ . }}</a>&nbsp;{{- end -}}</p>
+    {{- if and (.Param "toc") (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+      <div class="post-toc">
+        <h2>{{ "Table of Contents" | markdownify }}</h2>
+        {{ .TableOfContents }}
+      </div>
     {{- end }}
 
-    {{- with .Params.Description }}
-    <p class="post-description">{{ . }}</p>
+    {{- with .Content }}
+      <div class="post-content">
+        {{ . }}
+      </div>
     {{- end }}
-  </header>
 
-  {{- if .Params.Cover }}
-  <img src="{{ .Params.Cover | absURL }}" class="post-cover"
-    {{ with .Params.CoverAlt }} alt="{{ . | plainify }}" {{ end }} />
-  {{- end }}
-
-  {{- if and (.Param "toc") (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
-  <div class="post-toc">
-    <h2>{{ "Table of Contents" | markdownify }}</h2>
-    {{ .TableOfContents }}
-  </div>
-  {{- end }}
-
-  {{- with .Content }}
-  <div class="post-content">
-    {{ . }}
-  </div>
-  {{- end }}
-
-  {{- if eq .Type "posts" }}
-  <footer class="post-footer">
-    {{- if templates.Exists "partials/support-me.html" -}}
-      {{- partial "support-me.html" . -}}
-    {{- end -}}
-    {{- partial "pagination.html" . -}}
-    {{- partial "comments.html" . -}}
-  </footer>
-  {{- end }}
-</article>
+    {{- if eq .Type "posts" }}
+      <footer class="post-footer">
+        {{- if templates.Exists "partials/support-me.html" -}}
+          {{- partial "support-me.html" . -}}
+        {{- end -}}
+        {{- partial "pagination.html" . -}}
+        {{- partial "comments.html" . -}}
+      </footer>
+    {{- end }}
+  </article>
 {{- end -}}
