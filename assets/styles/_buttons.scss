@@ -62,7 +62,7 @@ a.button {
     background: none;
 
     @include themed() {
-      color: t($text);
+      color: t($text-brighter);
     }
   }
 

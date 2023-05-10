@@ -134,18 +134,8 @@ code {
   }
 
   @media print {
-    color: tp($code-text) !important;
-    background: tp($code-background) !important;
-  }
-
-  a {
-    @include themed() {
-      color: t($code-text-links);
-    }
-
-    @media print {
-      color: tp($code-text-links) !important;
-    }
+    color: tp($code-text);
+    background: tp($code-background);
   }
 }
 
@@ -213,22 +203,18 @@ figure {
 blockquote {
   border-left: $spacer-smallest solid;
   margin: $spacer-largest 0;
-  padding: $spacer-large;
+  padding: $spacer-normal $spacer-normal $spacer-normal $spacer-large;
   font-style: italic;
 
-  @media ($phone) {
-    padding-right: 0;
-  }
-
   @include themed() {
-    color: t($blockquote-text);
+    color: t($text-brighter);
     background: t($blockquote-background);
     border-color: t($accent);
   }
 
   @media print {
     margin: $spacer-large 0;
-    color: tp($blockquote-text);
+    color: tp($text-brighter);
     background: tp($blockquote-background);
     border-color: tp($accent);
   }

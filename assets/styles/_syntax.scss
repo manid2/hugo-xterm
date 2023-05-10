@@ -1,18 +1,3 @@
-/* override chroma theme colors */
-.theme--light {
-  /* PreWrapper */
-  .chroma {
-    background-color: hsl(240, 60%, 98%);
-  }
-}
-
-.theme--dark {
-  /* PreWrapper */
-  .chroma {
-    background-color: hsl(240, 20%, 15%);
-  }
-}
-
 /* syntax highlighted code layout */
 div.highlight-wrapper {
   margin: $spacer-large 0;
@@ -52,7 +37,7 @@ div.highlight-wrapper div.highlight-toolbar {
 
 div.highlight .chroma {
   margin: 0;
-  padding: $spacer-small 0;
+  padding: $spacer-smallest 0;
   overflow: auto;
 }
 

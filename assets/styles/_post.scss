@@ -168,7 +168,7 @@
   }
 
   @include themed() {
-    color: transparentize(t($accent), 0.1);
+    color: t($text-accent);
   }
 
   @media print {

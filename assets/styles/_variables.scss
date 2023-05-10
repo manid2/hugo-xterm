@@ -25,27 +25,40 @@ $blue: hsl(240, 100%, 50%);
 
 /* Light theme colors */
 $accent--light: $blue;
-$background--light: adjust-color(
+
+$background--light: scale-color(
   $accent--light,
-  $hue: -20deg,
   $saturation: -60%,
-  $lightness: 40%
+  $lightness: 90%
 );
-$text--light: darken($accent--light, 30%);
+
+$text--light: scale-color(
+  $accent--light,
+  $saturation: -60%,
+  $lightness: -50%
+);
+
 $text-links--light: adjust-color(
   $accent--light,
   $hue: -90deg,
-  $lightness: -20%
+  $lightness: -30%
 );
 
 /* Dark theme colors */
-$accent--dark: lighten($accent--light, 10%);
-$background--dark: darken($background--light, 80%);
-$text--dark: adjust-color($accent--dark, $hue: -30deg, $lightness: 20%);
+$accent--dark: $blue;
+
+$background--dark: scale-color(
+  $accent--dark,
+  $saturation: -80%,
+  $lightness: -80%
+);
+
+$text--dark: scale-color($accent--dark, $lightness: 80%);
+
 $text-links--dark: adjust-color(
   $accent--dark,
   $hue: -90deg,
-  $lightness: -20%
+  $lightness: -10%
 );
 
 /* Media queries */
