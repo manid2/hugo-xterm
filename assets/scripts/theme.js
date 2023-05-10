@@ -8,13 +8,17 @@ const themeToggle = document.querySelector(".theme-toggle");
 
 // Set theme from local storage
 if (localTheme) {
+  bodyClassList.remove(themeLight);
+  bodyClassList.remove(themeDark);
   bodyClassList.add(localTheme);
 } else {
   // Set theme from system theme
   const isSystemDark = systemDark.matches;
   if (isSystemDark) {
+    bodyClassList.remove(themeLight);
     bodyClassList.add(themeDark);
   } else {
+    bodyClassList.remove(themeDark);
     bodyClassList.add(themeLight);
   }
 }
