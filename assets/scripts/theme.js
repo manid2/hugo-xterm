@@ -20,6 +20,7 @@ if (localTheme) {
 }
 
 // Watch for system theme changes
+/*
 systemDark.addEventListener('change', e => {
   if (e.matches === "dark") {
     bodyClassList.remove(themeDark);
@@ -29,6 +30,7 @@ systemDark.addEventListener('change', e => {
     bodyClassList.add(themeDark);
   }
 });
+*/
 
 // Toggle theme on click
 themeToggle.addEventListener("click", () => {
