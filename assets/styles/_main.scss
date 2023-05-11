@@ -333,11 +333,11 @@ ol {
       }
 
       break-inside: avoid-page;
+    }
 
-      ul,
-      ol {
-        margin: 0 0 0 $spacer-large;
-      }
+    ul,
+    ol {
+      margin: 0 0 0 $spacer-large;
     }
   }
 }
