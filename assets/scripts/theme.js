@@ -2,8 +2,8 @@ const themeDark = "theme--dark";
 const themeLight = "theme--light";
 const bodyClassList = document.body.classList;
 const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-const localTheme = window.localStorage &&
-  window.localStorage.getItem("theme");
+const localTheme =
+  window.localStorage && window.localStorage.getItem("theme");
 const themeToggle = document.querySelector(".theme-toggle");
 
 // Set theme from local storage
@@ -45,6 +45,5 @@ themeToggle.addEventListener("click", () => {
     currentTheme = themeDark;
   }
 
-  window.localStorage &&
-    window.localStorage.setItem( "theme", currentTheme);
+  window.localStorage && window.localStorage.setItem("theme", currentTheme);
 });

@@ -34,7 +34,10 @@ allMenus.forEach(menu => {
       menu.classList.add("open");
     }
 
-    if (dropdown.getBoundingClientRect().right > container.getBoundingClientRect().right) {
+    if (
+      dropdown.getBoundingClientRect().right >
+      container.getBoundingClientRect().right
+    ) {
       dropdown.style.left = "auto";
       dropdown.style.right = 0;
     }
