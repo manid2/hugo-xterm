@@ -57,9 +57,11 @@
     {{- end -}}
 
     {{- block "scripts" . -}}
+      {{- $copy := resources.Get "scripts/theme.js" | js.Build -}}
       {{- $menu := resources.Get "scripts/menu.js" | js.Build -}}
-      {{- $theme := resources.Get "scripts/theme.js" | js.Build -}}
-      {{- $bundle := slice $menu $theme | resources.Concat "bundle.js" | resources.Minify -}}
+      {{- $print := resources.Get "scripts/copy.js" | js.Build -}}
+      {{- $theme := resources.Get "scripts/print.js" | js.Build -}}
+      {{- $bundle := slice $menu $theme $copy $print | resources.Concat "bundle.js" | resources.Minify -}}
       <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
     {{- end -}}
   </body>

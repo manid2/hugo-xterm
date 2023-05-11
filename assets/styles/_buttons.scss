@@ -29,6 +29,10 @@ a.button {
 
     @include themed {
       color: t($text-brighter);
+
+      &:hover {
+        background: transparentize(t($button-background), 0.1);
+      }
     }
   }
 
