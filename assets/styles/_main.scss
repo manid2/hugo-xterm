@@ -334,11 +334,6 @@ ol {
 
       break-inside: avoid-page;
     }
-
-    ul,
-    ol {
-      margin: 0 0 0 $spacer-large;
-    }
   }
 }
 
@@ -373,6 +368,11 @@ ol {
       content: counters(li, ".") " ";
     }
   }
+}
+
+li ol,
+li ul {
+  margin: 0 0 0 $spacer-large;
 }
 
 hr {

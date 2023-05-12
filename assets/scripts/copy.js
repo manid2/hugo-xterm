@@ -1,4 +1,4 @@
-const hiTextBlock = document.querySelectorAll(".highlight-wrapper")
+const hiTextBlock = document.querySelectorAll(".highlight-wrapper");
 
 hiTextBlock.forEach(function (hiTextBlock) {
   const hiToolbar = hiTextBlock.querySelector(".highlight-toolbar");
@@ -16,9 +16,8 @@ hiTextBlock.forEach(function (hiTextBlock) {
 
   /* copy code in pre > code blocks */
   copyButton.addEventListener("click", () => {
-
     // Use clipboard API if available.
-    if ('clipboard' in navigator) {
+    if ("clipboard" in navigator) {
       navigator.clipboard.writeText(hiText.innerText);
       copyingDone();
       return;
@@ -31,9 +30,9 @@ hiTextBlock.forEach(function (hiTextBlock) {
     selection.removeAllRanges();
     selection.addRange(range);
     try {
-      document.execCommand('copy');
+      document.execCommand("copy");
       copyingDone();
-    } catch (e) { };
+    } catch (e) {}
     selection.removeRange(range);
   });
 });
