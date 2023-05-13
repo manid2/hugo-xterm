@@ -10,7 +10,7 @@
     ```
  */
 
-.theme--light {
+/*.theme--light {*/
   /* Background */ .bg { color: #272822; background-color: #fafafa; }
   /* PreWrapper */ .chroma { color: #272822; background-color: #fafafa; }
   /* Other */ .chroma .x {  }
@@ -97,7 +97,7 @@
   /* GenericTraceback */ .chroma .gt {  }
   /* GenericUnderline */ .chroma .gl {  }
   /* TextWhitespace */ .chroma .w {  }
-}
+/*}*/
 
 .theme--dark {
   /* Background */ .bg { color: #f8f8f2; background-color: #272822; }
