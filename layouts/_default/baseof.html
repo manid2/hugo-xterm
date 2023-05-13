@@ -62,6 +62,9 @@
       {{- $print := resources.Get "scripts/print.js" | js.Build -}}
       {{- $theme := resources.Get "scripts/theme.js" | js.Build -}}
       {{- $bundle := slice $menu $theme $copy $print | resources.Concat "bundle.js" -}}
+      {{- if hugo.IsProduction -}}
+        {{- $bundle = $bundle | resources.Minify -}}
+      {{- end -}}
       <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
     {{- end -}}
   </body>
