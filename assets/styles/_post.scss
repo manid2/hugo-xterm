@@ -45,10 +45,6 @@
       border-color: t($accent);
     }
 
-    @media print {
-      border-color: tp($accent) !important;
-    }
-
     &::after {
       content: "";
       position: absolute;
@@ -59,10 +55,6 @@
 
       @include themed {
         border-color: t($accent);
-      }
-
-      @media print {
-        border-color: tp($accent) !important;
       }
     }
 
@@ -101,10 +93,6 @@
 
     @include themed {
       color: t($text-brighter);
-    }
-
-    @media print {
-      color: tp($text-brighter) !important;
     }
   }
 

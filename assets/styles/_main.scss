@@ -71,11 +71,6 @@ h3 {
   @include themed {
     border-color: t($accent);
   }
-
-  @media print {
-    color: tp($text);
-    border-color: tp($accent) !important;
-  }
 }
 
 h1 {
@@ -145,10 +140,6 @@ a {
       content: "(" attr(href) ")";
       text-decoration: underline;
       font-style: italic;
-
-      @include themed {
-        color: t($text);
-      }
     }
   }
 }
@@ -165,11 +156,6 @@ code {
   @include themed {
     color: t($code-text);
     background: t($code-background);
-  }
-
-  @media print {
-    color: tp($code-text);
-    background: tp($code-background);
   }
 }
 
@@ -248,9 +234,6 @@ blockquote {
 
   @media print {
     margin: $spacer-large 0;
-    color: tp($text-brighter);
-    background: tp($blockquote-background);
-    border-color: tp($accent);
   }
 
   p {
@@ -297,7 +280,6 @@ td {
 
   @media print {
     padding: $spacer-smallest;
-    border-color: tp($accent) !important;
   }
 }
 
@@ -307,11 +289,6 @@ th {
   @include themed {
     color: t($text-brighter);
     background: t($background-brighter);
-  }
-
-  @media print {
-    color: tp($text-brighter) !important;
-    background: tp($background-brighter) !important;
   }
 }
 

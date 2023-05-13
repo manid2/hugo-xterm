@@ -78,6 +78,7 @@ $current-theme: null;
     .theme--#{$theme-name} & {
       $current-theme: $theme-map !global;
       @content;
+
       $current-theme: null !global;
     }
   }
