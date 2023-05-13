@@ -16,12 +16,14 @@ hiTextBlock.forEach(function (hiTextBlock) {
 
   /* copy code in pre > code blocks */
   copyButton.addEventListener("click", () => {
+    /* Disabled to keep line numbers inline.
     // Use clipboard API if available.
     if ("clipboard" in navigator) {
       navigator.clipboard.writeText(hiText.innerText);
       copyingDone();
       return;
     }
+    */
 
     // Fallback to selection and copy
     const range = document.createRange();
