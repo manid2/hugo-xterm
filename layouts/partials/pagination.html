@@ -29,21 +29,21 @@
 
 {{- if or $pgNextLink $pgPrevLink -}}
   <div class="pagination">
-    <div class="pagination__title">
-      <span class="pagination__title-h">{{ $pgTitle }}</span>
+    <div class="pagination-title">
+      <span class="pagination-title-h">{{ $pgTitle }}</span>
       <hr />
     </div>
-    <div class="buttons center">
+    <div class="buttons center fill">
       {{- if $pgPrevLink }}
         <a href="{{ $pgPrevLink }}" class="button">
-          <span class="icon">←</span>
+          <span class="icon">&lArr;</span>
           <span class="label">{{ $pgPrev }}</span>
         </a>
       {{- end }}
       {{- if $pgNextLink }}
-        <a href="{{ $pgNextLink }}" class="button">
+        <a href="{{ $pgNextLink }}" class="button right">
           <span class="label">{{ $pgNext }}</span>
-          <span class="icon right">→</span>
+          <span class="icon right">&rArr;</span>
         </a>
       {{- end }}
     </div>

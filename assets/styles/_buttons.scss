@@ -46,6 +46,11 @@ a.button {
     }
   }
 
+  /* button content align right */
+  &.right {
+    justify-content: flex-end;
+  }
+
   /* button label */
   .label {
     text-overflow: ellipsis;
