@@ -2,13 +2,22 @@
 
 {{- /* site build info */}}
 <p class="buildinfo">
-  {{- /* site build timestamp */ -}}
+  {{- /* site build timestamp */}}
   <time datetime="{{ now.Format "2006-01-02 15:04:05 IST" }}">Site built on: {{ now.Format "2006-01-02 15:04:05 IST" }}</time>
 
   {{- with site.Params.git.last_commit -}}
-    {{- $commitUrl := printf "https://%s.com/%s/%s/~/commit/%s" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo .hash -}}
-    <span> from commit: </span><code class="gitinfo"><a href="{{ $commitUrl }}">{{ .short_hash }}</a></code>
+    {{- $commitUrl := printf "https://%s.com/%s/%s/~/commit/%s" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo .hash }}
+    <span> from commit: </span>
+
+    {{- /* code */}}
+    <code class="gitinfo">
+      <a href="{{ $commitUrl }}">
+        #{{ .short_hash }} |
+        {{ .subject }}
+      </a>
+    </code>
   {{- end -}}
+  {{/* gitinfo */}}
 </p>
 
 {{- /* site copyright */}}

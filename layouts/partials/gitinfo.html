@@ -15,7 +15,18 @@
 
 {{- with .GitInfo -}}
   {{ $commitUrl := printf "https://%s.com/%s/%s/~/commit/%s" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo .Hash }}
+
+  {{- /* gitinfo */}}
   <p class="gitinfo">
-    {{ $pageName }} last updated on {{ .AuthorDate }} by commit <code class="gitinfo"><a href="{{ $commitUrl }}">{{ .AbbreviatedHash }}</a></code>
+    {{- /* page name */}}
+    {{ $pageName }} last updated on {{ .AuthorDate }} by commit
+    {{- /* code */}}
+    <code class="gitinfo">
+      <a href="{{ $commitUrl }}">
+        #{{ .AbbreviatedHash }} |
+        {{ .Subject }}
+      </a>
+    </code>
   </p>
 {{- end -}}
+{{/* gitinfo */}}
