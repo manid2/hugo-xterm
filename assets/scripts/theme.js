@@ -1,39 +1,29 @@
 const themeDark = "theme--dark";
+const themeLight = "theme--light";
 const bodyClassList = document.body.classList;
-const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-const localStorage = window.localStorage;
+const isSystemDark = window.matchMedia(
+  "(prefers-color-scheme: dark)",
+).matches;
 const themeToggle = document.querySelector(".theme-toggle");
+const preferTheme = "prefer-theme";
 
 // Set theme from local storage
-const localTheme = localStorage.getItem("theme");
-if (localTheme) {
-  bodyClassList.add(localTheme);
-} else {
-  // Set theme from system theme
-  const isSystemDark = systemDark.matches;
-  if (isSystemDark) {
-    bodyClassList.add(themeDark);
-  }
+const localTheme = localStorage.getItem(preferTheme);
+if (localTheme === themeDark) {
+  bodyClassList.add(themeDark);
+} else if (localTheme === themeLight) {
+  bodyClassList.remove(themeDark);
+} else if (isSystemDark) {
+  bodyClassList.add(themeDark);
 }
-
-/* Disable this to prefer user theme toggle button
-// Watch for system theme changes
-systemDark.addEventListener("change", e => {
-  if (e.matches === "dark") {
-    bodyClassList.add(themeDark);
-  } else {
-    bodyClassList.remove(themeDark);
-  }
-});
-*/
 
 // Toggle theme on click
 themeToggle.addEventListener("click", () => {
   if (bodyClassList.contains(themeDark)) {
     bodyClassList.remove(themeDark);
-    localStorage.removeItem("theme");
+    localStorage.setItem(preferTheme, themeLight);
   } else {
     bodyClassList.add(themeDark);
-    localStorage.setItem("theme", themeDark);
+    localStorage.setItem(preferTheme, themeDark);
   }
 });
