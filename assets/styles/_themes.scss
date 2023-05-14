@@ -14,6 +14,20 @@ $blockquote-background: "blockquote-background";
 $button-text: "button-text";
 $button-background: "button-background";
 
+/* Syntax highlighting colors variables */
+$syn-bg: "syn-bg";
+$syn-fg: "syn-fg";
+$syn-kw: "syn-kw";
+$syn-ld: "syn-ld";
+$syn-lse: "syn-lse";
+$syn-n: "syn-n";
+$syn-na: "syn-na";
+
+/* Syntax highlighting common colors based on monokailight and monokai */
+$syn-c: #75715e;
+$syn-op: #f92672;
+$syn-l: #ae81ff;
+
 /* Themes */
 $themes: (
   light: (
@@ -34,6 +48,13 @@ $themes: (
     $blockquote-background: darken($background--light, 2%),
     $button-text: darken($text--light, 5%),
     $button-background: darken($background--light, 5%),
+    $syn-bg: #fafafa,
+    $syn-fg: #272822,
+    $syn-kw: #00a8c8,
+    $syn-ld: #d88200,
+    $syn-lse: #8045ff,
+    $syn-n: #111,
+    $syn-na: #75af00,
   ),
   dark: (
     $accent: $accent--dark,
@@ -53,6 +74,13 @@ $themes: (
     $blockquote-background: lighten($background--dark, 5%),
     $button-text: lighten($text--dark, 10%),
     $button-background: lighten($background--dark, 15%),
+    $syn-bg: #272822,
+    $syn-fg: #f8f8f2,
+    $syn-kw: #66d9ef,
+    $syn-ld: #e6db74,
+    $syn-lse: #ae81ff,
+    $syn-n: #f8f8f2,
+    $syn-na: #a6e22e,
   ),
 );
 

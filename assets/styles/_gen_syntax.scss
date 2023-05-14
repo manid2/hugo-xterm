@@ -1,0 +1,145 @@
+/* Syntax highlighting styles */
+.chroma .ln {
+  white-space: pre;
+  user-select: none;
+  margin-right: 0.4em;
+  padding: 0 0.4em;
+  color: #7f7f7f;
+}
+
+.chroma .line {
+  display: flex;
+}
+
+.chroma .ge {
+  font-style: italic;
+}
+
+.chroma .gs {
+  font-weight: bold;
+}
+
+/* Syntax highlighting colors */
+.chroma .err {
+  color: #960050;
+  background-color: #1e0010;
+}
+
+.chroma .hl {
+  background-color: #ffc;
+}
+
+.bg,
+.chroma {
+  @include themed {
+    color: t($syn-fg);
+    background-color: t($syn-bg);
+  }
+}
+
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .no {
+  @include themed {
+    color: t($syn-kw);
+  }
+}
+
+.chroma .kn,
+.chroma .nt,
+.chroma .o,
+.chroma .ow,
+.chroma .gd {
+  color: $syn-op;
+}
+
+.chroma .n {
+  @include themed {
+    color: t($syn-n);
+  }
+}
+
+.chroma .na,
+.chroma .nc,
+.chroma .nd,
+.chroma .ne,
+.chroma .nf,
+.chroma .nx,
+.chroma .gi {
+  @include themed {
+    color: t($syn-na);
+  }
+}
+
+.chroma .ld,
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss {
+  @include themed {
+    color: t($syn-ld);
+  }
+}
+
+.chroma .l,
+.chroma .se,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  color: $syn-l;
+}
+
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs,
+.chroma .cp,
+.chroma .cpf,
+.chroma .gu {
+  color: $syn-c;
+}
+
+/* Commented to fix linter errors, uncomment when needed.
+.chroma .x,
+.chroma .cl,
+.chroma .nb,
+.chroma .bp,
+.chroma .ni,
+.chroma .fm,
+.chroma .nl,
+.chroma .nn,
+.chroma .py,
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm,
+.chroma .p,
+.chroma .g,
+.chroma .gr,
+.chroma .gh,
+.chroma .go,
+.chroma .gp,
+.chroma .gt,
+.chroma .gl,
+.chroma .w {
+}
+*/
