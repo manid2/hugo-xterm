@@ -87,20 +87,16 @@ button,
     row-gap: $spacer-small;
   }
 
-  /* Buttons centered in the container */
-  &.center {
-    justify-content: center;
-  }
-
   /* Buttons filling the container */
   &.fill {
     button,
     .button,
     a.button {
-      flex-grow: 1;
+      flex: 1 0 0;
 
       @media ($phone) {
         width: 100%;
+        justify-content: center;
       }
     }
   }
