@@ -1,7 +1,6 @@
 /* Buttons */
 button,
-.button,
-a.button {
+.button {
   align-items: center;
   border-radius: $spacer-small;
   border: $spacer-1 solid;
@@ -19,6 +18,15 @@ a.button {
       background: transparentize(t($button-background), 0.6);
       text-decoration: none;
     }
+  }
+
+  @media print {
+    display: none;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
   }
 
   /* button variants */
@@ -68,10 +76,12 @@ a.button {
   }
 }
 
-button,
-.button {
+a.button {
   @media print {
-    display: none;
+    display: initial;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -90,8 +100,7 @@ button,
   /* Buttons filling the container */
   &.fill {
     button,
-    .button,
-    a.button {
+    .button {
       flex: 1 0 0;
 
       @media ($phone) {
