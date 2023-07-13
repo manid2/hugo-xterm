@@ -1,5 +1,5 @@
 .site-footer {
-  margin: $spacer-largest 0;
+  margin-top: $spacer-normal;
   border-top: $spacer-1 solid;
 
   @include themed {
@@ -15,6 +15,7 @@
 .themeinfo,
 .buildinfo {
   font-size: $font-size-smaller;
+  margin: $spacer-small 0;
 }
 
 .copyright {
@@ -29,15 +30,8 @@
   }
 
   .navbar {
-    margin: 0;
-
     &__list {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-
       > li {
-        padding: 0;
         border: none;
       }
     }

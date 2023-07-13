@@ -74,7 +74,7 @@ h3 {
 }
 
 h1 {
-  font-size: $font-size * 2.25;
+  font-size: $font-size * 2;
   border-bottom: $spacer-2 dotted;
 
   @media print, ($phone) {
@@ -100,7 +100,7 @@ h5,
 h6 {
   font-family: $font-family-title;
   font-weight: bold;
-  margin: $spacer-large 0;
+  margin: $spacer-normal 0;
   padding: $spacer-smallest 0;
   width: fit-content;
 
@@ -181,7 +181,7 @@ img {
 figure {
   display: table;
   max-width: 100%;
-  margin: $spacer-large 0;
+  margin: $spacer-normal 0;
 
   &.left {
     margin-right: auto;
@@ -262,18 +262,14 @@ table {
   table-layout: auto;
   border-collapse: collapse;
   width: 100%;
-  margin: $spacer-largest 0;
-
-  @media print {
-    margin: $spacer-normal 0;
-  }
+  margin: $spacer-normal 0;
 }
 
 table,
 th,
 td {
   border: $spacer-1 dashed;
-  padding: $spacer-small;
+  padding: $spacer-smallest;
 
   @include themed {
     border-color: t($accent);
@@ -366,7 +362,7 @@ hr {
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0 $spacer-large;
+  padding: $spacer-small;
   max-width: $container-max-width;
   min-height: 100vh;
 

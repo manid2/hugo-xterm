@@ -1,11 +1,4 @@
 .site-header {
-  margin: $spacer-largest 0;
-  border-bottom: $spacer-1 solid;
-
-  @include themed {
-    border-color: t($accent);
-  }
-
   @media print {
     display: none;
   }
@@ -16,6 +9,15 @@
   font-size: $font-size-smaller;
   font-style: italic;
   margin: $spacer-normal 0;
+}
+
+.breadcrumbs {
+  width: fit-content;
+  border-bottom: $spacer-1 solid;
+
+  @include themed {
+    border-color: t($accent);
+  }
 }
 
 .gitinfo {
@@ -60,10 +62,9 @@
   flex-flow: row wrap;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: $spacer-largest;
-  font-size: larger;
 
   &__first {
+    font-weight: 700;
     display: block;
   }
 
@@ -88,7 +89,7 @@
 
     > li {
       flex: 0 0 auto;
-      padding: $spacer-small $spacer-normal;
+      padding: $spacer-smallest $spacer-small;
       border: $spacer-2 dotted;
       margin-right: -#{$spacer-2};
 

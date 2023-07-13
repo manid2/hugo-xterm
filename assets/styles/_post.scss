@@ -1,33 +1,31 @@
 .post {
   width: 100%;
   text-align: left;
-  margin: $spacer-largest 0;
+  margin: $spacer-normal 0;
 
   @media print {
     margin: 0 0 $spacer-large 0;
   }
 
   &-entries {
-    margin: $spacer-large 0 $spacer-large $spacer-large;
-
     .item {
-      padding: $spacer-smallest;
-      margin: $spacer-small 0;
+      margin-bottom: $spacer-normal;
 
       p {
-        margin: $spacer-small 0;
+        margin: 0;
       }
 
       h2,
       h3 {
         border-style: none;
-        margin: $spacer-small 0;
+        margin: 0;
+        padding: 0;
       }
     }
   }
 
   &-header {
-    margin: $spacer-largest 0;
+    margin: $spacer-normal 0;
 
     @media print {
       margin: 0;
@@ -97,18 +95,10 @@
   }
 
   &-toc {
-    margin: $spacer-largest 0;
+    margin: $spacer-normal 0;
 
     @media print {
       display: none;
-    }
-  }
-
-  &-content {
-    margin: $spacer-largest 0;
-
-    @media print {
-      margin: 0;
     }
   }
 
@@ -125,8 +115,6 @@
   }
 
   &-footer {
-    margin: $spacer-largest 0;
-
     @media print {
       display: none;
     }
@@ -134,7 +122,7 @@
 
   &-support {
     font-style: italic;
-    margin: $spacer-largest 0;
+    margin: $spacer-normal 0;
     border-top: $spacer-1 solid;
 
     @include themed {
