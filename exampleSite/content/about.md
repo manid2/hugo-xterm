@@ -1,6 +1,6 @@
 +++
 title = "About"
-description = "About huog-xterm theme."
+description = "About hugo-xterm theme."
 toc = false
 +++
 

@@ -1,8 +1,12 @@
-baseurl = "/"
+baseurl = "https://manid2.github.io/hugo-xterm/"
 languageCode = "en-us"
-theme = "xterm"
 paginate = 20
 canonifyurls = true
+
+[module]
+  [[module.imports]]
+    path = "github.com/manid2/hugo-xterm"
+    replacements = "github.com/manid2/hugo-xterm -> ../.."
 
 [params]
   centerTheme = true
@@ -18,7 +22,7 @@ canonifyurls = true
 
 [languages]
   [languages.en]
-    title = "Mani Kumar"
+    title = "Hugo Xterm"
     copyright = "© Mani Kumar"
     menuMore = "Show more"
     readMore = "Read more"

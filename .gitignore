@@ -1,5 +1,7 @@
 /public
 /resources
+/exampleSite/public
+/exampleSite/resources
 /node_modules
 .vscode
 .hugo_build.lock
