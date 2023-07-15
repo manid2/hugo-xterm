@@ -1,0 +1,66 @@
+baseurl = "/"
+languageCode = "en-us"
+theme = "xterm"
+paginate = 20
+canonifyurls = true
+
+[params]
+  centerTheme = true
+  showMenuItems = true
+  favicon = "/images/xterm.png"
+  showBreadCrumbs = true
+  toc = true
+  copyrightUserUrl = "https://twitter.com/mani_d2"
+  copyrightUserText = "mani_d2"
+
+[params.twitter]
+  creator = "mani_d2"
+
+[languages]
+  [languages.en]
+    title = "Mani Kumar"
+    copyright = "© Mani Kumar"
+    menuMore = "Show more"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Previous"
+    olderPosts = "Next"
+    missingContentMessage = "Page not found..."
+    missingBackButtonLabel = "Back to home page"
+
+    [languages.en.params.logo]
+      logoText = "Home"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "cv"
+        name = "CV"
+        url = "/cv/"
+
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About"
+        url = "/about/"
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
