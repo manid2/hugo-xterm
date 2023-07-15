@@ -14,8 +14,8 @@ canonifyurls = true
   favicon = "/images/xterm.png"
   showBreadCrumbs = true
   toc = true
-  copyrightUserUrl = "https://twitter.com/mani_d2"
-  copyrightUserText = "mani_d2"
+  copyrightUserUrl = "https://manid2.gitlab.io/"
+  copyrightUserText = "Mani Kumar"
 
 [params.twitter]
   creator = "mani_d2"
