@@ -23,8 +23,8 @@
 {{- /* site copyright */}}
 <div class="copyright">
   <p>
-    {{- if site.Copyright -}}
-      {{ site.Copyright | safeHTML }}
+    {{- if site.Params.Copyright -}}
+      {{ site.Params.Copyright | safeHTML }}
       {{ now.Year }}
     {{- end -}}
 

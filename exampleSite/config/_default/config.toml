@@ -1,5 +1,6 @@
-baseurl = "https://manid2.github.io/hugo-xterm/"
+title = "Hugo Xterm"
 languageCode = "en-us"
+baseurl = "https://manid2.github.io/hugo-xterm/"
 paginate = 20
 canonifyurls = true
 
@@ -21,14 +22,9 @@ canonifyurls = true
   creator = "mani_d2"
 
 [languages]
-  [languages.en]
-    title = "Hugo Xterm"
+  [languages.en.params]
     copyright = "© Mani Kumar"
-    menuMore = "Show more"
-    readMore = "Read more"
     readOtherPosts = "Read other posts"
-    newerPosts = "Previous"
-    olderPosts = "Next"
     missingContentMessage = "Page not found..."
     missingBackButtonLabel = "Back to home page"
 
