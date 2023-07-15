@@ -1,2 +1,4 @@
 github.com/manid2/hugo-xterm v0.0.0-20230715095800-5e6c59a4014f h1:rqkJPX0cOjWuXBxuUaWC6yzou0E+Gzw2HHb6/M4kOSY=
 github.com/manid2/hugo-xterm v0.0.0-20230715095800-5e6c59a4014f/go.mod h1:okco5bnHP7wAs4wCdFM1CGqvOZf5Wpj39kHDIZT4Vds=
+github.com/manid2/hugo-xterm v0.0.0-20230715205645-468f278c002c h1:SjaKPRMTk/kZ2amsVNLiCqp73z2QU8whOYIC2C6C/7w=
+github.com/manid2/hugo-xterm v0.0.0-20230715205645-468f278c002c/go.mod h1:GfVYdHvhSC/U07C3fOHLl/k2hzc+uQh0oRuy4q7Or3A=
