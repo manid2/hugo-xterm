@@ -1,12 +1,16 @@
-{{- $gitRepoUrl := "https://github.com/manid2/hugo-xterm/" -}}
-
 {{- /* site build info */}}
 <p class="buildinfo">
   {{- /* site build timestamp */}}
   <time datetime="{{ now.Format "2006-01-02 15:04:05 IST" }}">Site built on: {{ now.Format "2006-01-02 15:04:05 IST" }}</time>
 
   {{- with site.Params.git.last_commit -}}
-    {{- $commitUrl := printf "https://%s.com/%s/%s/-/commit/%s" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo .hash }}
+    {{- $commitUrl := "" -}}
+    {{- if (isset site.Params "git_info") -}}
+      {{- $git_host := site.Params.git_info.host -}}
+      {{- $git_user := site.Params.git_info.user -}}
+      {{- $git_repo := site.Params.git_info.repo -}}
+      {{ $commitUrl = printf "https://%s.com/%s/%s/-/commit/%s" $git_host $git_user $git_repo .hash }}
+    {{- end -}}
     <span> from commit: </span>
 
     {{- /* code */}}
@@ -46,6 +50,13 @@
     <ul class="navbar__list">
       <li><a href="/posts/index.xml">RSS</a></li>
       <li><span>&nbsp;~~&nbsp;</span><a href="/sitemap.xml">Sitemap</a></li>
+      {{- $gitRepoUrl := "" -}}
+      {{- if (isset site.Params "git_info") -}}
+        {{- $git_host := site.Params.git_info.host -}}
+        {{- $git_user := site.Params.git_info.user -}}
+        {{- $git_repo := site.Params.git_info.repo -}}
+        {{ $gitRepoUrl = printf "https://%s.com/%s/%s" $git_host $git_user $git_repo }}
+      {{- end -}}
       <li><span>&nbsp;~~&nbsp;</span><a href="{{ $gitRepoUrl }}">Source</a></li>
     </ul>
   </nav>

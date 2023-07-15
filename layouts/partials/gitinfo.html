@@ -14,7 +14,13 @@
 {{- end -}}
 
 {{- with .GitInfo -}}
-  {{ $commitUrl := printf "https://%s.com/%s/%s/-/commit/%s" site.Data.gitinfo.host site.Data.gitinfo.user site.Data.gitinfo.repo .Hash }}
+  {{- $commitUrl := "" -}}
+  {{- if (isset site.Params "git_info") -}}
+    {{- $git_host := site.Params.git_info.host -}}
+    {{- $git_user := site.Params.git_info.user -}}
+    {{- $git_repo := site.Params.git_info.repo -}}
+    {{ $commitUrl = printf "https://%s.com/%s/%s/-/commit/%s" $git_host $git_user $git_repo .Hash }}
+  {{- end -}}
 
   {{- /* gitinfo */}}
   <p class="gitinfo">
