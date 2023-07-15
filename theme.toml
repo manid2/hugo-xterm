@@ -1,13 +1,27 @@
-name = "terminal"
-license = "MIT"
-licenselink = "https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md"
-description = "A simple, retro theme for Hugo."
-homepage = "https://github.com/panr/hugo-theme-terminal/"
-tags = ["blog", "clean", "customizable", "dark", "highlighting", "minimal", "monotone", "multilingual", "personal", "responsive", "simple", "technical", "retro"]
-features = ["blog", "shortcode", "syntax highlighting"]
-min_version = 0.90
+name = "xterm" 
+license = "GPL-3.0"
+licenselink = "https://github.com/manid2/hugo-xterm/blob/main/LICENSE"
+description = "Hugo theme for terminal users."
+homepage = "https://github.com/manid2/hugo-xterm/"
+tags = [
+  "blog", 
+  "contact",
+  "dark", 
+  "light",
+  "minimal",
+  "personal",
+  "portfolio",
+  "responsive" 
+]
+features = [
+  "blog",
+  "clean",
+  "minimal",
+  "portfolio"
+]
+min_version = 0.110
 
 [author]
-  name = "panr"
-  homepage = "https://radoslawkoziel.pl"
-  twitter = "https://twitter.com/panr"
+  name = "Mani Kumar"
+  homepage = "https://manid2.gitlab.io/"
+  twitter = "https://twitter.com/mani_d2"
