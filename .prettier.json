@@ -1,0 +1,14 @@
+{
+  "printWidth": 78,
+  "trailingComma": "all",
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "printWidth": 180,
+        "parser": "go-template"
+      }
+    }
+  ]
+}

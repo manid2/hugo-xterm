@@ -18,5 +18,5 @@ Features
 * Slides using [reveal.js][1].
 * Designed for blog and personal websites for professionals.
 * Support for online CV and documentation.
- 
+
 [1]: https://revealjs.com/

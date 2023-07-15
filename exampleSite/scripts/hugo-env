@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+HUGOxPARAMSxGITxLAST_COMMITxHASH=$(git log -1 --format=%H)
+HUGOxPARAMSxGITxLAST_COMMITxSHORT_HASH=$(git log -1 --format=%h)
+HUGOxPARAMSxGITxLAST_COMMITxSUBJECT=$(git log -1 --format=%s)
+
+export HUGOxPARAMSxGITxLAST_COMMITxHASH
+export HUGOxPARAMSxGITxLAST_COMMITxSHORT_HASH
+export HUGOxPARAMSxGITxLAST_COMMITxSUBJECT
+
+export TZ='Asia/Kolkata'

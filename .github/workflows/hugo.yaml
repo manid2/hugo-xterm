@@ -26,7 +26,21 @@ defaults:
     shell: bash
 
 jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Install test dependencies
+        run: |
+          sudo apt-get update && \
+          sudo apt-get -y install npm tzdata && \
+          npm ci
+
+      - name: Run tests
+        run: |
+          npm run test
+
   build:
+    needs: test
     runs-on: ubuntu-22.04
     env:
       HUGO_VERSION: 0.115.2
@@ -53,6 +67,7 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          source ./exampleSite/scripts/hugo-env && \
           hugo --source exampleSite
 
       - name: Upload artifact

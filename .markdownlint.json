@@ -1,0 +1,57 @@
+{
+  "default": true,
+  "heading-style": {
+    "style": "setext_with_atx"
+  },
+  "hr-style": {
+    "style": "---"
+  },
+  "code-block-style": {
+    "style": "fenced"
+  },
+  "code-fence-style": {
+    "style": "backtick"
+  },
+  "no-hard-tabs": {
+    "code_blocks": false
+  },
+  "fenced-code-language": {
+    "allowed_languages": [
+      "bash",
+      "c",
+      "cpp",
+      "css",
+      "html",
+      "js",
+      "json",
+      "lua",
+      "md",
+      "py",
+      "scss",
+      "sh",
+      "text",
+      "toml",
+      "vim",
+      "xml",
+      "yml",
+      "zsh"
+    ],
+    "language_only": true
+  },
+  "emphasis-style": {
+    "style": "underscore"
+  },
+  "strong-style": {
+    "style": "underscore"
+  },
+  "ul-style": {
+    "style": "sublist"
+  },
+  "line-length": {
+    "line_length": 78,
+    "heading_line_length": 72,
+    "code_block_line_length": 78,
+    "tables": false,
+    "strict": true
+  }
+}

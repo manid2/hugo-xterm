@@ -1,0 +1,62 @@
+{
+  "name": "hugo-xterm",
+  "version": "1.0.0",
+  "description": "Hugo theme for terminal users.",
+  "main": "index.js",
+  "scripts": {
+    "g-fmt": "prettier --config '.prettier.json' --write 'layouts/**/*.html'",
+    "g-fmt-check": "prettier --config '.prettier.json' --check 'layouts/**/*.html'",
+    "j-fmt": "prettier --config '.prettier.json' --write 'assets/scripts/*.js'",
+    "j-fmt-check": "prettier --config '.prettier.json' --check 'assets/scripts/*.js'",
+    "j-lint": "eslint 'assets/scripts/*.js'",
+    "j-lint-fix": "eslint --fix 'assets/scripts/*.js'",
+    "m-links-check": "linkinator --config '.linkinator.config.json' 'README.md' 'exampleSite/content/**/*.md'",
+    "m-lint": "markdownlint --config '.markdownlint.json' 'README.md' 'exampleSite/content/**/*.md'",
+    "s-fmt": "prettier --config '.prettier.json' --write 'assets/styles/*.scss'",
+    "s-fmt-check": "prettier --config '.prettier.json' --check 'assets/styles/*.scss'",
+    "s-lint": "stylelint --config '.stylelintrc.json' 'assets/styles/*.scss'",
+    "s-lint-fix": "stylelint --config '.stylelintrc.json' --fix 'assets/styles/*.scss'",
+    "format": "npm run g-fmt && npm run j-fmt && npm run s-fmt",
+    "format-check": "npm run g-fmt-check && npm run j-fmt-check && npm run s-fmt-check",
+    "lint": "npm run j-lint && npm run m-lint && npm run s-lint",
+    "lint-fix": "npm run j-lint-fix && npm run s-lint-fix",
+    "test": "npm run format-check && npm run lint && npm run m-links-check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/manid2/hugo-xterm/"
+  },
+  "keywords": [
+    "blog",
+    "cv",
+    "dark-theme",
+    "docs",
+    "hugo",
+    "hugo-theme",
+    "light-theme",
+    "minimal",
+    "personal-website",
+    "portfolio-website",
+    "slides"
+  ],
+  "author": "Mani Kumar",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://gitlab.com/manid2/hugo-xterm/issues"
+  },
+  "homepage": "https://manid2.github.io/hugo-xterm/",
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "linkinator": "^4.1.2",
+    "markdownlint-cli": "^0.33.0",
+    "prettier": "^2.8.8",
+    "prettier-plugin-go-template": "^0.0.13",
+    "stylelint": "^15.6.1",
+    "stylelint-config-standard-scss": "^9.0.0"
+  }
+}
