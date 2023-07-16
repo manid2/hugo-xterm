@@ -9,4 +9,3 @@ export HUGOxPARAMSxGITxLAST_COMMITxSHORT_HASH
 export HUGOxPARAMSxGITxLAST_COMMITxSUBJECT
 
 export TZ='Asia/Kolkata'
-export HUGO_MODULE_REPLACEMENTS="github.com/manid2/hugo-xterm -> ../.."
