@@ -9,7 +9,8 @@
 
   &-entries {
     .item {
-      margin-bottom: $spacer-normal;
+      padding-bottom: $spacer-small;
+      margin-bottom: $spacer-large;
 
       p {
         margin: 0;

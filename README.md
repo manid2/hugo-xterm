@@ -10,7 +10,8 @@ Local development
 -----------------
 
 ```bash
-HUGO_MODULE_REPLACEMENTS="github.com/manid2/hugo-xterm -> ../.." \
+# add to go.mod for local development
+# replace github.com/manid2/hugo-xterm => ../hugo-xterm
 hugo server --source exampleSite
 ```
 
