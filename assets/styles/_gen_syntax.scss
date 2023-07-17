@@ -2,9 +2,12 @@
 .chroma .ln {
   white-space: pre;
   user-select: none;
-  margin-right: 0.4em;
   padding: 0 0.4em;
   color: #7f7f7f;
+}
+
+.chroma .cl {
+  padding: 0 0.4em;
 }
 
 .chroma .line {
@@ -119,7 +122,6 @@
 
 /* Commented to fix linter errors, uncomment when needed.
 .chroma .x,
-.chroma .cl,
 .chroma .nb,
 .chroma .bp,
 .chroma .ni,

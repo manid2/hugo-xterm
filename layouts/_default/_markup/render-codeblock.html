@@ -1,5 +1,5 @@
 {{- $lang  := .Attributes.lang | default .Type -}}
-{{- $file  := .Attributes.file | default (printf "code-%d.%s" .Ordinal $lang) -}}
+{{- $file  := .Attributes.file -}}
 
 {{- /* TODO: Add div toolbar */}}
 <div class="highlight-wrapper">
@@ -9,10 +9,13 @@
       <span class="name">{{ $lang }}</span>
     </span>
 
-    <span class="item">
-      <span class="label">File:</span>
-      <span class="name">{{ $file }}</span>
-    </span>
+    {{- with $file }}
+      <span class="item">
+        <span class="label">File:</span>
+        <span class="name">{{ . }}</span>
+      </span>
+    {{- end }}
+
 
     <button class="item right outline brighter hide js-btn-copy-code">Copy</button>
   </div>
