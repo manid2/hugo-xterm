@@ -18,42 +18,26 @@
       {{- /* list content */}}
       <h2>See</h2>
 
-      {{- $paginator := .Paginate .Pages -}}
       {{- /* list items */}}
-      <ul class="post-entries">
-        {{- range $paginator.Pages }}
-          <li>
-            <div class="item">
+      {{- if eq .Params.list_type "docs_list" }}
+        {{- $paginator := .Paginate .Pages -}}
+        <ul>
+          {{- range $paginator.Pages }}
+            <li>
               {{- /* list item */ -}}
               <a href="{{ .Permalink }}">
                 {{- if .Title -}}
-                  <h2>
-                    {{- .Title | markdownify -}}
-                  </h2>
+                  {{- .Title | markdownify -}}
                 {{- else -}}
                   {{- .File.TranslationBaseName | markdownify -}}
                 {{- end -}}
               </a>
-
-              {{- if and (not .IsSection) (or .Date .Params.Author) -}}
-                <p class="post-meta">
-                  {{- with .Date -}}
-                    <span>{{ .Format "2006-01-02" -}}</span>
-                  {{- end -}}
-
-                  {{- with .Params.Author -}}
-                    <span> | {{ . }}</span>
-                  {{- end -}}
-                </p>
-              {{- end -}}
-
-              {{- with .Params.Description -}}
-                <p class="post-description">{{ . }}</p>
-              {{- end -}}
-            </div>
-          </li>
-        {{- end }}
-      </ul>
+            </li>
+          {{- end -}}
+        </ul>
+      {{- else }}
+        {{- partial "post-entries.html" . -}}
+      {{- end }}
     </div>
 
     <footer class="post-footer">
