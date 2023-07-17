@@ -33,7 +33,7 @@
     {{- end -}}
 
     {{- if site.Params.CopyrightUserUrl -}}
-      <span>&nbsp;~~&nbsp;</span>
+      <span>&nbsp;</span>
       {{- /* site copyright url */ -}}
       <a href="{{ site.Params.CopyrightUserUrl }}">
         {{- if site.Params.CopyrightUserText -}}
@@ -49,7 +49,7 @@
   <nav class="navbar">
     <ul class="navbar__list">
       <li><a href="/posts/index.xml">RSS</a></li>
-      <li><span>&nbsp;~~&nbsp;</span><a href="/sitemap.xml">Sitemap</a></li>
+      <li><a href="/sitemap.xml">Sitemap</a></li>
       {{- $gitRepoUrl := "" -}}
       {{- if (isset site.Params "git_info") -}}
         {{- $git_host := site.Params.git_info.host -}}
@@ -57,7 +57,7 @@
         {{- $git_repo := site.Params.git_info.repo -}}
         {{ $gitRepoUrl = printf "https://%s.com/%s/%s" $git_host $git_user $git_repo }}
       {{- end -}}
-      <li><span>&nbsp;~~&nbsp;</span><a href="{{ $gitRepoUrl }}">Source</a></li>
+      <li><a href="{{ $gitRepoUrl }}">Source</a></li>
     </ul>
   </nav>
 </div>
