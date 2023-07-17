@@ -6,6 +6,11 @@
   <div class="navbar__first">
     <ul class="navbar__list">
       <li><a href="{{ $logoLink }}">{{ $logoText }}</a></li>
+      <li>
+        <button class="theme-toggle transparent">
+          {{- partial "theme-icon.html" . -}}
+        </button>
+      </li>
     </ul>
   </div>
 
