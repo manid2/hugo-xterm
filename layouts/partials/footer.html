@@ -14,11 +14,16 @@
     <span> from commit: </span>
 
     {{- /* code */}}
-    <code class="gitinfo">
-      <a href="{{ $commitUrl }}">
+    <code>
+      {{- if eq $commitUrl "" }}
         #{{ .short_hash }} |
         {{ .subject }}
-      </a>
+      {{- else }}
+        <a href="{{ $commitUrl }}">
+          #{{ .short_hash }} |
+          {{ .subject }}
+        </a>
+      {{- end }}
     </code>
   {{- end -}}
   {{/* gitinfo */}}
@@ -57,7 +62,10 @@
         {{- $git_repo := site.Params.git_info.repo -}}
         {{ $gitRepoUrl = printf "https://%s.com/%s/%s" $git_host $git_user $git_repo }}
       {{- end -}}
-      <li><a href="{{ $gitRepoUrl }}">Source</a></li>
+
+      {{- if not (eq $gitRepoUrl "") }}
+        <li><a href="{{ $gitRepoUrl }}">Source</a></li>
+      {{- end }}
     </ul>
   </nav>
 </div>

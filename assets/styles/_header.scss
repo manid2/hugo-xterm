@@ -14,8 +14,12 @@
 }
 
 .gitinfo {
+  margin: $spacer-normal 0;
+  border-top: $spacer-1 solid;
+
   @include themed {
     color: t($text-duller);
+    border-color: t($accent);
   }
 
   @media print {

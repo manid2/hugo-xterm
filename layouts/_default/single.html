@@ -50,14 +50,19 @@
       </div>
     {{- end }}
 
-    {{- if eq .Type "posts" }}
-      <footer class="post-footer">
+
+    <footer class="post-footer">
+      {{- if .GitInfo -}}
+        {{- partial "gitinfo.html" . -}}
+      {{- end -}}
+
+      {{- if eq .Type "posts" }}
         {{- if templates.Exists "partials/support-me.html" -}}
           {{- partial "support-me.html" . -}}
         {{- end -}}
         {{- partial "pagination.html" . -}}
         {{- partial "comments.html" . -}}
-      </footer>
-    {{- end }}
+      {{- end }}
+    </footer>
   </article>
 {{- end -}}

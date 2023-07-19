@@ -31,10 +31,6 @@
 
           {{- /* site main */}}
           <main class="site-main">
-            {{- if .GitInfo -}}
-              {{- partial "gitinfo.html" . -}}
-            {{- end -}}
-
             {{- block "main" . -}}
               {{ if .Title -}}
                 <h1 class="post-title">{{ .Title | plainify }}</h1>

@@ -1,9 +1,5 @@
 {{- $pageName := "Page" -}}
-{{- if .IsHome -}}
-  {{- $pageName = "Home page" -}}
-{{- else if .IsSection -}}
-  {{- $pageName = print .Title " list" | plainify -}}
-{{- else if eq .Type "posts" -}}
+{{- if eq .Type "posts" -}}
   {{- $pageName = print "Article" | plainify -}}
 {{- else -}}
   {{- with .File -}}
@@ -23,16 +19,23 @@
   {{- end -}}
 
   {{- /* gitinfo */}}
-  <p class="gitinfo">
-    {{- /* page name */}}
-    {{ $pageName }} last updated on {{ .AuthorDate }} by commit
-    {{- /* code */}}
-    <code class="gitinfo">
-      <a href="{{ $commitUrl }}">
-        #{{ .AbbreviatedHash }} |
-        {{ .Subject }}
-      </a>
-    </code>
-  </p>
+  <div class="gitinfo">
+    <p>
+      {{- /* page name */}}
+      {{ $pageName }} last updated on {{ .AuthorDate }} by commit
+      {{- /* code */}}
+      <code>
+        {{- if eq $commitUrl "" }}
+          #{{ .AbbreviatedHash }} |
+          {{ .Subject }}
+        {{- else }}
+          <a href="{{ $commitUrl }}">
+            #{{ .AbbreviatedHash }} |
+            {{ .Subject }}
+          </a>
+        {{- end }}
+      </code>
+    </p>
+  </div>
 {{- end -}}
 {{/* gitinfo */}}

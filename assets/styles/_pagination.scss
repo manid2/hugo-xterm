@@ -1,6 +1,10 @@
 .pagination {
   margin: $spacer-largest 0;
 
+  @media print {
+    display: none;
+  }
+
   &-title {
     display: flex;
     text-align: center;
