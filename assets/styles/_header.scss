@@ -70,12 +70,20 @@
 
     > li {
       flex: 0 0 auto;
-      padding: $spacer-smallest $spacer-small;
-      border: $spacer-2 dotted;
-      margin-right: -#{$spacer-2};
+      padding-left: $spacer-small;
+      display: flex;
+      justify-content: center;
+    }
 
-      @include themed {
-        border-color: t($accent);
+    &.borders {
+      > li {
+        padding: $spacer-smallest $spacer-small;
+        border: $spacer-2 dotted;
+        margin-right: $spacer-2 * -1;
+
+        @include themed {
+          border-color: t($accent);
+        }
       }
     }
   }

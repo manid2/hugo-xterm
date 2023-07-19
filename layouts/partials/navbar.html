@@ -4,7 +4,7 @@
 {{- /* navbar */}}
 <nav class="navbar">
   <div class="navbar__first">
-    <ul class="navbar__list">
+    <ul class="navbar__list borders">
       <li><a href="{{ $logoLink }}">{{ $logoText }}</a></li>
       <li>
         <button class="theme-toggle transparent">
@@ -19,7 +19,7 @@
 
   {{- if site.Params.showMenuItems }}
     <div class="navbar__last">
-      <ul class="navbar__list menu--desktop">
+      <ul class="navbar__list borders menu--desktop">
         {{- range site.Menus.main -}}
           {{- if not .HasChildren }}
             <li><a href="{{ .URL }}">{{ .Name }}</a></li>
