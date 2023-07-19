@@ -78,6 +78,7 @@ h1 {
   border-bottom: $spacer-2 dotted;
 
   @media print, ($phone) {
+    margin-top: 0;
     font-size: $font-size * 2;
   }
 }
@@ -100,8 +101,7 @@ h5,
 h6 {
   font-family: $font-family-title;
   font-weight: bold;
-  margin: $spacer-normal 0;
-  padding: $spacer-smallest 0;
+  margin: $spacer-large2 0 $spacer-normal 0;
   width: fit-content;
 
   @media print {
@@ -181,7 +181,7 @@ img {
 figure {
   display: table;
   max-width: 100%;
-  margin: $spacer-normal 0;
+  margin: $spacer-large 0;
 
   &.left {
     margin-right: auto;
@@ -223,7 +223,7 @@ figure {
 
 blockquote {
   border-left: $spacer-smallest solid;
-  margin: $spacer-largest 0;
+  margin: $spacer-large 0;
   padding: $spacer-normal $spacer-normal $spacer-normal $spacer-large;
   font-style: italic;
 
@@ -262,7 +262,7 @@ table {
   table-layout: auto;
   border-collapse: collapse;
   width: 100%;
-  margin: $spacer-normal 0;
+  margin: $spacer-large 0;
 }
 
 table,

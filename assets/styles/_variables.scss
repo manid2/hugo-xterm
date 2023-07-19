@@ -17,7 +17,8 @@ $spacer-smallest: $spacer-2 * 2;
 $spacer-small: $spacer-smallest * 2;
 $spacer-normal: $spacer-small * 2;
 $spacer-large: $spacer-small * 3;
-$spacer-largest: $spacer-normal * 3;
+$spacer-large2: $spacer-small * 4;
+$spacer-largest: $spacer-small * 6;
 
 /* Colors */
 $blue: hsl(

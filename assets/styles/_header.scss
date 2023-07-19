@@ -1,9 +1,3 @@
-.site-header {
-  @media print {
-    display: none;
-  }
-}
-
 .gitinfo,
 .breadcrumbs {
   font-size: $font-size-smaller;
@@ -13,7 +7,6 @@
 .breadcrumbs {
   width: fit-content;
   border-bottom: $spacer-1 solid;
-  margin-top: $spacer-large;
 
   @include themed {
     border-color: t($accent);
@@ -33,19 +26,6 @@
         display: none;
       }
     }
-  }
-}
-
-.toolbar {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: $spacer-normal 0;
-
-  .item {
-    padding: $spacer-smallest $spacer-small;
-    margin-right: $spacer-small;
   }
 }
 
@@ -98,5 +78,16 @@
         border-color: t($accent);
       }
     }
+  }
+}
+
+.site-header {
+  .navbar {
+    margin-bottom: $spacer-large2;
+    font-size: $font-size-larger;
+  }
+
+  @media print {
+    display: none;
   }
 }

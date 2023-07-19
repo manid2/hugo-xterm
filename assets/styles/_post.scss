@@ -39,6 +39,7 @@
     position: relative;
     border-bottom: $border-title;
     width: 100%;
+    padding: $spacer-smallest 0;
 
     @include themed {
       border-color: t($accent);
@@ -119,6 +120,7 @@
     @media print {
       display: none;
     }
+    margin: $spacer-largest 0;
   }
 
   &-support {
