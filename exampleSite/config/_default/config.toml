@@ -20,6 +20,12 @@ canonifyurls = true
 [params.twitter]
   creator = "mani_d2"
 
+[params.site_verification]
+  google = "dRxlQUCTcreupAiAU9R-WcImzIL5ZkXVFT4PVPDJl6Y"
+  bing = "F82FFC97299503C8B6340178FE5F1EFA"
+  yandex = "146d77656fc95385"
+  naver = "e3b93136c43487a12e31584cf30306a269137968"
+
 [languages]
   [languages.en.params]
     copyright = "© Mani Kumar"
