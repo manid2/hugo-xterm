@@ -30,6 +30,11 @@
         display: none;
       }
     }
+
+    p {
+      margin: $spacer-small 0 0 0;
+      font-size: $font-size-smaller;
+    }
   }
 }
 

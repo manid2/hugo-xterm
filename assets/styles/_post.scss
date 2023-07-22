@@ -39,7 +39,7 @@
     position: relative;
     border-bottom: $border-title;
     width: 100%;
-    padding: $spacer-smallest 0;
+    padding-bottom: $spacer-smallest;
 
     @include themed {
       border-color: t($accent);
@@ -118,6 +118,10 @@
 
   &-footer {
     margin: $spacer-largest 0;
+
+    @media print {
+      margin: $spacer-small 0 0 0;
+    }
   }
 
   &-support {
