@@ -1,11 +1,17 @@
 /* Fonts */
-$font-family: arial, helvetica, verdana, roboto, sans-serif;
-$font-family-mono: ubuntu mono, monaco, consolas, monospace;
-$font-family-title: "Times New Roman", garamond, georgia, "Roboto Serif",
-  serif;
+$font-family-title: "Roboto Slab", "Times New Roman", garamond, serif;
+$font-family-normal: "Fira Sans", arial, helvetica, sans-serif;
+$font-family-mono: "Ubuntu Mono", monaco, consolas, monospace;
+
+/* Font weights */
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 500;
+
+/* Font sizes */
 $font-size: 1rem;
 $font-size-smaller: $font-size - 0.125;
-$font-size-larger: $font-size + 0.225;
+$font-size-larger: $font-size + 0.125;
 
 /* Layouts */
 $container-max-width: 864px;

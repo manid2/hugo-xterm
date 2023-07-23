@@ -11,7 +11,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: $font-family;
+  font-family: $font-family-normal;
+  font-weight: $font-normal;
   font-size: $font-size;
   line-height: 1.54;
   letter-spacing: -0.02em;
@@ -95,7 +96,7 @@ h4,
 h5,
 h6 {
   font-family: $font-family-title;
-  font-weight: bold;
+  font-weight: $font-bold;
   margin: $spacer-large2 0 $spacer-normal 0;
   width: fit-content;
 
@@ -283,7 +284,7 @@ td {
 }
 
 th {
-  font-weight: bold;
+  font-weight: $font-bold;
 
   @include themed {
     color: t($text-brighter);

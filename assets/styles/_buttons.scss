@@ -6,7 +6,7 @@ button,
   border: $spacer-1 solid;
   cursor: pointer;
   display: flex;
-  font-weight: bold;
+  font-weight: $font-bold;
   padding: $spacer-small $spacer-normal;
   text-align: center;
 
@@ -32,7 +32,7 @@ button,
   /* button variants */
   &.outline,
   &.transparent {
-    font-weight: normal;
+    font-weight: $font-normal;
     background: none;
 
     @include themed {
