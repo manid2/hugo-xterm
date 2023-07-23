@@ -1,0 +1,17 @@
+{{- $name := .Get "name" -}}
+{{- $date := .Get "date" -}}
+{{- $title := .Get "title" -}}
+{{- $location := .Get "location" -}}
+
+
+<div class="cv-experience">
+  <div class="row lead">
+    <span>{{ $name }}</span>
+    <span>{{ $date }}</span>
+  </div>
+
+  <div class="row sub">
+    <span>{{ $title }}</span>
+    <span>{{ $location }}</span>
+  </div>
+</div>

@@ -405,3 +405,79 @@ hr {
 .hide {
   display: none;
 }
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  &.start {
+    gap: $spacer-small;
+    justify-content: flex-start;
+  }
+}
+
+.col {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.row,
+.col {
+  &.lead {
+    font-weight: $font-bold;
+    font-size: $font-size-larger;
+  }
+
+  &.bold {
+    font-weight: $font-bold;
+  }
+
+  &.sub {
+    font-weight: $font-light;
+    font-style: italic;
+  }
+}
+
+.cv-title {
+  display: block;
+  border: none;
+  margin: 0 0 $spacer-smallest 0;
+}
+
+.cv-contacts {
+  display: block;
+  text-align: end;
+  margin: 0 0 $spacer-smallest 0;
+}
+
+.cv-experience {
+  margin: $spacer-small 0;
+  border-bottom: 1px solid;
+
+  @media print {
+    break-after: avoid-page;
+    break-inside: avoid-page;
+  }
+}
+
+.cv-skills {
+  margin: 0;
+  border: none;
+  width: auto;
+
+  .key {
+    padding: 0 $spacer-smallest 0 0;
+  }
+
+  .val {
+    padding: 0 0 0 $spacer-smallest;
+    font-weight: $font-bold;
+  }
+
+  .key,
+  .val {
+    border: none;
+  }
+}
