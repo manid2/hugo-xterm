@@ -5,6 +5,29 @@ Hugo theme designed for reading and printing text with dark and light modes.
 
 Demo example site [manid2.github.io/hugo-xterm][7].
 
+[![Hugo][hugo_ver_img]][hugo_v0110]
+[![LICENSE][hx_lic_img]][hx_lic_link]
+[![Build][hx_ci_build_img]][hx_ci_build_link]
+
+Screenshots
+-----------
+
+Dark mode:
+
+![Hugo Xterm Dark][hx_ss_dark]
+
+Light mode:
+
+![Hugo Xterm Light][hx_ss_light]
+
+CV template:
+
+![Hugo Xterm CV][hx_ss_cv]
+
+Features:
+
+![Hugo Xterm features][hx_ss_feat]
+
 Features
 --------
 
@@ -84,7 +107,7 @@ features from popular themes and websites as listed below:
 License
 -------
 
-[GNU General Public License v3.0][11]
+[GNU General Public License v3.0][hx_lic_link]
 
 [1]: https://github.com/panr/hugo-theme-terminal
 [2]: https://github.com/adityatelange/hugo-PaperMod
@@ -96,4 +119,17 @@ License
 [8]: https://en.wikipedia.org/wiki/HSL_and_HSV
 [9]: https://github.com/alecthomas/chroma/
 [10]: https://manid2.gitlab.io/cv/
-[11]: https://github.com/manid2/hugo-xterm/blob/main/LICENSE
+
+[hx_ci_build_img]: https://img.shields.io/github/actions/workflow/status/manid2/hugo-xterm/hugo.yaml?logo=github "Hugo Xterm build status badge"
+[hx_ci_build_link]: https://github.com/manid2/hugo-xterm/actions
+
+[hx_lic_img]: https://img.shields.io/github/license/manid2/hugo-xterm?logo=gnu&logoColor=black&label=License&labelColor=lightcyan "Hugo Xterm license badge"
+[hx_lic_link]: https://github.com/manid2/hugo-xterm/blob/main/LICENSE
+
+[hugo_ver_img]: https://img.shields.io/badge/Hugo%20Extended-%3E%3D%20v0.110.0-blue.svg?style=flat&logo=hugo&logoColor=white&label=Hugo%20Extended&labelColor=grey "Hugo Extended >= v0.110.0"
+[hugo_v0110]: https://github.com/gohugoio/hugo/releases/tag/v0.110.0
+
+[hx_ss_dark]: static/screenshots/hugo-xterm-ss-01-dark.png "Hugo Xterm dark mode screenshot"
+[hx_ss_light]: static/screenshots/hugo-xterm-ss-02-light.png "Hugo Xterm light mode screenshot"
+[hx_ss_cv]: static/screenshots/hugo-xterm-ss-03-cv.png "Hugo Xterm CV template screenshot"
+[hx_ss_feat]: static/screenshots/hugo-xterm-ss-04-features.png "Hugo Xterm features screenshot"
