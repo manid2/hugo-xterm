@@ -2,7 +2,13 @@ name = "xterm"
 license = "GPL-3.0"
 licenselink = "https://github.com/manid2/hugo-xterm/blob/main/LICENSE"
 description = "Hugo theme for terminal users."
-homepage = "https://manid2.github.io/hugo-xterm/"
+
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/manid2/hugo-xterm/"
+
+# Demo site.
+demosite = "https://manid2.github.io/hugo-xterm/"
+
 tags = [
   "blog", 
   "contact",
@@ -13,15 +19,24 @@ tags = [
   "portfolio",
   "responsive" 
 ]
+
 features = [
   "blog",
   "clean",
   "minimal",
   "portfolio"
 ]
+
 min_version = 0.110
 
 [author]
   name = "Mani Kumar"
   homepage = "https://manid2.gitlab.io/"
   twitter = "https://twitter.com/mani_d2"
+
+# Starter code taken from this theme 
+[original]
+  name = "terminal"
+  author = "panr"
+  homepage = "https://radoslawkoziel.pl"
+  repo = "https://github.com/panr/hugo-theme-terminal"
