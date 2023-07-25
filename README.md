@@ -129,7 +129,7 @@ License
 [hugo_ver_img]: https://img.shields.io/badge/Hugo%20Extended-%3E%3D%20v0.110.0-blue.svg?style=flat&logo=hugo&logoColor=white&label=Hugo%20Extended&labelColor=grey "Hugo Extended >= v0.110.0"
 [hugo_v0110]: https://github.com/gohugoio/hugo/releases/tag/v0.110.0
 
-[hx_ss_dark]: static/screenshots/hugo-xterm-ss-01-dark.png "Hugo Xterm dark mode screenshot"
-[hx_ss_light]: static/screenshots/hugo-xterm-ss-02-light.png "Hugo Xterm light mode screenshot"
-[hx_ss_cv]: static/screenshots/hugo-xterm-ss-03-cv.png "Hugo Xterm CV template screenshot"
-[hx_ss_feat]: static/screenshots/hugo-xterm-ss-04-features.png "Hugo Xterm features screenshot"
+[hx_ss_dark]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-01-dark.png "Hugo Xterm dark mode screenshot"
+[hx_ss_light]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-02-light.png "Hugo Xterm light mode screenshot"
+[hx_ss_cv]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-03-cv.png "Hugo Xterm CV template screenshot"
+[hx_ss_feat]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-04-features.png "Hugo Xterm features screenshot"
