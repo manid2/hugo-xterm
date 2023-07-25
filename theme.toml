@@ -1,7 +1,7 @@
 name = "xterm" 
 license = "GPL-3.0"
 licenselink = "https://github.com/manid2/hugo-xterm/blob/main/LICENSE"
-description = "Hugo theme for terminal users."
+description = "Hugo theme designed for reading and printing text with dark and light modes."
 
 # The home page of the theme, where the source can be found.
 homepage = "https://github.com/manid2/hugo-xterm/"
@@ -12,6 +12,8 @@ demosite = "https://manid2.github.io/hugo-xterm/"
 tags = [
   "blog", 
   "contact",
+  "cv",
+  "slides",
   "dark", 
   "light",
   "minimal",
