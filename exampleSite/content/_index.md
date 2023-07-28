@@ -12,6 +12,8 @@ This is the demo example site for [manid2/hugo-xterm][1] theme.
 [![LICENSE][hx_lic_img]][hx_lic_link]
 [![Build][hx_ci_build_img]][hx_ci_build_link]
 
+{{< ads >}}
+
 [1]: https://github.com/manid2/hugo-xterm
 
 [hx_ci_build_img]: https://img.shields.io/github/actions/workflow/status/manid2/hugo-xterm/hugo.yaml?logo=github "Hugo Xterm build status badge"

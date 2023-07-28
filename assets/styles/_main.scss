@@ -480,3 +480,11 @@ hr {
     border: none;
   }
 }
+
+.ads {
+  margin: $spacer-normal 0;
+
+  @media print {
+    display: none;
+  }
+}
