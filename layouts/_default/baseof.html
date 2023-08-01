@@ -7,6 +7,10 @@
         {{- partial "head/style.html" . -}}
       {{- end -}}
     {{- end -}}
+
+    {{- if templates.Exists "partials/extend_head.html" -}}
+      {{- partial "extend_head.html" . -}}
+    {{- end -}}
   </head>
 
   <body>
@@ -62,6 +66,10 @@
         {{- $bundle = $bundle | resources.Minify -}}
       {{- end -}}
       <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+    {{- end -}}
+
+    {{- if templates.Exists "partials/extend_footer.html" -}}
+      {{- partial "extend_footer.html" . -}}
     {{- end -}}
   </body>
 </html>
