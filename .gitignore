@@ -6,3 +6,8 @@
 .vscode
 .hugo_build.lock
 *.swp
+
+# ctags
+tags
+*.tags
+TAGS

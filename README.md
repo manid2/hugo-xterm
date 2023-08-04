@@ -89,6 +89,12 @@ Local development
 # add to go.mod for local development
 # replace github.com/manid2/hugo-xterm => ../hugo-xterm
 hugo server --source exampleSite
+
+# generate tags
+ctags -R assets/ layouts/ config.toml theme.toml
+
+# generate tags for exampleSite
+ctags -R exampleSite/layouts/ exampleSite/scripts/ exampleSite/config
 ```
 
 Credits
