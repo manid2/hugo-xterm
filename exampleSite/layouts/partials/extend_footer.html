@@ -1,0 +1,17 @@
+{{- $showAds := false -}}
+{{- if isset .Params "show_ads" -}}
+  {{- $showAds = .Params.show_ads -}}
+{{- else if isset site.Params "show_ads" -}}
+  {{- $showAds = site.Params.show_ads -}}
+{{- end -}}
+
+{{- if $showAds -}}
+  {{- $ads := resources.Get "scripts/ads.js" | js.Build -}}
+  {{- $bundle := slice $ads | resources.Concat "bundle.ads.js" -}}
+  {{- if hugo.IsProduction -}}
+    {{- $bundle = $bundle | resources.Minify -}}
+  {{- end -}}
+  <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
+  <script type="text/javascript" src="//pl20220116.highcpmrevenuegate.com/7f/c4/72/7fc4729b41e6def7678efe899c1db986.js"></script>
+  <script async="async" data-cfasync="false" src="//pl20260188.highcpmrevenuegate.com/9a0b7e3f5ef184780fa822e1002f7dbe/invoke.js"></script>
+{{- end -}}
