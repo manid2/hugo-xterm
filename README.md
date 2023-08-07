@@ -3,11 +3,24 @@ hugo-xterm
 
 Hugo theme designed for reading and printing text with dark and light modes.
 
-Demo example site [manid2.github.io/hugo-xterm][7].
-
 [![Hugo][hugo_ver_img]][hugo_v0110]
 [![LICENSE][hx_lic_img]][hx_lic_link]
 [![Build][hx_ci_build_img]][hx_ci_build_link]
+
+Demo
+----
+
+Demo example site [manid2.github.io/hugo-xterm][7].
+
+[![Hugo Xterm demo site QR code][hx_demo_qr_img]][7]
+
+Support
+-------
+
+Kindly support this theme development by donating at [Buy me a
+coffee][md2_bmc_link].
+
+[![Mani Kumar Buy Me a Coffee QR code][md2_bmc_qr_img]][md2_bmc_link]
 
 Screenshots
 -----------
@@ -139,3 +152,8 @@ License
 [hx_ss_light]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-02-light.png "Hugo Xterm light mode screenshot"
 [hx_ss_cv]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-03-cv.png "Hugo Xterm CV template screenshot"
 [hx_ss_feat]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-04-features.png "Hugo Xterm features screenshot"
+
+[hx_demo_qr_img]: https://quickchart.io/qr?text=https%3A%2F%2Fmanid2.github.io%2Fhugo-xterm%2F&dark=1a5fb4&size=200
+
+[md2_bmc_link]: https://www.buymeacoffee.com/manid2
+[md2_bmc_qr_img]: https://manid2.gitlab.io/images/md2_bmc_qr.png
