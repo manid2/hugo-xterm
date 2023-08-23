@@ -34,7 +34,7 @@
     </header>
 
     {{- if .Params.Cover }}
-      <img src="{{ .Params.Cover | absURL }}" class="post-cover" {{ with .Params.CoverAlt }}alt="{{ . | plainify }}"{{ end }} />
+      <img src="{{ absURL .Params.Cover }}" class="post-cover" {{ with .Params.CoverAlt }}alt="{{ . | plainify }}"{{ end }} />
     {{- end }}
 
     {{- if and (.Param "toc") (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
