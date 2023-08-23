@@ -53,8 +53,8 @@
   {{- /* site footer links */}}
   <nav class="navbar">
     <ul class="navbar__list">
-      <li><a href="/posts/index.xml">RSS</a></li>
-      <li><a href="/sitemap.xml">Sitemap</a></li>
+      <li><a href="{{ absURL "posts/index.xml" }}">RSS</a></li>
+      <li><a href="{{ absURL "sitemap.xml" }}">Sitemap</a></li>
       {{- $gitRepoUrl := "" -}}
       {{- if (isset site.Params "git_info") -}}
         {{- $git_host := site.Params.git_info.host -}}
