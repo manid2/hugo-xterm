@@ -2,7 +2,6 @@ title = "Hugo Xterm"
 languageCode = "en-us"
 baseurl = "https://manid2.github.io/hugo-xterm/"
 paginate = 20
-canonifyurls = true
 
 [module]
   [[module.imports]]
@@ -35,7 +34,6 @@ canonifyurls = true
 
     [languages.en.params.logo]
       logoText = "Home"
-      logoHomeLink = "/"
 
     [languages.en.menu]
       [[languages.en.menu.main]]

@@ -1,11 +1,11 @@
 {{- $logoText := site.Params.Logo.logoText | default "Home" -}}
-{{- $logoLink := site.Params.Logo.logoHomeLink | default "/" -}}
+{{- $logoLink := site.Params.Logo.logoHomeLink | default "" -}}
 
 {{- /* navbar */}}
 <nav class="navbar">
   <div class="navbar__first">
     <ul class="navbar__list borders">
-      <li><a href="{{ $logoLink }}">{{ $logoText }}</a></li>
+      <li><a href="{{ absURL $logoLink }}">{{ $logoText }}</a></li>
       <li>
         <button class="theme-toggle transparent">
           {{- partial "theme-icon.html" . -}}
