@@ -11,5 +11,5 @@
 
 {{- /* Custom CSS to override theme properties (/static/style.css) */}}
 {{- if (fileExists "static/style.css") }}
-  <link rel="stylesheet" href="{{ "style.css" | absURL }}" />
+  <link rel="stylesheet" href="{{ absURL "style.css" }}" />
 {{- end }}
