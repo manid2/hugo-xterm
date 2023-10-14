@@ -40,7 +40,7 @@ Features
 * Switchable dark and light themes with automatic selection based on system
   theme.
 * SEO friendly OpenGraph and twitter cards support
-* Customizable using configurations for: "full width:, "centered".
+* Customizable using configurations for: "full width", "centered".
 * Taxonomies and posts RSS.
 * Responsive tested on desktop and on smart phones.
 * Responsive menus for desktop and mobile screens.
@@ -66,9 +66,79 @@ tested as I don't use them myself:
 Installation
 ------------
 
-Follows the same steps for installing and updating a Hugo theme such as this
-link for installing and updating PaperMode theme
-[adityatelange/hugo-PaperMod/wiki/Installation][6].
+Follow the steps in any one of these methods to install or update a Hugo
+theme.
+
+### Method - Using hugo mod
+
+Add hugo-xterm theme as Hugo module to hide the theme content and let you
+focus only on your site content. Let Hugo handle the theme updates
+automatically and control the theme as a Hugo module instead of git.
+
+```bash
+cd <your-site-directory>
+
+# initialize your site as a hugo module.
+hugo mod init <your-repo-host/your-username/your-site-repo>
+
+# import hugo-xterm theme as hugo module in configuration
+$ cat config/_default/config.toml
+[module]
+  [[module.imports]]
+    path = "github.com/manid2/hugo-xterm"
+
+# update theme
+hugo mod get -u
+```
+
+For all below methods your site needs to point to hugo-xterm theme
+subdirectory in configuration as below:
+
+```bash
+$ cat config/_default/config.toml
+theme = "hugo-xterm"
+```
+
+### Method - Download and copy theme
+
+Download the archived (i.e. .zip or tar.gz) theme from github repository
+releases page. Extract and copy the contents into `themes/hugo-xterm`
+subdirectory in your site directory.
+
+To update the theme just download a new release and overwrite the same
+subdirectory.
+
+This method is simple, can be automated with script and saves space on disk by
+omitting the theme repository history.
+
+### Method - Using git clone
+
+This method clones the theme repository with history into your site's themes
+subdirectory which is useful if you want to control the history or make your
+own private modifications to the theme.
+
+```bash
+cd <your-site-directory>
+git clone https://github.com/manid2/hugo-xterm themes/hugo-xterm --depth=1
+
+# update theme
+cd themes/hugo-xterm
+git pull
+```
+
+### Method - Using git submodule
+
+This is similar to cloning the theme into subdirectory except using git
+submodule which makes the theme acts a dependency of your site repository. It
+lets git to control your site and its dependency this theme.
+
+```bash
+git submodule add --depth=1 https://github.com/manid2/hugo-xterm \
+themes/hugo-xterm
+
+# update theme
+git submodule update --remote --merge
+```
 
 Local development
 -----------------
@@ -106,7 +176,6 @@ License
 [3]: https://github.com/kaitlinmctigue/kaitlinmctigue.github.io
 [4]: https://github.com/hakimel/reveal.js
 [5]: https://wave.webaim.org/
-[6]: https://github.com/adityatelange/hugo-PaperMod/wiki/Installation
 [8]: https://en.wikipedia.org/wiki/HSL_and_HSV
 [9]: https://github.com/alecthomas/chroma/
 [10]: https://manid2.gitlab.io/cv/
