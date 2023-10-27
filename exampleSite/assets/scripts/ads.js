@@ -1,7 +1,5 @@
 // ad locations in page
 const postHeader = document.querySelector(".post-header");
-const postContent = document.querySelector(".post-content");
-const postPagination = document.querySelector(".post-footer > .pagination");
 const postFooter = document.querySelector(".post-footer");
 
 // media queries
@@ -27,20 +25,9 @@ const adBannerLeaderConfMobile = {
   params: {},
 };
 
-const adDirectLink = document.createElement("a");
-adDirectLink.href =
-  "https://www.highcpmrevenuegate.com/tk17ncqp?key=484c772258d73d54a528cc874518bfaa";
-adDirectLink.title = "Ad";
-adDirectLink.textContent = "Click here for ad ...";
-
-const adReferralLink = document.createElement("a");
-adReferralLink.href =
-  "https://beta.publishers.adsterra.com/referral/YiXLaw9kEU";
-adReferralLink.title = "Adsterra referral";
-adReferralLink.textContent = "Click here to join Adsterra ...";
-
 const adNativeBanner = document.createElement("div");
 adNativeBanner.id = "container-9a0b7e3f5ef184780fa822e1002f7dbe";
+postFooter.append(getAdBlock(adNativeBanner, "native--banner"));
 
 function getAdBannerLeaderDevice(adDevice, adConf) {
   const atOptionsScript = document.createElement("script");
@@ -84,51 +71,10 @@ function setAdBannerLeader(isResize = false) {
   }
 }
 
-function setAdReferralBanner(isResize = false) {
-  let postFooterAds = null;
-
-  if (!isResize) {
-    postFooterAds = getAdBlock();
-  } else {
-    postFooterAds = postFooter.querySelector(".ads");
-    postFooterAds.removeChild(postFooterAds.firstElementChild);
-  }
-
-  const adBanner = document.createElement("div");
-  adBanner.classList.add("banner");
-
-  const adReferralLink = document.createElement("a");
-  adReferralLink.href =
-    "https://beta.publishers.adsterra.com/referral/YiXLaw9kEU";
-  adReferralLink.title = "Adsterra referral";
-
-  const adReferralGif = document.createElement("img");
-  adReferralGif.alt = "Adsterra referral banner";
-
-  if (!isPhone()) {
-    adBanner.classList.add("banner--desktop");
-    adReferralGif.src =
-      "https://landings-cdn.adsterratech.com/referralBanners/gif/720x90_adsterra_reff.gif";
-  } else {
-    adBanner.classList.add("banner--mobile");
-    adReferralGif.src =
-      "https://landings-cdn.adsterratech.com/referralBanners/gif/300x250_adsterra_reff.gif";
-  }
-  adReferralLink.append(adReferralGif);
-  adBanner.append(adReferralLink);
-  postFooterAds.append(adBanner);
-
-  if (!isResize) {
-    postFooter.prepend(postFooterAds);
-  }
-}
-
 setAdBannerLeader();
-setAdReferralBanner();
 
 function handleWinResize() {
   setAdBannerLeader(true);
-  setAdReferralBanner(true);
 }
 
 window.addEventListener("resize", handleWinResize);
@@ -146,28 +92,4 @@ function getAdBlock(adContent, styles) {
   }
 
   return adBlock;
-}
-
-const adDirectLinkButtons = document.createElement("div");
-adDirectLinkButtons.classList.add("ads", "buttons", "fill");
-
-const adDirectLinkButtonLeft = document.createElement("a");
-adDirectLinkButtonLeft.classList.add("button", "outline", "left");
-adDirectLinkButtonLeft.href = adDirectLink.href;
-adDirectLinkButtonLeft.title = adDirectLink.title;
-adDirectLinkButtonLeft.textContent = adDirectLink.textContent;
-
-const adDirectLinkButtonRight = document.createElement("a");
-adDirectLinkButtonRight.classList.add("button", "outline", "right");
-adDirectLinkButtonRight.href = adReferralLink.href;
-adDirectLinkButtonRight.title = adReferralLink.title;
-adDirectLinkButtonRight.textContent = adReferralLink.textContent;
-
-adDirectLinkButtons.append(adDirectLinkButtonLeft);
-adDirectLinkButtons.append(adDirectLinkButtonRight);
-
-postContent.prepend(adDirectLinkButtons);
-
-if (postPagination) {
-  postPagination.append(getAdBlock(adNativeBanner, "native--banner"));
 }
