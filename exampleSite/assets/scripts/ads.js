@@ -1,6 +1,5 @@
 // ad locations in page
 const postHeader = document.querySelector(".post-header");
-const postFooter = document.querySelector(".post-footer");
 
 // media queries
 const phoneQuery = getComputedStyle(document.body).getPropertyValue(
@@ -24,10 +23,6 @@ const adBannerLeaderConfMobile = {
   width: 320,
   params: {},
 };
-
-const adNativeBanner = document.createElement("div");
-adNativeBanner.id = "container-9a0b7e3f5ef184780fa822e1002f7dbe";
-postFooter.append(getAdBlock(adNativeBanner, "native--banner"));
 
 function getAdBannerLeaderDevice(adDevice, adConf) {
   const atOptionsScript = document.createElement("script");
