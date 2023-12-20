@@ -1,49 +1,52 @@
 {{- define "main" -}}
   <!-- Hide header & footer until slides are ready -->
-  <div style="display: none;">
+  <div class="hide">
     <div id="slide-header-footer">
-      {{ if .Title }}
-        <div class="header-left">{{- .Title -}}</div>
-      {{ end }}
-      {{ if $.Site.Copyright }}
-        <div class="footer-left">{{ $.Site.Copyright | safeHTML }} {{ now.Year }}</div>
-      {{ end }}
+      {{- if .Title -}}
+        <div class="header-left">{{ .Title }}</div>
+      {{- end -}}
+      {{- if site.Copyright -}}
+        <div class="footer-left">{{ site.Copyright | safeHTML }} {{ now.Year }}</div>
+      {{- end -}}
     </div>
   </div>
 
-  <div class="reveal">
-    <div class="slides">
-      <!-- Title slide -->
-      {{ if .Title }}
-        <section>
-          <h1>{{- .Title -}}</h1>
-          <p>
-            {{ with .Date }}
-              {{ .Format "2006-01-02" }}
-            {{ end }}
-            {{ with .Params.Author }}
-              |
-              {{ . }}
-            {{ end }}
-          </p>
-          {{ if .Description }}
-            <p style="font-style: italic;">
-              {{ .Description | plainify }}
-            </p>
-          {{ end }}
+  <div class="highlight-wrapper">
+    <div class="reveal">
+      <div class="slides">
+        <!-- Title slide -->
+        {{- if .Title }}
+          <section>
+            <h1>{{ .Title }}</h1>
+            {{- if or .Date .Params.Author }}
+              <p>
+                {{- with .Date -}}
+                  <span>{{ .Format "2006-01-02" }}</span>
+                {{- end -}}
+
+                {{- with .Params.Author -}}
+                  <span>&nbsp;| {{ . }}</span>
+                {{- end -}}
+              </p>
+            {{- end }}
+
+            {{- with .Description }}
+              <p class="post-description">{{ . }}</p>
+            {{- end }}
+          </section>
+        {{- end }}
+
+
+        <!-- Content slides -->
+        <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+          {{ .RawContent }}
         </section>
-      {{ end }}
 
-
-      <!-- Content slides -->
-      <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-          {{- .RawContent -}}
-      </section>
-
-      <!-- End slide -->
-      <section>
-        <h2>Thank you</h2>
-      </section>
+        <!-- End slide -->
+        <section>
+          <h2>Thank you</h2>
+        </section>
+      </div>
     </div>
   </div>
 {{- end -}}
