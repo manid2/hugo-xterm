@@ -14,12 +14,15 @@
   height: $spacer-large * 25;
 }
 
+.reveal .slides {
+  text-align: left;
+}
+
 .header-left,
 .footer-left {
   position: absolute;
   left: 0%;
-  margin: $spacer-large;
-  padding: $spacer-small;
+  margin: $spacer-normal $spacer-normal;
 }
 
 .header-left {
