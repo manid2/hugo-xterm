@@ -1,0 +1,31 @@
+:root {
+  --r-background-color: #{$background--light};
+  --r-code-font: #{$font-family-mono};
+  --r-heading-color: #{$text--light};
+  --r-heading-font: #{$font-family-title};
+  --r-link-color: #{$text-links--light};
+  --r-main-color: #{$text--light};
+  --r-main-font-size: #{$font-size};
+  --r-main-font: #{$font-family-normal};
+}
+
+.reveal {
+  width: 100%;
+  height: $spacer-large * 25;
+}
+
+.header-left,
+.footer-left {
+  position: absolute;
+  left: 0%;
+  margin: $spacer-large;
+  padding: $spacer-small;
+}
+
+.header-left {
+  top: 0%;
+}
+
+.footer-left {
+  bottom: 0%;
+}
