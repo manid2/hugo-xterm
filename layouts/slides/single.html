@@ -5,8 +5,8 @@
       {{- if .Title -}}
         <div class="header-left">{{ .Title }}</div>
       {{- end -}}
-      {{- if site.Copyright -}}
-        <div class="footer-left">{{ site.Copyright | safeHTML }} {{ now.Year }}</div>
+      {{- if site.Params.Copyright -}}
+        <div class="footer-left">{{ site.Params.Copyright | safeHTML }} {{ now.Year }}</div>
       {{- end -}}
     </div>
   </div>
