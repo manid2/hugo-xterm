@@ -1,73 +1,55 @@
 <!DOCTYPE html>
 <html lang="{{- site.Language -}}">
   <head>
-    {{- block "head" . -}}
-      {{- partial "head/base.html" . -}}
-      {{- block "styles" . -}}
-        {{- partial "head/style.html" . -}}
-      {{- end -}}
-    {{- end -}}
-
+    {{- partial "head/base.html" . -}}
+    {{- partial "head/style.html" . -}}
     {{- if templates.Exists "partials/extend_head.html" -}}
       {{- partial "extend_head.html" . -}}
     {{- end -}}
   </head>
 
   <body>
-    {{- block "container" . -}}
-      {{- $container := "container" -}}
-      {{- if site.Params.fullWidthTheme -}}
-        {{- $container = print $container " full" -}}
-      {{- else if site.Params.centerTheme -}}
-        {{- $container = print $container " center" -}}
-      {{- end -}}
+    {{- $container := "container" -}}
+    {{- if site.Params.fullWidthTheme -}}
+      {{- $container = print $container " full" -}}
+    {{- else if site.Params.centerTheme -}}
+      {{- $container = print $container " center" -}}
+    {{- end -}}
 
+    {{- /* theme container */}}
+    <div class="theme-container">
+      {{- /* container */}}
+      <div class="{{- $container -}}">
+        {{- /* site header */}}
+        <header class="site-header">
+          {{- block "header" . -}}
+            {{- partial "header.html" . -}}
+          {{- end -}}
+        </header>
 
-      <div class="theme-container">
-        {{- /* container */}}
-        <div class="{{- $container -}}">
-          {{- /* site header */}}
-          <header class="site-header">
-            {{- block "header" . -}}
-              {{- partial "header.html" . -}}
+        {{- /* site main */}}
+        <main class="site-main">
+          {{- block "main" . -}}
+            {{ if .Title -}}
+              <h1 class="post-title">{{ .Title | plainify }}</h1>
             {{- end -}}
-          </header>
 
-          {{- /* site main */}}
-          <main class="site-main">
-            {{- block "main" . -}}
-              {{ if .Title -}}
-                <h1 class="post-title">{{ .Title | plainify }}</h1>
-              {{- end -}}
+            {{- /* site main content */}}
+            {{ .Content }}
+          {{- end -}}
+          {{- /* end main content */}}
+        </main>
 
-              {{- /* site main content */}}
-              {{ .Content }}
-            {{- end -}}
-            {{- /* end main content */}}
-          </main>
-
-          {{- /* site footer */}}
-          <footer class="site-footer">
-            {{- block "footer" . -}}
-              {{- partial "footer.html" . -}}
-            {{- end -}}
-          </footer>
-        </div>
+        {{- /* site footer */}}
+        <footer class="site-footer">
+          {{- block "footer" . -}}
+            {{- partial "footer.html" . -}}
+          {{- end -}}
+        </footer>
       </div>
-    {{- end -}}
+    </div>
 
-    {{- block "scripts" . -}}
-      {{- $copy := resources.Get "scripts/copy.js" | js.Build -}}
-      {{- $menu := resources.Get "scripts/menu.js" | js.Build -}}
-      {{- $print := resources.Get "scripts/print.js" | js.Build -}}
-      {{- $theme := resources.Get "scripts/theme.js" | js.Build -}}
-      {{- $bundle := slice $menu $theme $copy $print | resources.Concat "bundle.js" -}}
-      {{- if hugo.IsProduction -}}
-        {{- $bundle = $bundle | resources.Minify -}}
-      {{- end -}}
-      <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
-    {{- end -}}
-
+    {{- partial "scripts/base.html" . -}}
     {{- if templates.Exists "partials/extend_footer.html" -}}
       {{- partial "extend_footer.html" . -}}
     {{- end -}}

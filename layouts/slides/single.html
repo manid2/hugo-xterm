@@ -1,8 +1,4 @@
-{{ define "styles" }}
-  {{- partial "slides/style.html" . -}}
-{{ end }}
-
-{{ define "container" }}
+{{- define "main" -}}
   <!-- Hide header & footer until slides are ready -->
   <div style="display: none;">
     <div id="slide-header-footer">
@@ -41,9 +37,7 @@
 
       <!-- Content slides -->
       <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
-        {{ block "main" . }}
           {{- .RawContent -}}
-        {{ end }}
       </section>
 
       <!-- End slide -->
@@ -52,8 +46,4 @@
       </section>
     </div>
   </div>
-{{ end }}
-
-{{ define "scripts" }}
-  {{ partial "slides/scripts.html" . }}
-{{ end }}
+{{- end -}}

@@ -1,3 +1,7 @@
+{{- if and (not .IsSection) (eq .Type "slides") -}}
+  {{- partial "slides/style.html" . -}}
+{{- end }}
+
 {{- /* styles */}}
 {{- if hugo.IsProduction -}}
   {{- $options := (dict "targetPath" "styles.css" "outputStyle" "compressed") -}}
