@@ -115,7 +115,3 @@ $current-theme: null;
 @function t($key) {
   @return map-get($current-theme, $key);
 }
-
-@function tp($key) {
-  @return map-get(map-get($themes, "light"), "#{$key}");
-}

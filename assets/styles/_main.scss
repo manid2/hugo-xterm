@@ -143,7 +143,10 @@ a {
       content: "(" attr(href) ")";
       text-decoration: underline;
       font-style: italic;
-      color: tp($text);
+
+      @include themed {
+        color: t($text);
+      }
     }
   }
 }
