@@ -1,12 +1,25 @@
 :root {
-  --r-background-color: #{$background--light};
   --r-code-font: #{$font-family-mono};
-  --r-heading-color: #{$text--light};
   --r-heading-font: #{$font-family-title};
-  --r-link-color: #{$text-links--light};
-  --r-main-color: #{$text--light};
   --r-main-font-size: #{$font-size};
   --r-main-font: #{$font-family-normal};
+
+  /* FIXME doesn't work in light theme */
+  @include themed {
+    --r-background-color: t($background);
+    --r-heading-color: t($text);
+    --r-main-color: t($text);
+    --r-link-color: t($text-links);
+    --r-link-color-dark: t($text-links);
+    --r-link-color-hover: t($text);
+  }
+}
+
+/* HACK use this until reveal.js theme colors are fixed */
+.reveal a {
+  @include themed {
+    color: t($text-links);
+  }
 }
 
 .reveal {
