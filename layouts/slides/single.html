@@ -11,6 +11,35 @@
     </div>
   </div>
 
+  <header class="post-header">
+    {{- if .Title }}
+      <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
+    {{- end }}
+
+    {{- if or (.Params.Date) (.Params.Author) }}
+      <address class="post-meta">
+        {{- with .Params.Date }}
+          <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}">
+            Published on
+            {{ .Format "2006-01-02 15:04:05 IST" }}
+          </time>
+        {{- end }}
+
+        {{- with .Params.Author }}
+          <span>by {{ . }}</span>
+        {{- end }}
+
+        {{- with .Params.LastMod }}
+          <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}"> last modified {{ .Format "2006-01-02 15:04:05 IST" }}. </time>
+        {{- end }}
+      </address>
+    {{- end }}
+
+    {{- with .Params.Description }}
+      <p class="post-description">{{ . }}</p>
+    {{- end }}
+  </header>
+
   <div class="highlight-wrapper">
     <div class="reveal">
       <div class="slides">
