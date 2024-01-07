@@ -19,7 +19,7 @@ Features
 * __Print:__ any page in light theme mode for readability.
 * __[CV][10]:__ or resume template to reduce vertical space by using 2 columns
   and shortcodes to list the experiences and skills.
-* __Slides:__ support using [reveal.js][4] (improvement is WIP).
+* __Slides:__ support using [reveal.js][4].
 * __Lists__: separate view and pagination for simple list items and post
   entries.
 * __GitInfo:__ show the latest git commit short hash and subject message for

@@ -39,7 +39,7 @@ CV template:
 
 Features:
 
-![Hugo Xterm features][hx_ss_feat]
+![Hugo Xterm Slides][hx_ss_slides]
 
 Features
 --------
@@ -50,7 +50,7 @@ Features
 * __Print:__ any page in light theme mode for readability.
 * __[CV][10]:__ or resume template to reduce vertical space by using 2 columns
   and shortcodes to list the experiences and skills.
-* __Slides:__ support using [reveal.js][4] (improvement is WIP).
+* __Slides:__ support using [reveal.js][4].
 * __Lists__: separate view and pagination for simple list items and post
   entries.
 * __GitInfo:__ show the latest git commit short hash and subject message for
@@ -220,7 +220,7 @@ License
 [hx_ss_dark]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-01-dark.png "Hugo Xterm dark mode screenshot"
 [hx_ss_light]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-02-light.png "Hugo Xterm light mode screenshot"
 [hx_ss_cv]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-03-cv.png "Hugo Xterm CV template screenshot"
-[hx_ss_feat]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-04-features.png "Hugo Xterm features screenshot"
+[hx_ss_slides]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-04-slides.png "Hugo Xterm slides screenshot"
 
 [hx_demo_qr_img]: https://quickchart.io/qr?text=https%3A%2F%2Fmanid2.github.io%2Fhugo-xterm%2F&dark=1a5fb4&size=200
 
