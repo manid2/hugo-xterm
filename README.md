@@ -25,19 +25,19 @@ coffee][md2_bmc_link].
 Screenshots
 -----------
 
-Dark mode:
+### Dark mode
 
 ![Hugo Xterm Dark][hx_ss_dark]
 
-Light mode:
+### Light mode
 
 ![Hugo Xterm Light][hx_ss_light]
 
-CV template:
+### CV template
 
 ![Hugo Xterm CV][hx_ss_cv]
 
-Features:
+### Slides
 
 ![Hugo Xterm Slides][hx_ss_slides]
 
