@@ -1,14 +1,14 @@
 <table class="cv-skills">
-  {{- with .Get "technologies" -}}
+  {{- with .Get "languages" -}}
     <tr>
-      <td class="key">Technologies</td>
+      <td class="key">Languages</td>
       <td class="val">{{ . }}</td>
     </tr>
   {{- end -}}
 
-  {{- with .Get "languages" -}}
+  {{- with .Get "technologies" -}}
     <tr>
-      <td class="key">Languages</td>
+      <td class="key">Technologies</td>
       <td class="val">{{ . }}</td>
     </tr>
   {{- end -}}
