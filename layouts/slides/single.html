@@ -17,7 +17,7 @@
     {{- end }}
 
     {{- if or (.Params.Date) (.Params.Author) }}
-      <address class="post-meta">
+      <div class="post-meta">
         {{- with .Params.Date }}
           <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}">
             Published on
@@ -32,7 +32,7 @@
         {{- with .Params.LastMod }}
           <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}"> last modified {{ .Format "2006-01-02 15:04:05 IST" }}. </time>
         {{- end }}
-      </address>
+      </div>
     {{- end }}
 
     {{- with .Params.Description }}
