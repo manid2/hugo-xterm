@@ -24,14 +24,8 @@
         {{- end }}
       </div>
 
-      {{- with .Params.LastMod }}
-        <div class="post-meta">
-          <time pubdate datetime="{{ .Format "2006-01-02 15:04:05 IST" }}"> Updated on: {{ .Format "2006-01-02 15:04:05 IST" }}. </time>
-        </div>
-      {{- end }}
-
       {{- with .Params.Description }}
-        <p class="post-description">{{ . }}</p>
+        <p class="post-meta">{{ . }}</p>
       {{- end }}
     </header>
 
