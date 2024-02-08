@@ -10,5 +10,3 @@ author = "Mani Kumar"
 
 This page shows the list of items which are not articles and don't need a
 date, author and other meta data associated. They are like simple documents.
-
-{{< ads >}}

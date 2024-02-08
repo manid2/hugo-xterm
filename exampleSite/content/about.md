@@ -6,12 +6,8 @@ toc = false
 
 Hugo theme designed for reading and printing text with dark and light modes.
 
-{{< ads >}}
-
 Features
 --------
-
-{{< ads >}}
 
 ### Distinguishing features
 
@@ -32,8 +28,6 @@ Features
   from the [HSL colors][8].
 * Website banner is supported.
 
-{{< ads >}}
-
 ### Adopted features
 
 * Minimal configuration.
@@ -50,8 +44,6 @@ Features
 * Tightly coupled with Hugo extended latest version (v1.110.0) to compile and
   generate asset bundles with pipelines, fingerprinting and minification.
 
-{{< ads >}}
-
 ### Other features
 
 These are supported due to [panr/terminal][1] theme base code but not
@@ -60,8 +52,6 @@ tested as I don't use them myself:
 * Post cover image.
 * Images in post with caption.
 * Comments.
-
-{{< ads >}}
 
 Installation
 ------------
@@ -149,8 +139,6 @@ Local development
 hugo server --source exampleSite
 ```
 
-{{< ads >}}
-
 Credits
 -------
 
@@ -168,8 +156,6 @@ License
 -------
 
 [GNU General Public License v3.0][11]
-
-{{< ads >}}
 
 [1]: https://github.com/panr/hugo-theme-terminal
 [2]: https://github.com/adityatelange/hugo-PaperMod
