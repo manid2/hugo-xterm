@@ -25,12 +25,12 @@
       </div>
 
       {{- with .Params.Description }}
-        <p class="post-meta">{{ . }}</p>
+        <p class="cv-description">{{ . }}</p>
       {{- end }}
     </header>
 
     {{- with .Content }}
-      <div class="post-content">
+      <div class="post-content cv-content">
         {{ . }}
       </div>
     {{- end }}

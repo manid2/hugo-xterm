@@ -21,8 +21,7 @@ Experience
 * Working as part of Data-Plane team to develop and maintain features for
   ActiveLogic product which processes internet packets.
 
-{{< cv/skills
-    technologies="C, Python, DPDK, NUMA, Data-Plane, TCP/IP, PostgreSQL" >}}
+Technologies: C, Python, DPDK, NUMA, Data-Plane, TCP/IP, PostgreSQL
 
 {{< cv/experience
     name="Toshiba Software"
@@ -35,8 +34,7 @@ Experience
   feature the users can scan a non-standard paper sizes such as identity
   cards, bills and receipts.
 
-{{< cv/skills
-    technologies="C++, C, JPEG, PDF, OpenCV, Linux, Embedded Systems" >}}
+Technologies: C++, C, JPEG, PDF, OpenCV, Linux, Embedded Systems
 
 Education
 ---------
@@ -51,9 +49,9 @@ Education
 Technical Skills
 ----------------
 
-{{< cv/skills
-    languages="C, C++, Python"
-    tools="Git, Docker, GDB, Valgrind, Gitlab, Vim, Ctags" >}}
+Languages: C, C++, Python
+
+Tools: Git, Docker, GDB, Valgrind, Gitlab, Vim, Ctags
 
 Hobbies
 -------

@@ -454,9 +454,15 @@ hr {
   margin: 0 0 $spacer-smallest 0;
 }
 
+.cv-description {
+  font-style: italic;
+  font-size: $font-size-smaller;
+  margin: $spacer-smallest 0;
+}
+
 .cv-experience {
   margin: $spacer-small 0;
-  border-bottom: 1px solid;
+  border-bottom: none;
 
   @media print {
     break-after: avoid-page;
@@ -464,22 +470,21 @@ hr {
   }
 }
 
-.cv-skills {
-  margin: 0;
-  border: none;
-  width: auto;
+.cv-content {
+  h2 {
+    font-size: $font-size-larger;
+    width: 100%;
 
-  .key {
-    padding: 0 $spacer-smallest 0 0;
+    .hanchor {
+      display: none;
+    }
   }
 
-  .val {
-    padding: 0 0 0 $spacer-smallest;
-    font-weight: $font-bold;
-  }
-
-  .key,
-  .val {
-    border: none;
+  @media print {
+    * {
+      margin-top: $spacer-2;
+      margin-bottom: 0;
+      line-height: 1.2;
+    }
   }
 }
