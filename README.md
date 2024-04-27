@@ -3,6 +3,15 @@ hugo-xterm
 
 Hugo theme designed for reading and printing text with dark and light modes.
 
+It uses Hugo extended version with __>= 0.110__ to build the theme to take
+advantage of builtin SCSS compiler and reduce dependency on external
+libraries.
+
+This theme is fully free and open source so it can be used and modified as you
+like but redistributing requires attribution to [license][hx_lic_link] and
+credits to author [Mani Kumar][md2_gh_link] with link to this repository
+[hugo-xterm][hx_gh_link].
+
 [![Hugo][hugo_ver_img]][hugo_v0110]
 [![LICENSE][hx_lic_img]][hx_lic_link]
 [![Build][hx_ci_build_img]][hx_ci_build_link]
@@ -13,14 +22,6 @@ Demo
 Demo example site [manid2.github.io/hugo-xterm][7].
 
 [![Hugo Xterm demo site QR code][hx_demo_qr_img]][7]
-
-Support
--------
-
-Kindly support this theme development by donating at [Buy me a
-coffee][md2_bmc_link].
-
-[![Mani Kumar Buy Me a Coffee QR code][md2_bmc_qr_img]][md2_bmc_link]
 
 Screenshots
 -----------
@@ -180,6 +181,35 @@ ctags -R assets/ layouts/ config.toml theme.toml
 ctags -R exampleSite/layouts/ exampleSite/scripts/ exampleSite/config
 ```
 
+Request feature & report bugs
+-----------------------------
+
+If you find any bugs or need any features then please raise an
+[issue][hx_gh_issues_link] so that it can tracked and avoid same requests from
+other users.
+
+You can also fix the bug or implement the feature yourself and raise a [pull
+request][hx_gh_pr_link] so I can review and integrate it into this theme with
+credits to you as a contributor.
+
+Use the theme & want to show your site?
+---------------------------------------
+
+I would be happy to know that you use this theme and want to show your site.
+For this please raise a pull request with link to your site, your
+name/username, profession/study mentioned in this list [hugo-xterm
+users][hx_users_link].
+
+Support
+-------
+
+Kindly support this theme development by donating at [Buy me a
+coffee][md2_bmc_link].
+
+TODO Add current supporters.
+
+[![Mani Kumar Buy Me a Coffee QR code][md2_bmc_qr_img]][md2_bmc_link]
+
 Credits
 -------
 
@@ -223,6 +253,11 @@ License
 [hx_ss_slides]: https://manid2.github.io/hugo-xterm/screenshots/hugo-xterm-ss-04-slides.png "Hugo Xterm slides screenshot"
 
 [hx_demo_qr_img]: https://quickchart.io/qr?text=https%3A%2F%2Fmanid2.github.io%2Fhugo-xterm%2F&dark=1a5fb4&size=200
+[hx_gh_link]: https://github.com/manid2/hugo-xterm
+[hx_gh_issues_link]: https://github.com/manid2/hugo-xterm/issues
+[hx_gh_pr_link]: https://github.com/manid2/hugo-xterm/pulls
+[hx_users_link]: https://github.com/manid2/hugo-xterm/blob/main/USERS.md
 
 [md2_bmc_link]: https://www.buymeacoffee.com/manid2
 [md2_bmc_qr_img]: https://manid2.gitlab.io/images/md2_bmc_qr.png
+[md2_gh_link]: https://github.com/manid2
