@@ -50,7 +50,7 @@ jobs:
     needs: test
     runs-on: ubuntu-22.04
     env:
-      HUGO_VERSION: 0.115.2
+      HUGO_VERSION: 0.125.5
 
     steps:
       - name: Install Hugo CLI
