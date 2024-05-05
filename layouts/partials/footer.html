@@ -1,7 +1,7 @@
 {{- /* site build info */}}
 <p class="buildinfo">
   {{- /* site build timestamp */}}
-  <time datetime="{{ now.Format "2006-01-02 15:04:05 IST" }}">Site built on: {{ now.Format "2006-01-02 15:04:05 IST" }}</time>
+  <time datetime="{{ now.Format "2006-01-02 15:04:05 MST" }}">Site built on: {{ now.Format "2006-01-02 15:04:05 MST" }}</time>
 
   {{- with site.Params.git.last_commit -}}
     {{- $commitUrl := "" -}}

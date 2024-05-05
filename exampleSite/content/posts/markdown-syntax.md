@@ -3,7 +3,7 @@ title = "Markdown Syntax Guide"
 description = """Sample article showcasing basic Markdown syntax and \
   formatting for HTML elements."""
 draft = false
-date = "2023-07-28"
+date = "2024-05-06T01:22:51+0530"
 author = "Hugo Authors"
 tags = ["markdown", "xterm", "css", "html"]
 categories = ["themes", "syntax"]

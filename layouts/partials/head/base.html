@@ -52,7 +52,7 @@
     <meta property="article:published_time" content="{{ time .Date }}" />
   {{- end }}
   {{- with .Params.LastMod }}
-    <meta property="article:modified_time" content="{{ .Format "2006-01-02 15:04:05 IST" }}" />
+    <meta property="article:modified_time" content="{{ .Format "2006-01-02 15:04:05 MST" }}" />
   {{- end }}
   <meta property="article:author" content="{{ .Params.Author | default site.Title }}" />
   {{- if .Params.cover -}}
