@@ -79,11 +79,11 @@ Features
 * Copy code, see code language and file name (optional).
 * Tightly coupled with Hugo extended latest version (v1.110.0) to compile and
   generate asset bundles with pipelines, fingerprinting and minification.
-* Favicon support: (1) add a ```static``` directory in the root directory of your project; (2) place your favicon in the static directory; and (3) add the following lines to the end of your ```hugo.yaml```
+* Favicon support: (1) find the ```static``` direcotry within ```themes/hugo-xterm```; (2) add your favicon in the ```static``` directory; and (3) add the following lines to the end of your ```themes/hugo-xterm/config.toml```
 
-```yaml
-params:
-  favicon: "my-icon.png"
+```toml
+[params]
+  favicon="my-icon.png"
 ```
 
 ### Other features
