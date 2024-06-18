@@ -79,6 +79,21 @@ Features
 * Copy code, see code language and file name (optional).
 * Tightly coupled with Hugo extended latest version (v1.110.0) to compile and
   generate asset bundles with pipelines, fingerprinting and minification.
+* Support for favicon which is displayed in browser tabs and bookmarks bar.
+
+#### How to add favicon in Hugo-xterm
+
+* Add your favicon images to `static` directory.
+  Example: `static/images/xterm.png`.
+* Add the favicon image path to `config.toml`.
+
+  ```toml
+  [params]
+    favicon="/images/xterm.png"
+  ```
+
+For working example check `exampleSite` directory to know how favicon is
+added.
 
 ### Other features
 
