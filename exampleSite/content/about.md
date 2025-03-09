@@ -13,9 +13,6 @@ Features
 
 * Designed for __reading__ and __printing__ text.
 * __Print:__ any page in light theme mode for readability.
-* __[CV][10]:__ or resume template to reduce vertical space by using 2 columns
-  and shortcodes to list the experiences and skills.
-* __Slides:__ support using [reveal.js][4].
 * __Lists__: separate view and pagination for simple list items and post
   entries.
 * __GitInfo:__ show the latest git commit short hash and subject message for
@@ -160,9 +157,7 @@ License
 [1]: https://github.com/panr/hugo-theme-terminal
 [2]: https://github.com/adityatelange/hugo-PaperMod
 [3]: https://github.com/kaitlinmctigue/kaitlinmctigue.github.io
-[4]: https://github.com/hakimel/reveal.js
 [5]: https://wave.webaim.org/
 [8]: https://en.wikipedia.org/wiki/HSL_and_HSV
 [9]: https://github.com/alecthomas/chroma/
-[10]: https://manid2.gitlab.io/cv/
 [11]: https://github.com/manid2/hugo-xterm/blob/main/LICENSE

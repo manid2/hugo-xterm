@@ -37,11 +37,6 @@ paginate = 20
 
     [languages.en.menu]
       [[languages.en.menu.main]]
-        identifier = "cv"
-        name = "CV"
-        url = "/cv/"
-
-      [[languages.en.menu.main]]
         identifier = "posts"
         name = "Posts"
         url = "/posts/"
