@@ -17,6 +17,14 @@ if (localTheme === themeDark) {
   bodyClassList.add(themeDark);
 }
 
+// Set background for overscroll (or elastic scrolling in OSX)
+function setBodyBackground() {
+  const tc = document.querySelector(".theme-container");
+  const cs = window.getComputedStyle(tc);
+  document.body.style.background = cs.background;
+}
+setBodyBackground();
+
 // Toggle theme on click
 themeToggle.addEventListener("click", () => {
   if (bodyClassList.contains(themeDark)) {
@@ -26,4 +34,5 @@ themeToggle.addEventListener("click", () => {
     bodyClassList.add(themeDark);
     localStorage.setItem(preferTheme, themeDark);
   }
+  setBodyBackground();
 });
