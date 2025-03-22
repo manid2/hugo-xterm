@@ -154,10 +154,6 @@ Code Blocks
 
 <!-- markdownlint-enable -->
 
-### Gist
-
-{{< gist spf13 7896402 >}}
-
 List Types
 ----------
 

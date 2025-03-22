@@ -1,7 +1,9 @@
 title = "Hugo Xterm"
 languageCode = "en-us"
 baseurl = "https://manid2.github.io/hugo-xterm/"
-paginate = 20
+
+[pagination]
+  pagerSize = 20
 
 [module]
   [[module.imports]]
