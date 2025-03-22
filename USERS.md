@@ -1,4 +1,4 @@
 hugo-xterm users
 ================
 
-* https://manid2.gitlab.io/ __manid2__ - Software Engineer
+* https://manid2.github.io/ __manid2__ - Software Engineer

@@ -13,7 +13,7 @@ paginate = 20
   favicon = "/images/xterm.png"
   showBreadCrumbs = true
   toc = true
-  copyrightUserUrl = "https://manid2.gitlab.io/"
+  copyrightUserUrl = "https://manid2.github.io/"
   copyrightUserText = "Mani Kumar"
 
 [params.twitter]

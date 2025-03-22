@@ -32,4 +32,4 @@ coffee][md2_bmc_link].
 [hugo_v0110]: https://github.com/gohugoio/hugo/releases/tag/v0.110.0
 
 [md2_bmc_link]: https://www.buymeacoffee.com/manid2
-[md2_bmc_qr_img]: https://manid2.gitlab.io/images/md2_bmc_qr.png
+[md2_bmc_qr_img]: https://manid2.github.io/images/md2_bmc_qr.png

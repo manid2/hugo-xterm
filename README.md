@@ -274,5 +274,5 @@ License
 [hx_users_link]: https://github.com/manid2/hugo-xterm/blob/main/USERS.md
 
 [md2_bmc_link]: https://www.buymeacoffee.com/manid2
-[md2_bmc_qr_img]: https://manid2.gitlab.io/images/md2_bmc_qr.png
+[md2_bmc_qr_img]: https://manid2.github.io/images/md2_bmc_qr.png
 [md2_gh_link]: https://github.com/manid2
