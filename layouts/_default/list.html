@@ -16,7 +16,9 @@
       {{- end }}
 
       {{- /* list content */}}
-      <h2>See</h2>
+      {{ if .Pages }}
+      <h2>See</h2><div class="post-entries">
+      {{ end }}
 
       {{- /* list items */}}
       {{- if eq .Params.list_type "docs_list" }}

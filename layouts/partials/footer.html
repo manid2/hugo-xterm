@@ -53,7 +53,9 @@
   {{- /* site footer links */}}
   <nav class="navbar">
     <ul class="navbar__list">
+      {{- if os.FileExists "/content/posts" -}}
       <li><a href="{{ absURL "posts/index.xml" }}">RSS</a></li>
+      {{- end -}}
       <li><a href="{{ absURL "sitemap.xml" }}">Sitemap</a></li>
       {{- $gitRepoUrl := "" -}}
       {{- if (isset site.Params "git_info") -}}
