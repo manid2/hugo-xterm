@@ -18,6 +18,10 @@ baseurl = "https://manid2.github.io/hugo-xterm/"
   copyrightUserUrl = "https://manid2.github.io/"
   copyrightUserText = "Mani Kumar"
 
+[params.author]
+    name = "Author Name"
+    email = "changeme@changeme.tld"
+
 [params.twitter]
   creator = "mani_d2"
 
